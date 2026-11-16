@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"
+     viewBox="0 0 800 800" role="img" aria-labelledby="title description"
+     shape-rendering="geometricPrecision">
+  <title id="title">颐智科技标志</title>
+  <desc id="description">适用于头像、图标与小尺寸场景的独立六段时间环</desc>
+  <g transform="translate(400 400)">
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#005B3E"/>
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#C59B3A" transform="rotate(60)"/>
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#005B3E" transform="rotate(120)"/>
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#005B3E" transform="rotate(180)"/>
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#005B3E" transform="rotate(240)"/>
+<rect x="-69" y="-173" width="138" height="46" rx="23" fill="#005B3E" transform="rotate(300)"/>
+</g>
+</svg>
