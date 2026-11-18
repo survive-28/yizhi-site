@@ -12,7 +12,7 @@
 <meta property="og:description" content="Care-grade medication adherence, designed in Suzhou. W100 global launch · 24 November 2026, Shanghai (SUIBE SA308 / SA407 Booth C9).">
 <meta property="og:image" content="https://yizhi-w100.netlify.app/assets/img/w100-product.jpg">
 <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=20261118c">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -100,6 +100,7 @@
   <section class="hero">
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="hero-spotlight" aria-hidden="true"></div>
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="hero-copy">
         <p class="eyebrow hero-eyebrow hero-in" data-de="Therapietreue im Alter · Suzhou, China" data-zh="银发用药依从性方案 · 中国苏州">Medication-adherence solutions · Suzhou, China</p>
@@ -326,14 +327,150 @@
         </div>
       </div>
 
+      <!-- INTERACTIVE 3D HARDWARE ARCHITECTURE & EXPLODED VIEW -->
+      <div class="stage3d-card reveal" id="model3d">
+        <div class="stage3d-head">
+          <div>
+            <p class="eyebrow" style="margin-bottom:6px" data-de="3D-Hardware-Architektur" data-zh="3D 硬件建模与结构拆解">3D Hardware Architecture</p>
+            <h3 data-de="Interaktives 3D-Modell &amp; Doppeldecker-Explosionsansicht" data-zh="W100 实时 3D 硬件建模 · 一层三格 上下两层对称拆解">Interactive 3D Model &amp; Dual-Layer Assembly</h3>
+            <p data-de="Ziehen Sie das Modell 360° (auch nach oben/unten für die Unterseite) oder öffnen Sie alle 3+3 Klappdeckel symmetrisch." data-zh="支持 360° 上下左右自由拖拽（可翻转查看下层 4–6 号仓），或点击按钮体验 45° 双层对称展开与五层爆炸拆解。">Drag 360° (including vertical flip to inspect bottom slots 4–6), or trigger the 45° dual-layer clamshell &amp; 5-layer explosion.</p>
+          </div>
+          <div class="stage3d-controls" role="group" aria-label="3D model controls" data-de-aria-label="3D-Modell-Steuerung" data-zh-aria-label="3D 模型控制">
+            <button class="stage3d-btn" type="button" id="m3dExplode" aria-pressed="false" data-de="5-Ebenen-Explosion" data-zh="5 层对称拆解">Explode Layers</button>
+            <button class="stage3d-btn" type="button" id="m3dDual" aria-pressed="false" data-de="45° Doppeldecker-Öffnung" data-zh="45° 双层对称展开">Dual-Layer Open</button>
+            <button class="stage3d-btn" type="button" id="m3dFlip" aria-pressed="false" data-de="Unterseite (4–6)" data-zh="翻转下层 (4–6)">Flip Underside</button>
+            <button class="stage3d-btn is-active" type="button" id="m3dAlert" aria-pressed="true" data-de="3D-Alarm-Impuls" data-zh="3D 声光脉冲">3D Alert Pulse</button>
+            <button class="stage3d-btn" type="button" id="m3dReset" data-de="Zurücksetzen" data-zh="复位视角">Reset View</button>
+          </div>
+        </div>
+
+        <div class="stage3d-grid">
+          <div class="stage3d-viewport" id="stage3dViewport" aria-label="Interactive 3D model of Healthcare Nurse W100" data-de-aria-label="Interaktives 3D-Modell des W100" data-zh-aria-label="W100 交互式 3D 模型视窗">
+            <span class="stage3d-drag-hint" data-de="↻ 360° ziehen (inkl. Unterseite)" data-zh="↻ 拖拽 360° 旋转（可上下翻转查看两层）">↻ Drag 360° (flip to view bottom)</span>
+            <div class="w100-3d-rig">
+              <div class="rig-shadow" aria-hidden="true"></div>
+              <div class="rig-wave" aria-hidden="true"></div>
+              <div class="rig-wave rig-wave--2" aria-hidden="true"></div>
+
+              <!-- Central ABS Housing: Top Plate + Bottom Plate + 4 Extruded Walls (130 x 85 x 40 mm) -->
+              <div class="m3d-layer m3d-core">
+                <div class="m3d-core-top">
+                  <div class="m3d-blackbar" aria-hidden="true">
+                    <span class="m3d-led-cluster m3d-led-cluster--1" data-slot="1"><i></i><i></i><i></i></span>
+                    <span class="m3d-led-cluster m3d-led-cluster--2" data-slot="2"><i></i><i></i><i></i></span>
+                    <span class="m3d-led-cluster m3d-led-cluster--3" data-slot="3"><i></i><i></i><i></i></span>
+                  </div>
+                </div>
+                <div class="m3d-core-bot">
+                  <div class="m3d-blackbar" aria-hidden="true">
+                    <span class="m3d-led-cluster m3d-led-cluster--4" data-slot="4"><i></i><i></i><i></i></span>
+                    <span class="m3d-led-cluster m3d-led-cluster--5" data-slot="5"><i></i><i></i><i></i></span>
+                    <span class="m3d-led-cluster m3d-led-cluster--6" data-slot="6"><i></i><i></i><i></i></span>
+                  </div>
+                </div>
+                <div class="m3d-wall m3d-wall-front">
+                  <span class="m3d-speaker-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+                  <span class="m3d-mic-dot" aria-hidden="true"></span>
+                </div>
+                <div class="m3d-wall m3d-wall-back"></div>
+                <div class="m3d-wall m3d-wall-left">
+                  <span class="m3d-usbc" title="USB Type-C 5V/1A"></span>
+                  <span class="m3d-switch" title="Power Slide Switch"></span>
+                </div>
+                <div class="m3d-wall m3d-wall-right"></div>
+              </div>
+
+              <!-- Internal PCB Core (Cortex-M4, Wi-Fi, 1200 mAh Battery) -->
+              <div class="m3d-layer m3d-pcb">
+                <div class="m3d-battery">
+                  <b>Li-Ion 3.7 V</b>
+                  <span>1,200 mAh (4.44 Wh)</span>
+                  <span>≈ 60d Standby</span>
+                </div>
+                <div class="m3d-mcu-side">
+                  <div class="m3d-chip">ARM Cortex-M4<br>144 MHz · 8 MB</div>
+                  <div class="m3d-wifi-trace">2.4 GHz Wi-Fi · 36 LEDs</div>
+                </div>
+              </div>
+
+              <!-- Upper Food-Grade Silicone Tray (Layer 1: 3 Compartments) -->
+              <div class="m3d-layer m3d-silicone-top">
+                <div class="m3d-cup"><span class="m3d-pill"></span><span class="m3d-pill"></span></div>
+                <div class="m3d-cup"><span class="m3d-pill m3d-pill--cap"></span></div>
+                <div class="m3d-cup"><span class="m3d-pill"></span><span class="m3d-pill m3d-pill--cap"></span></div>
+              </div>
+
+              <!-- Lower Food-Grade Silicone Tray (Layer 2: 3 Compartments, underside) -->
+              <div class="m3d-layer m3d-silicone-bot">
+                <div class="m3d-cup"><span class="m3d-pill"></span></div>
+                <div class="m3d-cup"><span class="m3d-pill m3d-pill--cap"></span></div>
+                <div class="m3d-cup"><span class="m3d-pill"></span><span class="m3d-pill"></span></div>
+              </div>
+
+              <!-- Upper Lids (Layer 1: 1, 2, 3 — open UPWARD from rear hinge) -->
+              <div class="m3d-layer m3d-lids-top">
+                <div class="m3d-lid m3d-lid--1" data-lid="1"><span class="m3d-beam"></span><span class="m3d-lid-face">1<small>07:00</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+                <div class="m3d-lid" data-lid="2"><span class="m3d-beam"></span><span class="m3d-lid-face">2<small>09:00</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+                <div class="m3d-lid" data-lid="3"><span class="m3d-beam"></span><span class="m3d-lid-face">3<small>12:00</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+              </div>
+
+              <!-- Lower Lids (Layer 2: 4, 5, 6 — open DOWNWARD symmetrically from rear hinge) -->
+              <div class="m3d-layer m3d-lids-bot">
+                <div class="m3d-lid" data-lid="4"><span class="m3d-beam"></span><span class="m3d-lid-inner">4<small>15:00</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+                <div class="m3d-lid" data-lid="5"><span class="m3d-beam"></span><span class="m3d-lid-inner">5<small>18:30</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+                <div class="m3d-lid" data-lid="6"><span class="m3d-beam"></span><span class="m3d-lid-inner">6<small>21:00</small></span><span class="m3d-lid-back" aria-hidden="true"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage3d-layers">
+            <div class="layer-callout">
+              <span class="layer-num">L5</span>
+              <div>
+                <b data-de="Obere &amp; untere Klappdeckel (je 3 Fächer)" data-zh="上下双层各三格 · 6 枚对称独立翻盖">Upper &amp; Lower Flip Lids (3 + 3)</b>
+                <span data-de="Oben Fach 1–3 nach oben, unten Fach 4–6 nach unten öffnend – kein Bildschirm, keine Tasten." data-zh="上层 1–3 号仓向上开启、下层 4–6 号仓对称向下开启，背面同轴铰链、正面卡扣零屏幕。">Slots 1–3 hinge upward on top; Slots 4–6 hinge downward on bottom — zero screen or buttons.</span>
+              </div>
+            </div>
+            <div class="layer-callout">
+              <span class="layer-num">L4</span>
+              <div>
+                <b data-de="Doppeldecker-Silikoneinsätze (2 × 3)" data-zh="上下双层 1×3 食品级硅胶内盒">Dual 3-Slot Silicone Trays (2 × 3)</b>
+                <span data-de="Zwei abnehmbare 3er-Einsätze (EC 1935 / LFGB): ~25 Tabletten oder ~20 Kapseln pro Fach." data-zh="上下各一枚可拆洗食品级密封硅胶槽（一层三格），每仓约装 25 片圆片或 20 粒胶囊。">Two removable 3-slot trays (EC 1935 / LFGB), ~25 tablets or ~20 capsules per compartment.</span>
+              </div>
+            </div>
+            <div class="layer-callout">
+              <span class="layer-num">L3</span>
+              <div>
+                <b data-de="Schwarze LED-Leiste · 36 LEDs &amp; 6 Sensoren" data-zh="黑色导光灯带 · 36 颗 LED 与 6 枚传感器">Optical Strip · 36 LEDs &amp; 6 Sensors</b>
+                <span data-de="Glänzende Frontleiste mit 3 LED-Clustern pro Ebene; Sensoren erkennen jedes falsche Öffnen." data-zh="上下前缘黑色高亮导光带与 6 枚独立开仓传感器，实时判别按时、错仓与重复开仓。">Front glossy strip on each deck with 6 LEDs/slot; sensors verify every lid opening.</span>
+              </div>
+            </div>
+            <div class="layer-callout">
+              <span class="layer-num">L2</span>
+              <div>
+                <b data-de="Zentrales PCB · Cortex-M4 · 1.200 mAh" data-zh="居中主板 · Cortex-M4 · 1200 mAh 电芯">Central PCB · Cortex-M4 · 1,200 mAh</b>
+                <span data-de="144 MHz / 8 MB (60 Tage Offline-Log) · 2,4-GHz-WLAN (3 Hotspots) · ca. 60 Tage Standby." data-zh="居中夹层主控：144 MHz / 8 MB（60 天离线缓存）· 2.4 GHz 三热点 Wi-Fi · 约 60 天待机。">Sandwiched core: 144 MHz / 8 MB (60d offline cache), 2.4 GHz 3-hotspot Wi-Fi &amp; ≈60d standby.</span>
+              </div>
+            </div>
+            <div class="layer-callout">
+              <span class="layer-num">L1</span>
+              <div>
+                <b data-de="Zentralgehäuse (130 × 85 × 40 mm · 210 g)" data-zh="居中 ABS 机身（130 × 85 × 40 mm · 210 g）">Central ABS Chassis (210 g)</b>
+                <span data-de="Mit 5-Punkt-Lautsprecher, USB-C-Port (5 V / 1 A) und seitlichem Schiebeschalter." data-zh="正面集成 5 孔扬声器与提示孔，左侧配 USB Type-C 5V/1A 充电口与绿色拨动开关。">Front 5-dot speaker grille &amp; mic; left USB-C 5V/1A port &amp; physical lime power switch.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- INTERACTIVE W100 CLOSED-LOOP SIMULATOR -->
       <div class="sim-panel reveal" id="simulator">
         <div id="w100Sim">
           <div class="sim-head">
             <div>
               <p class="eyebrow" style="margin-bottom:8px" data-de="Interaktive Live-Simulation" data-zh="交互式硬件闭环演练">Interactive Live Simulation</p>
-              <h3 data-de="Erleben Sie den W100-Kreislauf in Echtzeit" data-zh="亲手点击药仓，体验 W100「提醒—开仓—同步」闭环">Experience the W100 Closed Loop Live</h3>
-              <p data-de="Testen Sie, wie der W100 Seniorinnen und Senioren leitet und jeden Schritt an die Familien-App meldet." data-zh="选择场景并点击下方 1–6 号药仓，感受老人端零学习成本的引导逻辑与家属 App 实时时间线反馈。">Pick a scenario and tap compartments 1–6 below to see how W100 guides the elder and updates the Guardian App live.</p>
+              <h3 data-de="Erleben Sie den W100-Kreislauf in Echtzeit" data-zh="亲手点击上下双层药仓，体验 W100「提醒—开仓—同步」闭环">Experience the W100 Closed Loop Live</h3>
+              <p data-de="Oben Fächer 1–3, unten (Unterseite) Fächer 4–6 – wählen Sie ein Szenario und testen Sie beide Ebenen live." data-zh="还原真实「一层三格、上下两层」双面结构（上层 1–3 号仓、下层背面 4–6 号仓），点击药仓体验零屏幕引导与 App 实时同步。">Built around the real 2-layer × 3-slot architecture (Upper 1–3 &amp; Lower underside 4–6). Pick a scenario and tap any lid live.</p>
             </div>
             <div class="sim-scenarios" role="group" aria-label="Simulation scenarios" data-de-aria-label="Simulationsszenarien" data-zh-aria-label="选择演练场景">
               <button class="sim-scenario is-active" type="button" data-scenario="normal" aria-pressed="true" data-de="Planmäßige Einnahme" data-zh="按时开仓">On-Time Dose</button>
@@ -353,35 +490,64 @@
               </div>
 
               <div class="w100-device">
-                <div class="w100-slots">
-                  <button class="w100-slot" type="button" aria-label="Compartment 1">
+                <div class="w100-deck-lbl">
+                  <span data-de="Obere Ebene · Fächer 1–3" data-zh="上层药仓（正面）· 1–3 号仓">Upper Layer · Slots 1–3</span>
+                  <span>07:00 · 09:00 · 12:00</span>
+                </div>
+                <div class="w100-slots w100-slots--top">
+                  <button class="w100-slot" type="button" aria-label="Upper Layer Compartment 1" data-de-aria-label="Obere Ebene Fach 1" data-zh-aria-label="上层 1 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">1</span><span class="w100-lid-time">07:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
-                  <button class="w100-slot" type="button" aria-label="Compartment 2">
+                  <button class="w100-slot" type="button" aria-label="Upper Layer Compartment 2" data-de-aria-label="Obere Ebene Fach 2" data-zh-aria-label="上层 2 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">2</span><span class="w100-lid-time">09:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
-                  <button class="w100-slot" type="button" aria-label="Compartment 3">
+                  <button class="w100-slot" type="button" aria-label="Upper Layer Compartment 3" data-de-aria-label="Obere Ebene Fach 3" data-zh-aria-label="上层 3 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">3</span><span class="w100-lid-time">12:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
-                  <button class="w100-slot" type="button" aria-label="Compartment 4">
+                </div>
+                <div class="w100-black-strip w100-black-strip--top" aria-hidden="true">
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                </div>
+
+                <div class="w100-sensor-strip">
+                  <span class="w100-chassis-ports" title="USB-C 5V/1A &amp; Power Switch">
+                    <i class="w100-port-usbc" aria-hidden="true"></i>
+                    <i class="w100-port-switch" aria-hidden="true"></i>
+                    <span data-de="2×3 Gehäuse" data-zh="中框主机">CHASSIS 2×3</span>
+                  </span>
+                  <span class="w100-chassis-speaker" aria-hidden="true">
+                    <span class="w100-speaker-dots"><i></i><i></i><i></i><i></i><i></i></span>
+                  </span>
+                  <div class="w100-sensor-leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+
+                <div class="w100-black-strip w100-black-strip--bot" aria-hidden="true">
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                  <span class="w100-strip-cluster"><i></i><i></i><i></i></span>
+                </div>
+                <div class="w100-slots w100-slots--bot">
+                  <button class="w100-slot" type="button" aria-label="Lower Layer Compartment 4" data-de-aria-label="Untere Ebene Fach 4" data-zh-aria-label="下层 4 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">4</span><span class="w100-lid-time">15:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
-                  <button class="w100-slot" type="button" aria-label="Compartment 5">
+                  <button class="w100-slot" type="button" aria-label="Lower Layer Compartment 5" data-de-aria-label="Untere Ebene Fach 5" data-zh-aria-label="下层 5 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">5</span><span class="w100-lid-time">18:30</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
-                  <button class="w100-slot" type="button" aria-label="Compartment 6">
+                  <button class="w100-slot" type="button" aria-label="Lower Layer Compartment 6" data-de-aria-label="Untere Ebene Fach 6" data-zh-aria-label="下层 6 号药仓">
                     <span class="w100-pills-inside"><i></i><i></i><i></i></span>
                     <span class="w100-lid"><span class="w100-lid-num">6</span><span class="w100-lid-time">21:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
                   </button>
                 </div>
-                <div class="w100-sensor-strip">
-                  <span>6× LID SENSORS · 2.4 GHz WI-FI</span>
-                  <div class="w100-sensor-leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="w100-deck-lbl w100-deck-lbl--bot">
+                  <span data-de="Untere Ebene (Unterseite) · Fächer 4–6" data-zh="下层药仓（底面翻转视角）· 4–6 号仓">Lower Layer (Underside) · Slots 4–6</span>
+                  <span>15:00 · 18:30 · 21:00</span>
                 </div>
               </div>
 
@@ -824,6 +990,6 @@
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v=20261118c" defer></script>
 </body>
 </html>

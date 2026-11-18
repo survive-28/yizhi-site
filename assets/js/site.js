@@ -363,10 +363,12 @@
       }
     };
 
+    var stripClusters = $$('.w100-strip-cluster', sim);
+
     var meds = {
-      en: { 1: 'Morning Care', 2: 'Post-Meal', 3: 'Midday', 4: 'Afternoon', 5: 'Evening', 6: 'Bedtime' },
-      de: { 1: 'Morgen', 2: 'Nach Frühstück', 3: 'Mittag', 4: 'Nachmittag', 5: 'Abend', 6: 'Nachtruhe' },
-      zh: { 1: '晨起药', 2: '餐后药', 3: '午间药', 4: '午后药', 5: '晚间药', 6: '睡前药' }
+      en: { 1: 'Upper · Morning', 2: 'Upper · Post-Meal', 3: 'Upper · Midday', 4: 'Lower · Afternoon', 5: 'Lower · Evening', 6: 'Lower · Bedtime' },
+      de: { 1: 'Oben · Morgen', 2: 'Oben · Nach Frühstück', 3: 'Oben · Mittag', 4: 'Unten · Nachmittag', 5: 'Unten · Abend', 6: 'Unten · Nachtruhe' },
+      zh: { 1: '上层·晨起药', 2: '上层·餐后药', 3: '上层·午间药', 4: '下层·午后药', 5: '下层·晚间药', 6: '下层·睡前药' }
     };
 
     var currentScenario = 'normal';
@@ -416,17 +418,19 @@
       });
       slotBtns.forEach(function (b) { b.classList.remove('is-open', 'is-wrong', 'is-target'); });
       sensorLeds.forEach(function (l) { l.classList.remove('on', 'ok'); });
+      stripClusters.forEach(function (c) { c.classList.remove('on', 'ok'); });
 
       var t = simText[lang] || simText.en;
       var m = meds[lang] || meds.en;
 
       if (sc === 'normal') targetSlot = 1;
-      else if (sc === 'wrong') targetSlot = 3;
+      else if (sc === 'wrong') targetSlot = 4;
       else targetSlot = 2;
 
       var targetBtn = slotBtns[targetSlot - 1];
       if (targetBtn) targetBtn.classList.add('is-target');
       if (sensorLeds[targetSlot - 1]) sensorLeds[targetSlot - 1].classList.add('on');
+      if (stripClusters[targetSlot - 1]) stripClusters[targetSlot - 1].classList.add('on');
 
       if (sc === 'normal') {
         setVisualState('is-ringing', t.ringing(targetSlot, m[targetSlot]));
@@ -447,6 +451,7 @@
 
         if (!ringing) {
           btn.classList.toggle('is-open');
+          if (stripClusters[idx]) stripClusters[idx].classList.toggle('ok', btn.classList.contains('is-open'));
           return;
         }
 
@@ -455,7 +460,9 @@
           btn.classList.add('is-open');
           ringing = false;
           sensorLeds.forEach(function (l) { l.classList.remove('on'); });
+          stripClusters.forEach(function (c) { c.classList.remove('on'); });
           if (sensorLeds[idx]) sensorLeds[idx].classList.add('ok');
+          if (stripClusters[idx]) stripClusters[idx].classList.add('ok');
           setVisualState('is-ok', t.openedOk(slot));
           pushEvent(t.logOk(slot, m[slot]), t.logOkTag, '');
         } else {
@@ -481,6 +488,7 @@
         ringing = false;
         slotBtns.forEach(function (b) { b.classList.remove('is-open', 'is-wrong', 'is-target'); });
         sensorLeds.forEach(function (l) { l.classList.remove('on', 'ok'); });
+        stripClusters.forEach(function (c) { c.classList.remove('on', 'ok'); });
         var t = simText[lang] || simText.en;
         setVisualState('', t.idle);
         setFeedDefault();
@@ -634,6 +642,13 @@
 
   /* ---------- scroll reveal ---------- */
   var items = $$('.reveal');
+  var revealPassed = function () {
+    var vh = window.innerHeight || 900;
+    items.forEach(function (el) {
+      if (el.classList.contains('is-in')) return;
+      if (el.getBoundingClientRect().top <= vh * 0.96) el.classList.add('is-in');
+    });
+  };
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -644,6 +659,8 @@
       });
     }, { rootMargin: '0px 0px -4% 0px', threshold: 0.04 });
     items.forEach(function (el) { io.observe(el); });
+    window.addEventListener('scroll', revealPassed, { passive: true });
+    revealPassed();
   } else {
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
@@ -681,4 +698,257 @@
       }
     });
   });
+
+  /* ---------- luminous hero particle constellation ---------- */
+  var canvases = $$('.hero-canvas');
+  if (canvases.length && !reduce) {
+    canvases.forEach(function (cv) {
+      var ctx = cv.getContext('2d');
+      if (!ctx) return;
+      var w = 0, h = 0, dpr = Math.min(2, window.devicePixelRatio || 1);
+      var mouse = { x: -9999, y: -9999 };
+      var visible = true;
+      var pts = [];
+      var COUNT = 38;
+
+      var resize = function () {
+        var r = cv.parentElement.getBoundingClientRect();
+        w = Math.max(300, r.width);
+        h = Math.max(300, r.height);
+        cv.width = Math.round(w * dpr);
+        cv.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      for (var i = 0; i < COUNT; i++) {
+        pts.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.34,
+          vy: (Math.random() - 0.5) * 0.34,
+          r: 1.2 + Math.random() * 1.9,
+          gold: i % 3 === 0
+        });
+      }
+
+      if (window.matchMedia('(pointer:fine)').matches) {
+        cv.parentElement.addEventListener('pointermove', function (e) {
+          var rect = cv.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        }, { passive: true });
+        cv.parentElement.addEventListener('pointerleave', function () {
+          mouse.x = -9999; mouse.y = -9999;
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var pio = new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+        }, { threshold: 0.02 });
+        pio.observe(cv);
+      }
+
+      var frame = function () {
+        if (visible) {
+          ctx.clearRect(0, 0, w, h);
+          for (var i = 0; i < pts.length; i++) {
+            var p = pts[i];
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+
+            var dxm = p.x - mouse.x, dym = p.y - mouse.y;
+            var dm2 = dxm * dxm + dym * dym;
+            if (dm2 < 16000 && dm2 > 4) {
+              var force = (1 - Math.sqrt(dm2) / 126) * 0.45;
+              p.x += (dxm / Math.sqrt(dm2)) * force;
+              p.y += (dym / Math.sqrt(dm2)) * force;
+            }
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.gold ? 'rgba(229,188,91,0.55)' : 'rgba(134,210,175,0.34)';
+            ctx.fill();
+
+            for (var j = i + 1; j < pts.length; j++) {
+              var q = pts[j];
+              var dx = p.x - q.x, dy = p.y - q.y;
+              var d2 = dx * dx + dy * dy;
+              if (d2 < 13000) {
+                var alpha = (1 - d2 / 13000) * (p.gold || q.gold ? 0.18 : 0.1);
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(q.x, q.y);
+                ctx.strokeStyle = (p.gold || q.gold) ? 'rgba(229,188,91,' + alpha.toFixed(3) + ')' : 'rgba(255,255,255,' + alpha.toFixed(3) + ')';
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+        }
+        window.requestAnimationFrame(frame);
+      };
+      window.requestAnimationFrame(frame);
+    });
+  }
+
+  /* ---------- 3D tilt on Hero Six-Moment Dial ---------- */
+  if (dialRoot && !reduce && window.matchMedia('(pointer:fine)').matches) {
+    dialRoot.addEventListener('pointermove', function (e) {
+      var r = dialRoot.getBoundingClientRect();
+      var dx = ((e.clientX - r.left) / r.width - 0.5) * 10;
+      var dy = ((e.clientY - r.top) / r.height - 0.5) * -10;
+      dialRoot.style.transform = 'perspective(900px) rotateX(' + dy.toFixed(2) + 'deg) rotateY(' + dx.toFixed(2) + 'deg)';
+    });
+    dialRoot.addEventListener('pointerleave', function () {
+      dialRoot.style.transform = '';
+    });
+  }
+
+  /* ---------- interactive 3D W100 hardware modeling & exploded view ---------- */
+  var modelCard = $('#model3d');
+  if (modelCard) {
+    var vp = $('#stage3dViewport', modelCard);
+    var btnExplode = $('#m3dExplode', modelCard);
+    var btnDual = $('#m3dDual', modelCard);
+    var btnFlip = $('#m3dFlip', modelCard);
+    var btnAlert = $('#m3dAlert', modelCard);
+    var btnReset = $('#m3dReset', modelCard);
+    var m3dLids = $$('.m3d-lid', modelCard);
+
+    var rx = 60, rz = -26, dragging = false, sx = 0, sy = 0, baseRx = 60, baseRz = -26, downLid = null;
+    var autoOrbit = !reduce;
+
+    var syncButtons = function () {
+      var ex = modelCard.classList.contains('is-exploded');
+      var du = modelCard.classList.contains('is-dual');
+      var al = modelCard.classList.contains('is-alert');
+      var fl = rx > 92;
+      if (btnExplode) { btnExplode.classList.toggle('is-active', ex); btnExplode.setAttribute('aria-pressed', ex ? 'true' : 'false'); }
+      if (btnDual) { btnDual.classList.toggle('is-active', du); btnDual.setAttribute('aria-pressed', du ? 'true' : 'false'); }
+      if (btnFlip) { btnFlip.classList.toggle('is-active', fl); btnFlip.setAttribute('aria-pressed', fl ? 'true' : 'false'); }
+      if (btnAlert) { btnAlert.classList.toggle('is-active', al); btnAlert.setAttribute('aria-pressed', al ? 'true' : 'false'); }
+    };
+
+    var applyRig = function () {
+      if (!vp) return;
+      vp.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+      vp.style.setProperty('--rz', rz.toFixed(2) + 'deg');
+      if (btnFlip) {
+        var fl = rx > 92;
+        btnFlip.classList.toggle('is-active', fl);
+        btnFlip.setAttribute('aria-pressed', fl ? 'true' : 'false');
+      }
+    };
+    applyRig();
+
+    if (vp) {
+      vp.addEventListener('pointerdown', function (e) {
+        dragging = true; autoOrbit = false;
+        sx = e.clientX; sy = e.clientY;
+        baseRx = rx; baseRz = rz;
+        downLid = e.target && e.target.closest ? e.target.closest('.m3d-lid') : null;
+        vp.classList.add('is-dragging');
+        if (vp.setPointerCapture) vp.setPointerCapture(e.pointerId);
+      });
+      vp.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        var dx = e.clientX - sx;
+        var dy = e.clientY - sy;
+        rz = baseRz + dx * 0.45;
+        rx = Math.max(15, Math.min(165, baseRx - dy * 0.45));
+        applyRig();
+      });
+      var stopDrag = function (e) {
+        if (!dragging) return;
+        dragging = false;
+        vp.classList.remove('is-dragging');
+        if (e && downLid && Math.hypot(e.clientX - sx, e.clientY - sy) < 6) {
+          var isOpen = downLid.classList.toggle('is-open');
+          var lidNum = downLid.getAttribute('data-lid');
+          if (lidNum) {
+            var cluster = $('.m3d-led-cluster[data-slot="' + lidNum + '"]', modelCard);
+            if (cluster) cluster.classList.toggle('is-lit', isOpen);
+          }
+        }
+        downLid = null;
+      };
+      vp.addEventListener('pointerup', stopDrag);
+      vp.addEventListener('pointercancel', function () { dragging = false; downLid = null; vp.classList.remove('is-dragging'); });
+    }
+
+    if (btnExplode) {
+      btnExplode.addEventListener('click', function () {
+        modelCard.classList.remove('is-dual');
+        modelCard.classList.toggle('is-exploded');
+        if (modelCard.classList.contains('is-exploded')) {
+          rx = rx > 92 ? 124 : 54;
+          rz = -34;
+          autoOrbit = false;
+          applyRig();
+        }
+        syncButtons();
+      });
+    }
+    if (btnDual) {
+      btnDual.addEventListener('click', function () {
+        modelCard.classList.remove('is-exploded');
+        modelCard.classList.toggle('is-dual');
+        if (modelCard.classList.contains('is-dual')) {
+          rx = 78; rz = -34; autoOrbit = false; applyRig();
+        }
+        syncButtons();
+      });
+    }
+    if (btnFlip) {
+      btnFlip.addEventListener('click', function () {
+        autoOrbit = false;
+        rx = rx > 92 ? 60 : 128;
+        rz = -26;
+        applyRig();
+        syncButtons();
+      });
+    }
+    if (btnAlert) {
+      btnAlert.addEventListener('click', function () {
+        modelCard.classList.toggle('is-alert');
+        syncButtons();
+      });
+    }
+    if (btnReset) {
+      btnReset.addEventListener('click', function () {
+        modelCard.classList.remove('is-exploded', 'is-dual', 'is-alert');
+        m3dLids.forEach(function (l) { l.classList.remove('is-open'); });
+        $$('.m3d-led-cluster', modelCard).forEach(function (c) { c.classList.remove('is-lit'); });
+        rx = 60; rz = -26; autoOrbit = !reduce;
+        applyRig();
+        syncButtons();
+      });
+    }
+
+    // Default alert pulse on load so visitors immediately see the 3D LED & lid animation
+    modelCard.classList.add('is-alert');
+    syncButtons();
+
+    if (!reduce) {
+      var orbitVisible = true;
+      if ('IntersectionObserver' in window) {
+        var mio = new IntersectionObserver(function (entries) {
+          orbitVisible = entries[0].isIntersecting;
+        }, { threshold: 0.05 });
+        mio.observe(modelCard);
+      }
+      var tickOrbit = function () {
+        if (autoOrbit && orbitVisible && !dragging) {
+          rz += 0.14;
+          applyRig();
+        }
+        window.requestAnimationFrame(tickOrbit);
+      };
+      window.requestAnimationFrame(tickOrbit);
+    }
+  }
 })();
