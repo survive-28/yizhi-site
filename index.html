@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YIZHI Smart Care Technology — Never miss a dose. Never miss a moment.</title>
-<meta name="description" content="YIZHI Smart Care Technology (Suzhou) designs care-grade medication-adherence products. Meet the Healthcare Nurse W100 — six sealed compartments, a voice that remembers, a family that can see.">
-<meta name="theme-color" content="#00301F">
+<meta name="description" content="YIZHI Smart Care Technology (Suzhou) designs care-grade medication-adherence solutions. Meet the Healthcare Nurse W100 — six sealed compartments, zero screen for elders, a family that can see.">
+<meta name="theme-color" content="#002A1C">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yizhi-w100.netlify.app/">
 <meta property="og:title" content="YIZHI — Never miss a dose. Never miss a moment.">
-<meta property="og:description" content="Care-grade medication adherence, designed in Suzhou. W100 global launch · 24 November 2026, Shanghai.">
-<meta property="og:image" content="assets/img/w100-product.jpg">
+<meta property="og:description" content="Care-grade medication adherence, designed in Suzhou. W100 global launch · 24 November 2026, Shanghai (SUIBE SA308 / SA407 Booth C9).">
+<meta property="og:image" content="https://yizhi-w100.netlify.app/assets/img/w100-product.jpg">
 <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>document.documentElement.classList.add('js');</script>
@@ -21,15 +22,14 @@
       "@type": "Organization",
       "name": "YIZHI Smart Care Technology (Suzhou) Co., Ltd.",
       "alternateName": "颐智科技（苏州）有限公司",
-      "url": "https://yizhi-care.com",
-      "logo": "https://yizhi-care.com/assets/img/logo-2x.png",
-      "email": "yizhi_technology@126.com",
-      "telephone": "+86-180-5068-4286",
+      "url": "https://yizhi-w100.netlify.app",
+      "logo": "https://yizhi-w100.netlify.app/assets/img/logo-2x.png",
+      "email": "sales@yizhi.com",
+      "telephone": "+86-158-7541-5001",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Xuesi Building, SUIBE",
-        "addressLocality": "Songjiang, Shanghai",
-        "addressRegion": "Shanghai",
+        "addressLocality": "Suzhou",
+        "addressRegion": "Jiangsu",
         "addressCountry": "CN"
       }
     },
@@ -37,8 +37,8 @@
       "@type": "Product",
       "name": "Healthcare Nurse W100",
       "brand": { "@type": "Brand", "name": "Healthcare Nurse" },
-      "category": "Smart pill organizer",
-      "description": "Six-compartment voice-enabled smart pill organizer with family remote alerts, medication logs and six sensors."
+      "category": "Smart medication adherence organizer",
+      "description": "Six-compartment Wi-Fi smart pill organizer with 36 LEDs, 6 opening sensors, triple alerts, 60-day offline flash cache and family remote monitoring."
     },
     {
       "@type": "Event",
@@ -47,7 +47,7 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Room SA308, Xuesi Building, SUIBE",
+        "name": "Room SA308 & Booth C9 (Room SA407), Xuesi Building, SUIBE",
         "address": "Songjiang, Shanghai, China"
       }
     }
@@ -56,36 +56,41 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#main" data-zh="跳到主要内容">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<a class="skip" href="#main" data-de="Zum Hauptinhalt springen" data-zh="跳到主要内容">Skip to content</a>
 
 <header class="site-header" id="siteHeader">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="YIZHI Smart Care Technology — home" data-zh-aria-label="颐智科技 — 返回首页">
-      <img src="assets/img/logo-reverse.svg" alt="YIZHI Smart Care Technology" data-zh-alt="颐智科技" data-logo="reverse">
-      <img src="assets/img/logo-horizontal.svg" alt="" data-logo="color" hidden>
+    <a class="brand" href="#top" aria-label="YIZHI Smart Care Technology — home" data-de-aria-label="YIZHI Smart Care Technology — Startseite" data-zh-aria-label="颐智科技 — 返回首页">
+      <img src="assets/img/logo-reverse.svg" alt="YIZHI Smart Care Technology" data-de-alt="YIZHI Smart Care Technology" data-zh-alt="颐智科技" data-logo="reverse">
+      <img src="assets/img/logo-horizontal.svg" alt="" data-logo="color">
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#company" data-zh="公司">Company</a>
-      <a href="#product" data-zh="产品">Product</a>
-      <a href="#launch" data-zh="发布会">Launch</a>
-      <a href="#contact" data-zh="联系我们">Contact</a>
+      <a href="#company" data-de="Unternehmen" data-zh="公司">Company</a>
+      <a href="#product" data-de="Produkt" data-zh="产品">Product</a>
+      <a href="#export" data-de="Export &amp; EU-Konformität" data-zh="出口与合规">Export &amp; EU</a>
+      <a href="#launch" data-de="Launch" data-zh="发布会">Launch</a>
+      <a href="#contact" data-de="Kontakt" data-zh="联系我们">Contact</a>
     </nav>
     <div class="header-actions">
-      <button class="lang-toggle" type="button" id="langToggle" aria-label="Switch to Chinese" data-zh-aria-label="切换到英文">
-        <span data-lang-label>中文</span>
-      </button>
-      <a class="btn btn--cta btn--sm" href="#launch" data-zh="预约发布会">Join the launch</a>
-      <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu" data-zh-aria-label="打开菜单"><span></span></button>
+      <div class="lang-switch" role="group" aria-label="Language selection" data-de-aria-label="Sprachauswahl" data-zh-aria-label="语言切换">
+        <button class="lang-opt is-active" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-opt" type="button" data-set-lang="de" aria-pressed="false">DE</button>
+        <button class="lang-opt" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="btn btn--cta btn--sm" href="#launch" data-de="Launch reservieren" data-zh="预约发布会">Join the launch</a>
+      <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu" data-de-aria-label="Menü öffnen" data-zh-aria-label="打开菜单"><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <a href="#company" data-zh="公司">Company<small>01</small></a>
-  <a href="#product" data-zh="产品">Product<small>02</small></a>
-  <a href="#launch" data-zh="发布会">Launch<small>03</small></a>
-  <a href="#contact" data-zh="联系我们">Contact<small>04</small></a>
-  <div class="mobile-foot">Suzhou, China · Since 2024</div>
+  <a href="#company" data-de="Unternehmen<small>01</small>" data-zh="公司<small>01</small>">Company<small>01</small></a>
+  <a href="#product" data-de="Produkt<small>02</small>" data-zh="产品<small>02</small>">Product<small>02</small></a>
+  <a href="#export" data-de="Export &amp; EU-Konformität<small>03</small>" data-zh="出口与合规<small>03</small>">Export &amp; EU<small>03</small></a>
+  <a href="#launch" data-de="Launch<small>04</small>" data-zh="发布会<small>04</small>">Launch<small>04</small></a>
+  <a href="#contact" data-de="Kontakt<small>05</small>" data-zh="联系我们<small>05</small>">Contact<small>05</small></a>
+  <div class="mobile-foot" data-de="Suzhou, China · Booth C9 Shanghai" data-zh="中国苏州 · 上海 SA407 Booth C9">Suzhou, China · Booth C9 Shanghai</div>
 </div>
 
 <main id="main">
@@ -93,42 +98,58 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-spotlight" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow hero-eyebrow" data-zh="用药依从性方案 · 中国苏州">Medication-adherence solutions · Suzhou, China</p>
-        <h1 data-zh="按时吃药。<br>不错过<em>每一刻</em>。">Never miss a dose.<br>Never miss a <em>moment</em>.</h1>
-        <p class="lede" data-zh="颐智为全球银发市场设计「照护级」用药依从性产品。健康小护 W100 把六格药仓放进一天的节奏里，也让一家人始终看得见彼此。">YIZHI designs care-grade medication-adherence products for the global silver economy. The Healthcare Nurse W100 keeps six sealed compartments in step with one day — and a whole family in sight.</p>
-        <div class="hero-actions">
-          <a class="btn btn--gold" href="#product"><span data-zh="了解 W100">Explore the W100</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="#launch" data-zh="预约发布会">Register for the launch</a>
+        <p class="eyebrow hero-eyebrow hero-in" data-de="Therapietreue im Alter · Suzhou, China" data-zh="银发用药依从性方案 · 中国苏州">Medication-adherence solutions · Suzhou, China</p>
+        <h1 class="hero-in hero-in--2" data-de="Keine Dosis verpassen.<br>Keinen <em>Moment</em> versäumen." data-zh="按时吃药。<br>不错过<em>每一刻</em>。">Never miss a dose.<br>Never miss a <em>moment</em>.</h1>
+        <p class="lede hero-in hero-in--3" data-de="YIZHI entwickelt alltagstaugliche Erinnerungshelfer für die globale Silberwirtschaft. Der Healthcare Nurse W100 bringt sechs versiegelte Fächer in den Tagesrhythmus – ganz ohne Bildschirm für Seniorinnen und Senioren, mit voller Transparenz für die Familie." data-zh="颐智科技为全球银发市场设计「照护级」用药依从性产品。健康小护 W100 把六格独立药仓融入一日六时——老人端零屏幕零操作，家人手机端远程清晰可见。">YIZHI designs care-grade medication-adherence solutions for the global silver economy. The Healthcare Nurse W100 keeps six sealed compartments in step with one day — zero screen for elders, full visibility for family.</p>
+        <div class="hero-actions hero-in hero-in--4">
+          <a class="btn btn--gold" href="#simulator"><span data-de="W100 interaktiv testen" data-zh="交互体验 W100">Try the W100 loop</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#launch" data-de="Launch 24. Nov. reservieren" data-zh="预约 11.24 发布会">Register for the launch</a>
         </div>
-        <div class="hero-meta">
-          <span data-zh="6 个独立药仓">6 sealed compartments</span>
-          <span data-zh="6 个传感器">6 sensors</span>
-          <span data-zh="1200 mAh 电池">1,200 mAh battery</span>
-          <span data-zh="210 g 净重">210 g net weight</span>
+        <div class="hero-meta hero-in hero-in--5">
+          <span data-de="6 versiegelte Fächer" data-zh="6 个独立密封药仓">6 sealed compartments</span>
+          <span data-de="36 LEDs · 6 Sensoren" data-zh="36 颗 LED · 6 传感器">36 LEDs · 6 sensors</span>
+          <span data-de="1.200 mAh · ca. 60 Tage Standby" data-zh="1200 mAh · 约 60 天待机">1,200 mAh · ≈60d standby</span>
+          <span data-de="210 g Nettogewicht" data-zh="210 g 整机净重">210 g net weight</span>
         </div>
       </div>
+
       <div class="hero-visual">
-        <div class="hero-badge"><i class="pulse" aria-hidden="true"></i><span data-zh="W100 全球发布 · 2026.11.24">W100 global launch · <b>24.11.2026</b></span></div>
-        <div class="dial" aria-hidden="true">
-          <svg viewBox="0 0 600 600" role="presentation">
-            <g class="dial-rotor">
-              <g fill="none" stroke="rgba(255,255,255,.17)" stroke-width="26" stroke-linecap="round">
-                <circle cx="300" cy="300" r="230" stroke-dasharray="209 1236" transform="rotate(-90 300 300)"/>
-                <circle cx="300" cy="300" r="230" stroke-dasharray="209 1236" transform="rotate(-30 300 300)"/>
-                <circle cx="300" cy="300" r="230" stroke-dasharray="209 1236" transform="rotate(30 300 300)"/>
-                <circle cx="300" cy="300" r="230" stroke-dasharray="209 1236" transform="rotate(90 300 300)"/>
-                <circle cx="300" cy="300" r="230" stroke-dasharray="209 1236" transform="rotate(150 300 300)"/>
+        <div class="hero-badge"><i class="pulse" aria-hidden="true"></i><span data-de="W100 Weltpremiere · <b>24.11.2026</b> · SA308 &amp; Booth C9" data-zh="W100 全球发布 · <b>2026.11.24</b> · SA308 &amp; Booth C9">W100 global launch · <b>24.11.2026</b> · SA308 &amp; Booth C9</span></div>
+        <div class="dial-wrap" id="sixDial">
+          <div class="dial-ripple" aria-hidden="true"></div>
+          <div class="dial-ripple dial-ripple--2" aria-hidden="true"></div>
+          <div class="dial">
+            <svg viewBox="0 0 600 600" role="img" aria-label="Interactive Six-Moment Ring representing six medication compartments" data-de-aria-label="Interaktiver Sechs-Momente-Ring für sechs Medikamentenfächer" data-zh-aria-label="交互式六时环：代表六个独立药仓的一日节律">
+              <circle cx="300" cy="300" r="276" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4 10" class="dial-orbit"/>
+              <circle cx="300" cy="300" r="168" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+              <circle cx="300" cy="300" r="136" fill="none" stroke="rgba(197,155,58,.24)" stroke-width="1" stroke-dasharray="2 8" class="dial-orbit--rev"/>
+              <g>
+                <circle class="dial-seg is-active" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(-108 300 300)" data-idx="0"/>
+                <circle class="dial-seg" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(-48 300 300)" data-idx="1"/>
+                <circle class="dial-seg" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(12 300 300)" data-idx="2"/>
+                <circle class="dial-seg" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(72 300 300)" data-idx="3"/>
+                <circle class="dial-seg" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(132 300 300)" data-idx="4"/>
+                <circle class="dial-seg" cx="300" cy="300" r="230" stroke-dasharray="204 1242" transform="rotate(192 300 300)" data-idx="5"/>
               </g>
-              <circle cx="300" cy="300" r="230" fill="none" stroke="#C59B3A" stroke-width="26" stroke-linecap="round" stroke-dasharray="209 1236" transform="rotate(-150 300 300)"/>
-            </g>
-            <circle cx="300" cy="300" r="150" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
-            <circle cx="300" cy="300" r="70" fill="none" stroke="rgba(197,155,58,.25)" stroke-width="1"/>
-          </svg>
-          <div class="dial-caption">
-            <strong data-zh="六格 · 一日">Six · One day</strong>
-            <span data-zh="六个独立药仓，一段会说话的时间">Six compartments. A day that speaks.</span>
+            </svg>
+            <div class="dial-center">
+              <span class="dial-time">07:00</span>
+              <strong class="dial-title">Slot 1 · Morning</strong>
+              <span class="dial-desc">Blood pressure &amp; daily care — LED + 10s voice cue</span>
+              <em class="dial-cue">Layer 1 · Compartment 1</em>
+            </div>
+          </div>
+          <div class="dial-pills" aria-label="Select daily medication moment" data-de-aria-label="Tageszeit auswählen" data-zh-aria-label="选择每日用药时段">
+            <button class="dial-pill is-active" type="button" aria-pressed="true">07:00</button>
+            <button class="dial-pill" type="button" aria-pressed="false">09:00</button>
+            <button class="dial-pill" type="button" aria-pressed="false">12:00</button>
+            <button class="dial-pill" type="button" aria-pressed="false">15:00</button>
+            <button class="dial-pill" type="button" aria-pressed="false">18:30</button>
+            <button class="dial-pill" type="button" aria-pressed="false">21:00</button>
           </div>
         </div>
       </div>
@@ -138,8 +159,22 @@
   <!-- ============ TICKER ============ -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span data-zh="6 个独立药仓">6 sealed compartments</span><span data-zh="6 个传感器">6 sensors</span><span data-zh="5 分钟重复提醒">5-minute repeat</span><span data-zh="30 秒响铃">30-second ring</span><span data-zh="约 60 天待机">≈60-day standby</span><span data-zh="210 g 净重">210 g</span><span data-zh="2 年质保">2-year warranty</span><span data-zh="与三甲医院共同研发">Co-developed with a tertiary hospital</span>
-      <span data-zh="6 个独立药仓">6 sealed compartments</span><span data-zh="6 个传感器">6 sensors</span><span data-zh="5 分钟重复提醒">5-minute repeat</span><span data-zh="30 秒响铃">30-second ring</span><span data-zh="约 60 天待机">≈60-day standby</span><span data-zh="210 g 净重">210 g</span><span data-zh="2 年质保">2-year warranty</span><span data-zh="与三甲医院共同研发">Co-developed with a tertiary hospital</span>
+      <span data-de="6 versiegelte Fächer" data-zh="6 个独立密封药仓">6 sealed compartments</span>
+      <span data-de="36 LEDs · 6 Sensoren" data-zh="36 颗 LED · 6 传感器">36 LEDs · 6 sensors</span>
+      <span data-de="Kein Bildschirm für Seniorinnen &amp; Senioren" data-zh="老人端零屏幕零操作">Zero screen for elders</span>
+      <span data-de="5-Min.-Wiederholung · 30-s-Alarm" data-zh="5 分钟重复 · 30 秒提醒">5-min repeat · 30-sec alert</span>
+      <span data-de="ca. 60 Tage Standby &amp; Offline-Speicher" data-zh="约 60 天待机与断网缓存">≈60-day standby &amp; offline cache</span>
+      <span data-de="210 g Nettogewicht" data-zh="210 g 整机净重">210 g net weight</span>
+      <span data-de="24 Monate Gerätegarantie" data-zh="24 个月整机质保">24-month warranty</span>
+      <span data-de="Mit Klinikum mitentwickelt" data-zh="与三甲医院共同研发">Co-developed with a tertiary hospital</span>
+      <span data-de="6 versiegelte Fächer" data-zh="6 个独立密封药仓">6 sealed compartments</span>
+      <span data-de="36 LEDs · 6 Sensoren" data-zh="36 颗 LED · 6 传感器">36 LEDs · 6 sensors</span>
+      <span data-de="Kein Bildschirm für Seniorinnen &amp; Senioren" data-zh="老人端零屏幕零操作">Zero screen for elders</span>
+      <span data-de="5-Min.-Wiederholung · 30-s-Alarm" data-zh="5 分钟重复 · 30 秒提醒">5-min repeat · 30-sec alert</span>
+      <span data-de="ca. 60 Tage Standby &amp; Offline-Speicher" data-zh="约 60 天待机与断网缓存">≈60-day standby &amp; offline cache</span>
+      <span data-de="210 g Nettogewicht" data-zh="210 g 整机净重">210 g net weight</span>
+      <span data-de="24 Monate Gerätegarantie" data-zh="24 个月整机质保">24-month warranty</span>
+      <span data-de="Mit Klinikum mitentwickelt" data-zh="与三甲医院共同研发">Co-developed with a tertiary hospital</span>
     </div>
   </div>
 
@@ -148,51 +183,53 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-copy reveal">
-          <p class="eyebrow eyebrow--dark" data-zh="关于我们">The company</p>
-          <h2 class="display" data-zh="以智颐养。">Smart care for<br>graceful aging.</h2>
-          <p class="lede" style="margin-top:24px" data-zh="颐智科技（苏州）有限公司，是一家面向全球银发市场的智能照护出口企业。我们只追问一个问题：关于一次服药，一个家庭真正需要知道什么？">YIZHI Smart Care Technology (Suzhou) Co., Ltd. is an export-focused smart-care company built around one question: what does a family actually need to know about a single dose?</p>
-          <p data-zh="我们是苏州橡实信息技术有限公司的授权出口与贴牌合作伙伴，也是健康小护 W100 的运营方。从苏州出发，我们把产品端到端交付给欧洲、北美与东南亚的分销商、药房连锁与 DTC 渠道——多语本地化、认证推进、零售包装、物流与售后。">We are the authorized export and OEM partner of Suzhou Xiangshi Information Technology Co., Ltd., and the company behind the Healthcare Nurse W100. From Suzhou, we deliver the product end to end — multilingual localization, certification, retail packaging, logistics and after-sales — to distributors, pharmacy chains and DTC channels across Europe, North America and Southeast Asia.</p>
-          <p data-zh="W100 与一家三甲医院共同研发，其发明专利由该医院与制造商共同持有。六个传感器、语音播报，以及「提醒—开仓—记录—反馈」的闭环，把「记得吃药」变成看得见的照护。">The W100 was co-developed with a tertiary hospital, and its invention patent is co-owned by that hospital. Six sensors, voice prompts and a closed loop of remind–open–record–report turn "remembering" into evidence of care.</p>
-          <p class="compliance" data-zh="我们提供用药依从性辅助与照护支持，不做诊断、治疗或疗效宣称。认证进度：CE / RoHS / FDA 注册推进中。">We build medication-adherence support and care assistance — never diagnosis, treatment or efficacy claims. Certifications in progress: CE / RoHS / FDA registration.</p>
+          <p class="eyebrow eyebrow--dark" data-de="Über uns" data-zh="关于我们">The company</p>
+          <h2 class="display" data-de="Intelligente Pflege für<br>würdevolles Altern." data-zh="以智颐养。<br>让照护看得见。">Smart care for<br>graceful aging.</h2>
+          <p class="lede" style="margin-top:24px" data-de="Die YIZHI Smart Care Technology (Suzhou) Co., Ltd. ist ein exportorientiertes Unternehmen für smarte Alltagshilfen – entstanden aus einer zentralen Frage: Was muss eine Familie über eine einzelne Medikationsgabe wirklich wissen?" data-zh="颐智科技（苏州）有限公司，是一家面向全球银发市场的智能照护出口企业。我们只追问一个问题：关于一次服药，一个家庭真正需要知道什么？">YIZHI Smart Care Technology (Suzhou) Co., Ltd. is an export-focused smart-care company built around one question: what does a family actually need to know about a single dose?</p>
+          <p data-de="Als autorisierter Export- und Markenpartner der Suzhou Xiangshi Information Technology Co., Ltd. verantworten wir den globalen Auftritt des Healthcare Nurse W100. Von Suzhou aus liefern wir schlüsselfertig an Distributoren, Apothekenketten und Pflegeeinrichtungen in Europa und Südostasien – inklusive Mehrsprachigkeit, EU-Konformitätsdokumentation, Verpackung, Exportlogistik ab Hafen Shanghai (FOB Shanghai) sowie After-Sales-SLA." data-zh="我们是苏州橡实信息技术有限公司的授权出口与品牌运营合作伙伴，全面负责健康小护 W100 的海外交付。从苏州出发，以 FOB 上海为基准，我们为欧洲、东南亚的医药分销商、连锁药房与护理机构提供多语本地化、欧盟合规建档、出口包装与 24 个月售后 SLA 支持。">We are the authorized export and brand partner of Suzhou Xiangshi Information Technology Co., Ltd., and the company behind the Healthcare Nurse W100. From Suzhou via FOB Shanghai, we deliver end-to-end readiness — multilingual localization, EU conformity dossiers, retail packing, logistics and after-sales SLA — to distributors, pharmacy chains and care institutions across Europe and Southeast Asia.</p>
+          <p data-de="Der W100 wurde gemeinsam mit einem Universitätsklinikum der höchsten Versorgungsstufe entwickelt; das Erfindungspatent wird gemeinschaftlich gehalten. Sechs unabhängige Öffnungssensoren, Sprachführung und der geschlossene Kreislauf „Erinnern – Öffnen – Protokollieren – Benachrichtigen“ machen aus bloßem Erinnern verlässliche Alltagstransparenz." data-zh="W100 与一家三甲医院共同研发，发明专利由医院与合作制造方共同持有。六枚独立开仓传感器、语音灯光指引，以及「提醒—开仓—记录—反馈」的闭环，把「记得吃药」变成一家人看得见的安心。">The W100 was co-developed with a tertiary hospital, and its invention patent is co-owned with that hospital. Six independent opening sensors, voice cues and a closed loop of remind–open–record–report turn remembering into visible peace of mind.</p>
+          <p class="compliance" data-de="Rechtlicher Hinweis: Der W100 ist ein nicht-medizinisches Hilfsmittel zur Erinnerung und Protokollierung von Fachöffnungen gemäß EU-MDR (EU) 2017/745 Art. 2(1) – kein Medizinprodukt und kein Ersatz für ärztliche Diagnose oder Behandlung. Das Öffnungsprotokoll dokumentiert das Öffnen eines Fachs, nicht die tatsächliche Einnahme. Die 12-teilige EU-Konformitätsakte (CE-Modul A, RED/EN 18031, EMC, RoHS, LFGB, GPSR, DE-EPR) liegt als Simulationsmuster für Wettbewerbsverhandlungen vor." data-zh="合规声明：W100 为日常用药提醒与开仓记录辅助设备，依据欧盟 EU MDR (EU) 2017/745 第 2(1) 条主动界定为非医疗器械，不做诊断、治疗或疗效宣称；「开仓记录 ≠ 证明实际吞服」。12 份欧盟全链条合规文件包（含 CE 模块 A 声明、RED/EN 18031 网络安全、EMC、RoHS、LFGB 食品接触、GPSR 及德国 EPR）已建档完成（赛事模拟谈判样本口径，不含 FDA）。">Compliance boundary: The W100 is a non-medical medication-adherence aid per EU MDR (EU) 2017/745 Art. 2(1) — never diagnosis, treatment or proof of actual ingestion. Our 12-document EU conformity dossier (CE Module A, RED/EN 18031, EMC, RoHS, LFGB, GPSR &amp; German EPR) is compiled as a complete trade-fair simulation pack (no FDA claims).</p>
         </div>
         <div class="stats reveal" data-delay="1">
-          <div class="stat"><b>02</b><span data-zh="项专利（发明 + 实用新型）">Patents held</span></div>
-          <div class="stat"><b>06</b><span data-zh="个独立药仓">Sealed compartments</span></div>
-          <div class="stat"><b>210<small>g</small></b><span data-zh="整机净重">Net weight</span></div>
-          <div class="stat"><b>60<small>d</small></b><span data-zh="约 60 天待机">Standby, approx.</span></div>
+          <div class="stat"><b><span data-count="2" data-pad2>02</span></b><span data-de="Patente (Erfindung &amp; Gebrauchsmuster)" data-zh="项专利（发明 + 实用新型）">Patents held</span></div>
+          <div class="stat"><b><span data-count="6" data-pad2>06</span></b><span data-de="Versiegelte Fächer · 6 Sensoren" data-zh="个独立药仓 · 6 传感器">Sealed compartments</span></div>
+          <div class="stat"><b><span data-count="36">36</span></b><span data-de="LEDs (6 pro Medikamentenfach)" data-zh="颗 LED 指示灯（每仓 6 颗）">LEDs (6 per slot)</span></div>
+          <div class="stat"><b><span data-count="210">210</span><small>g</small></b><span data-de="Nettogewicht (130 × 85 × 40 mm)" data-zh="整机净重（130×85×40 mm）">Net weight</span></div>
+          <div class="stat"><b><span data-count="60">60</span><small data-de="T" data-zh="天">d</small></b><span data-de="Standby &amp; Offline-Speicher (ca.)" data-zh="约 60 天待机 / 断网缓存">Standby &amp; offline cache</span></div>
+          <div class="stat"><b><span data-count="12">12</span></b><span data-de="EU-Konformitätsdokumente (Muster)" data-zh="份欧盟全链条合规文件">EU dossier files</span></div>
         </div>
       </div>
 
       <div class="values reveal">
         <article class="value">
           <span class="num">01</span>
-          <h4 data-zh="尊严优先">Dignity First</h4>
-          <p data-zh="设计绝不增加一件老人「要学的东西」。">Design must never add one more thing an elder has to learn.</p>
-          <span class="cite" data-zh="「老者安之。」">“The old are put at ease.” — Analects</span>
+          <h4 data-de="Würde zuerst" data-zh="尊严优先">Dignity First</h4>
+          <p data-de="Kein Bildschirm, keine Knöpfe, keine App-Hürde für ältere Menschen." data-zh="老人端零屏幕、零按键，绝不增加一件老人「要学的东西」。">Zero screen, zero buttons — never add one more thing an elder has to learn.</p>
+          <span class="cite" data-de="„Den Älteren Ruhe schenken.“ — Konfuzius" data-zh="「老者安之。」">“The old are put at ease.” — Analects</span>
         </article>
         <article class="value">
           <span class="num">02</span>
-          <h4 data-zh="机制优先于意志力">Mechanism over Willpower</h4>
-          <p data-zh="只有提醒不算做完，必须闭环到确认、记录与反馈。">A reminder is not enough — it must close the loop: confirm, record, report.</p>
-          <span class="cite" data-zh="「善假于物。」">“Make good use of tools.” — Xunzi</span>
+          <h4 data-de="Mechanismus vor Willenskraft" data-zh="机制优先于意志力">Mechanism over Willpower</h4>
+          <p data-de="Eine bloße Erinnerung genügt nicht: Erst Öffnen, Erkennen und Teilen schließen den Kreis." data-zh="只有提醒不算做完，必须闭环到传感器识别、记录与家人反馈。">A reminder is not enough — it closes the loop via sensor verification and sync.</p>
+          <span class="cite" data-de="„Gute Werkzeuge klug nutzen.“ — Xunzi" data-zh="「善假于物。」">“Make good use of tools.” — Xunzi</span>
         </article>
         <article class="value">
           <span class="num">03</span>
-          <h4 data-zh="可验证的诚实">Verifiable Honesty</h4>
-          <p data-zh="每个数字都要能指到事实底座的某一行；指不到就删。">Every number must point to a line in our fact base; if it cannot, we delete it.</p>
-          <span class="cite" data-zh="「人而无信，不知其可也。」">“Without trust, a person is lost.” — Analects</span>
+          <h4 data-de="Überprüfbare Ehrlichkeit" data-zh="可验证的诚实">Verifiable Honesty</h4>
+          <p data-de="Fachöffnung statt Schluckversprechen. Keine unbelegten Heil- oder Zulassungsaussagen." data-zh="严守「开仓记录 ≠ 证明吞服」，每个参数都能对应到实测或模拟底座。">Opening logs instead of ingestion claims — every figure maps to our fact base.</p>
+          <span class="cite" data-de="„Ohne Vertrauen kein Bestand.“ — Konfuzius" data-zh="「人而无信，不知其可也。」">“Without trust, a person is lost.” — Analects</span>
         </article>
         <article class="value">
           <span class="num">04</span>
-          <h4 data-zh="一家人的照护">It Takes a Family</h4>
-          <p data-zh="每个界面都要回答：老人看得懂吗？子女看得见吗？">Every screen answers two questions: can the elder read it, can the family see it?</p>
-          <span class="cite" data-zh="「老吾老，以及人之老。」">“Care for your elders, and for others’.” — Mencius</span>
+          <h4 data-de="Für die ganze Familie" data-zh="一家人的照护">It Takes a Family</h4>
+          <p data-de="Angehörige konfigurieren per WLAN-App (ohne WeChat); der Alltag wird zum gemeinsamen Zeitstrahl." data-zh="家属端 iOS/Android 远程设置（欧洲版零微信依赖），多子女共同守护。">Caregivers set schedules via Wi-Fi App (zero WeChat lock-in); siblings share visibility.</p>
+          <span class="cite" data-de="„Für die eigenen Eltern wie für andere sorgen.“ — Menzius" data-zh="「老吾老，以及人之老。」">“Care for your elders, and for others’.” — Mencius</span>
         </article>
         <article class="value">
           <span class="num">05</span>
-          <h4 data-zh="长期主义">Built to Last</h4>
-          <p data-zh="每个 SKU 必配售后包、备件与 OTA 计划，缺一不上架。">Every SKU ships with spares, service and an OTA plan — or it does not ship.</p>
-          <span class="cite" data-zh="「慎终如始，则无败事。」">“Finish as carefully as you begin.” — Laozi</span>
+          <h4 data-de="Auf Langlebigkeit gebaut" data-zh="长期主义">Built to Last</h4>
+          <p data-de="24 Monate Gerätegarantie, ≤ 2 % FOC-Ersatzteile und 5 Jahre CRA-OTA-Support bis 2031." data-zh="24 个月整机质保、≤ 2% 随货备品与 5 年 CRA 安全 OTA 更新（至 2031）。">24-month warranty, ≤ 2% FOC spares and 5-year CRA OTA security updates through 2031.</p>
+          <span class="cite" data-de="„Das Ende so sorgsam bedenken wie den Anfang.“ — Laozi" data-zh="「慎终如始，则无败事。」">“Finish as carefully as you begin.” — Laozi</span>
         </article>
       </div>
     </div>
@@ -203,90 +240,353 @@
     <div class="wrap">
       <div class="product-head">
         <div class="reveal">
-          <p class="eyebrow eyebrow--dark" data-zh="产品简介">The product</p>
+          <p class="eyebrow eyebrow--dark" data-de="Produktübersicht" data-zh="产品简介">The product</p>
           <h2 class="display">Healthcare Nurse <span style="color:var(--green-700)">W100</span></h2>
         </div>
-        <p class="lede reveal" data-delay="1" data-zh="六格药仓，上下两层，每层三格。它用一句话就能完成设置——不需要手机，不需要网络，也不需要老人重新学习什么。">Six sealed compartments, two layers of three. It is set up with a sentence — no smartphone, no network, nothing new to learn.</p>
+        <p class="lede reveal" data-delay="1" data-de="Sechs versiegelte Fächer auf zwei Ebenen à drei Fächer. Vollständig von Angehörigen per 2,4-GHz-WLAN-App eingerichtet – ohne Bildschirm, ohne Tasten und ohne Sprachbefehlseingabe am Gerät selbst." data-zh="上下两层、每层三格，共六个独立密封药仓。家属通过手机 App（2.4 GHz Wi-Fi）远程设定提醒，老人端无屏幕、无按键、无语音指令误触发，只需听音看灯、开仓取药。">Six sealed compartments in two layers of three. Configured remotely by family over 2.4 GHz Wi-Fi — zero screen, zero buttons and zero voice-command triggers on the elder’s device.</p>
       </div>
 
       <div class="product-showcase">
-        <figure class="product-shot reveal" style="margin:0">
-          <span class="tag" data-zh="智能语音版 · 参赛型号">Voice edition · W100</span>
-          <img src="assets/img/w100-product.png" alt="Healthcare Nurse W100 open, showing six compartments filled with tablets and capsules" data-zh-alt="健康小护 W100 打开状态，六格药仓装有药片与胶囊" width="1476" height="1100">
-        </figure>
+        <div class="gallery-card reveal" id="productGallery">
+          <div class="gallery-top">
+            <span class="gallery-tag" data-de="W100 Hardware &amp; App" data-zh="W100 硬件与 App 多视角">W100 Hardware &amp; App</span>
+            <span class="gallery-dim" id="galleryDim">130 × 85 × 40 mm · 210 g</span>
+          </div>
+          <div class="gallery-stage">
+            <img id="galleryImg" src="assets/img/w100-product.jpg" alt="Healthcare Nurse W100 open compartments" data-de-alt="Healthcare Nurse W100 mit geöffneten Fächern" data-zh-alt="健康小护 W100 打开状态，六格独立药仓" width="1400" height="994">
+          </div>
+          <div class="gallery-tabs" role="group" aria-label="Product views" data-de-aria-label="Produktansichten" data-zh-aria-label="切换产品视图">
+            <button class="gallery-tab is-active" type="button" aria-pressed="true"
+              data-src="assets/img/w100-product.jpg"
+              data-dim="6 Sealed Compartments"
+              data-cap-en="Open upper deck: food-grade silicone inner trays keep solid tablets and capsules moisture-sealed."
+              data-cap-de="Geöffnete obere Ebene: Herausnehmbare Silikoneinsätze in Lebensmittelqualität schützen vor Feuchtigkeit."
+              data-cap-zh="上层开仓实景：可拆洗食品级硅胶内盒，防潮阻氧化，适配片剂与胶囊。"
+              data-de="Geöffnet · Tabletten" data-zh="开仓装药">Open · Pills</button>
+            <button class="gallery-tab" type="button" aria-pressed="false"
+              data-src="assets/img/w100-dual-layer.jpg"
+              data-dim="2 Layers × 3 + USB-C 5V/1A"
+              data-cap-en="Double-deck 3+3 hinge architecture with USB Type-C charging port and physical power switch."
+              data-cap-de="Doppeldecker-Struktur (2 × 3 Fächer) mit USB-Typ-C-Ladeanschluss und Schutzschalter."
+              data-cap-zh="双层 3+3 结构展开：侧面配备 USB Type-C 充电口（5V 1A）与物理拨动开关。"
+              data-de="2 Ebenen &amp; USB-C" data-zh="双层与 Type-C">Dual-Layer &amp; USB-C</button>
+            <button class="gallery-tab" type="button" aria-pressed="false"
+              data-src="assets/img/w100-closed.jpg"
+              data-dim="36 LEDs · 6 Sensors"
+              data-cap-en="Closed minimalist silhouette: translucent LED indicators guide the elder straight to the scheduled slot."
+              data-cap-de="Geschlossene Bauform: Leuchtende Fach-LEDs führen direkt zum jeweils fälligen Medikamentenfach."
+              data-cap-zh="闭合状态：简洁白色机身搭配透光灯带，到点仅亮起对应药仓提示灯。"
+              data-de="Geschlossen · LEDs" data-zh="闭合与灯效">Closed · LEDs</button>
+            <button class="gallery-tab" type="button" aria-pressed="false"
+              data-src="assets/img/w100-dims.jpg"
+              data-dim="130 × 85 × 40 mm · 210 g"
+              data-cap-en="Pocket-friendly 130 × 85 × 40 mm footprint (210 g net) — compact for home nightstands and retail shelves."
+              data-cap-de="Kompakte 130 × 85 × 40 mm (210 g netto) – ideal für den Nachttisch und europäische Apothekenregale."
+              data-cap-zh="掌心尺寸 130 × 85 × 40 mm，净重仅 210 g，兼顾居家床头与药房货架陈列。"
+              data-de="Maße · 210 g" data-zh="尺寸 · 210 g">Dimensions</button>
+            <button class="gallery-tab" type="button" aria-pressed="false"
+              data-src="assets/img/w100-app-ui.png"
+              data-dim="EN / DE Guardian App · Data Act"
+              data-cap-en="European Guardian App (iOS &amp; Android, zero WeChat dependency): 3-hotspot Wi-Fi pairing, 7× schedules &amp; JSON/CSV export."
+              data-cap-de="Europäische Guardian-App (iOS/Android, ohne WeChat): 3-Hotspot-WLAN, bis zu 7 Erinnerungen/Tag &amp; JSON/CSV-Export."
+              data-cap-zh="欧美商业版 Guardian App（零微信依赖）：3 热点 Wi-Fi 配对、每日 7 次日程与 Data Act 日志导出。"
+              data-de="EN/DE App-UI" data-zh="双语 App 界面">Guardian App</button>
+          </div>
+          <p class="gallery-caption" id="galleryCaption"></p>
+        </div>
+
         <div class="reveal" data-delay="1">
-          <h3 data-zh="六项核心能力">Six things it does</h3>
+          <h3 data-de="Sechs Kernfunktionen" data-zh="六大核心能力">Six core capabilities</h3>
           <div class="feature-list">
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg>
-              <div><b data-zh="全方位提醒">All-round reminders</b><span data-zh="灯光、语音、震动，三重提醒同时到达。">Light, voice and vibration arrive together.</span></div>
+              <div><b data-de="Dreifach-Erinnerung" data-zh="全方位三重提醒">All-round reminders</b><span data-de="36 LEDs, Sprachansage (10 s) &amp; Vibration – 30 s Alarm, alle 5 Min. erneut." data-zh="36 颗 LED 灯光 + 语音播报 + 震动，响铃 30 秒，未开仓每 5 分钟重复。">36 LEDs, voice &amp; vibration arrive together — 30s alert, 5-min repeat.</span></div>
             </div>
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 8.2-7 10-4.1-1.8-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-              <div><b data-zh="防漏服 · 防错服 · 防重复">Anti-miss, anti-double</b><span data-zh="6 个传感器与算法共同判断，开错仓立即提示。">Six sensors and on-device logic; the wrong compartment is called out.</span></div>
+              <div><b data-de="Fehl- &amp; Doppelentnahmeschutz" data-zh="防漏服 · 防错服 · 防重复">Anti-miss, anti-double</b><span data-de="6 Sensoren erkennen sofort jedes falsche oder wiederholte Öffnen." data-zh="6 枚独立传感器配合边缘判断，开错仓或重复开仓立即语音纠偏。">Six lid sensors &amp; on-device logic immediately call out wrong compartments.</span></div>
             </div>
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 4h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
-              <div><b data-zh="按药品记录服药">Medication log</b><span data-zh="每一种药、每一次服用，自动生成记录。">Every medicine, every dose — recorded automatically.</span></div>
+              <div><b data-de="Protokoll pro Fach &amp; Export" data-zh="按药品生成开仓记录">Structured opening log</b><span data-de="8 MB Speicher sichern 60 Tage offline; JSON-/CSV-Export gemäß EU Data Act." data-zh="8 MB 本地闪存可离线保存 60 天记录，联网自动同步并支持 JSON/CSV 导出。">60-day offline flash cache (8 MB) with EU Data Act JSON / CSV export.</span></div>
             </div>
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 11a4 4 0 1 0-8 0"/><circle cx="12" cy="7" r="4"/><path d="M3 21c0-3.3 4-6 9-6s9 2.7 9 6"/></svg>
-              <div><b data-zh="子女远程看得见">Family remote alerts</b><span data-zh="已服、漏服、错服，同步到家人手机。">Taken, missed or wrong — the family is told.</span></div>
+              <div><b data-de="Familien-Benachrichtigung" data-zh="子女远程看得见">Family remote alerts</b><span data-de="Geöffnet, verpasst oder falsches Fach – Echtzeit-Push ohne WeChat." data-zh="已开仓、超时未开、开错仓实时推送家人手机（商业版零微信依赖）。">Opened, missed or wrong lid — synced live to family without WeChat.</span></div>
             </div>
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13c0-6 9-10 9-10s9 4 9 10a7 7 0 0 1-7 7"/><path d="M12 8v8"/></svg>
-              <div><b data-zh="食品级材质">Food-grade materials</b><span data-zh="食品级 ABS 与食品级硅胶，密封防潮、阻氧化。">Food-grade ABS and silicone seal out moisture and oxygen.</span></div>
+              <div><b data-de="Lebensmittelechte Materialien" data-zh="食品级密封防潮">Food-grade materials</b><span data-de="ABS-Gehäuse &amp; herausnehmbares Silikon (EC 1935/2004 &amp; LFGB) für feste Oralia." data-zh="ABS 外壳 + 可拆卸食品级硅胶内盒（通过 EC 1935/2004 与德国 LFGB）。">ABS housing &amp; removable silicone trays (EC 1935/2004 &amp; LFGB) for dry tablets.</span></div>
             </div>
             <div class="feature">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16M3 12h18"/></svg>
-              <div><b data-zh="六格独立药仓">6 independent compartments</b><span data-zh="上下两层，每层三格，一周的药一次备好。">Two layers, three each — a week of doses prepared once.</span></div>
+              <div><b data-de="6 unabhängige Fächer" data-zh="六格独立大空间">6 sealed compartments</b><span data-de="2 Ebenen × 3 Fächer, bis zu 7 Erinnerungen pro Medikament und Tag." data-zh="上下两层 × 3 仓，每种药品每日可设多达 7 次分时段提醒。">Two layers × 3 slots; up to 7 scheduled reminders per medicine daily.</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="detail-grid reveal">
-        <div class="detail"><b data-zh="一句话完成设置">Set up in one sentence</b><p data-zh="「设置早上七点的药」——语音设置，无需手机、无需网络。">“Set the 7 a.m. dose.” Voice setup, no phone or network required.</p></div>
-        <div class="detail"><b data-zh="OTA 远程升级">OTA updates</b><p data-zh="固件远程升级，不必返厂、不必换机。">Firmware updates over the air — no return, no replacement.</p></div>
-        <div class="detail"><b data-zh="儿童防拧开关">Child-lock</b><p data-zh="安全锁设计，防止误开误食。">A safety lock keeps small hands out.</p></div>
-        <div class="detail"><b data-zh="多用户 · 多设备">Multi-user, multi-device</b><p data-zh="一名家属可照护多位老人，多子女共同监护。">One carer can look after several elders; siblings can share the watch.</p></div>
+      <!-- INTERACTIVE W100 CLOSED-LOOP SIMULATOR -->
+      <div class="sim-panel reveal" id="simulator">
+        <div id="w100Sim">
+          <div class="sim-head">
+            <div>
+              <p class="eyebrow" style="margin-bottom:8px" data-de="Interaktive Live-Simulation" data-zh="交互式硬件闭环演练">Interactive Live Simulation</p>
+              <h3 data-de="Erleben Sie den W100-Kreislauf in Echtzeit" data-zh="亲手点击药仓，体验 W100「提醒—开仓—同步」闭环">Experience the W100 Closed Loop Live</h3>
+              <p data-de="Testen Sie, wie der W100 Seniorinnen und Senioren leitet und jeden Schritt an die Familien-App meldet." data-zh="选择场景并点击下方 1–6 号药仓，感受老人端零学习成本的引导逻辑与家属 App 实时时间线反馈。">Pick a scenario and tap compartments 1–6 below to see how W100 guides the elder and updates the Guardian App live.</p>
+            </div>
+            <div class="sim-scenarios" role="group" aria-label="Simulation scenarios" data-de-aria-label="Simulationsszenarien" data-zh-aria-label="选择演练场景">
+              <button class="sim-scenario is-active" type="button" data-scenario="normal" aria-pressed="true" data-de="Planmäßige Einnahme" data-zh="按时开仓">On-Time Dose</button>
+              <button class="sim-scenario" type="button" data-scenario="wrong" aria-pressed="false" data-de="Fehlentnahme-Schutz" data-zh="防错仓纠偏">Wrong-Lid Alert</button>
+              <button class="sim-scenario" type="button" data-scenario="repeat" aria-pressed="false" data-de="5-Min.-Wiederholung" data-zh="5 分钟超时重响">5-Min Repeat</button>
+            </div>
+          </div>
+
+          <div class="sim-grid">
+            <div class="hw-stage">
+              <div class="hw-top-bar">
+                <div class="hw-status" id="simStatus">
+                  <span class="hw-status-dot" aria-hidden="true"></span>
+                  <span id="simStatusText">Active Alert (30s)</span>
+                </div>
+                <div class="hw-wave" id="simWave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+
+              <div class="w100-device">
+                <div class="w100-slots">
+                  <button class="w100-slot" type="button" aria-label="Compartment 1">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">1</span><span class="w100-lid-time">07:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                  <button class="w100-slot" type="button" aria-label="Compartment 2">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">2</span><span class="w100-lid-time">09:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                  <button class="w100-slot" type="button" aria-label="Compartment 3">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">3</span><span class="w100-lid-time">12:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                  <button class="w100-slot" type="button" aria-label="Compartment 4">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">4</span><span class="w100-lid-time">15:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                  <button class="w100-slot" type="button" aria-label="Compartment 5">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">5</span><span class="w100-lid-time">18:30</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                  <button class="w100-slot" type="button" aria-label="Compartment 6">
+                    <span class="w100-pills-inside"><i></i><i></i><i></i></span>
+                    <span class="w100-lid"><span class="w100-lid-num">6</span><span class="w100-lid-time">21:00</span><span class="w100-led-dots"><i></i><i></i><i></i></span></span>
+                  </button>
+                </div>
+                <div class="w100-sensor-strip">
+                  <span>6× LID SENSORS · 2.4 GHz WI-FI</span>
+                  <div class="w100-sensor-leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+
+              <div class="hw-controls">
+                <span class="hw-hint" data-de="Tipp: Klicken Sie auf das leuchtende Fach – oder testen Sie bewusst ein falsches Fach." data-zh="提示：点击金色闪烁药仓完成开仓，或故意点错仓测试防错警报。">Tip: Tap the glowing gold lid to open, or tap another lid to test anti-error alerts.</span>
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <button class="btn btn--gold btn--sm" type="button" id="simTrigger" data-de="Alarm auslösen" data-zh="触发提醒">Trigger Alert</button>
+                  <button class="btn btn--ghost btn--sm" type="button" id="simReset" data-de="Zurücksetzen" data-zh="重置演示">Reset</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-mirror">
+              <div class="app-bar">
+                <div class="app-brand">
+                  <span style="width:10px;height:10px;border-radius:50%;background:var(--green-700);display:inline-block"></span>
+                  <span data-de="YIZHI Guardian-App · Live-Protokoll" data-zh="YIZHI 家属守护端 · 实时日志">YIZHI Guardian App · Live Feed</span>
+                </div>
+                <span class="app-badge">EN / DE · iOS &amp; Android</span>
+              </div>
+              <div class="app-feed" id="simFeed" aria-live="polite"></div>
+              <div class="app-foot">
+                <span data-de="Hinweis: Dokumentiert Fachöffnung (kein Einnahmenachweis)." data-zh="合规标注：仅记录开仓行为，不作为实际吞服证明。">Records lid openings only; does not prove ingestion.</span>
+                <button class="copy-btn" type="button" id="simExport" data-de="JSON / CSV Export" data-zh="导出 JSON / CSV">Export JSON / CSV</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="specs">
+      <!-- 3-SKU MATRIX (ZERO PRICING) -->
+      <div class="sku-section-head reveal">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-de="Modellreihe · Ohne Preisbindung vor Launch" data-zh="产品矩阵 · 价格将于发布会揭晓">Model lineup · Launch embargo</p>
+          <h3 style="font-size:clamp(1.4rem,2.4vw,1.95rem)" data-de="Drei W100-Ausführungen für Handel &amp; Pflege" data-zh="三款 W100 版本，覆盖居家与护理机构">Three W100 editions for retail &amp; institutional care</h3>
+        </div>
+        <span class="sku-embargo" data-de="Preise &amp; Konditionen: Veröffentlichung am 24. Nov. 2026" data-zh="全系官方定价与渠道政策 · 11 月 24 日发布会揭晓">Official pricing &amp; distributor terms unveiled at 24 Nov launch</span>
+      </div>
+
+      <div class="sku-grid reveal">
+        <article class="sku-card">
+          <div>
+            <span class="sku-badge">W100-B · Essential</span>
+            <h4 data-de="W100 Essential" data-zh="W100 Essential 基础版">W100 Essential</h4>
+            <p class="sku-sub" data-de="Für die tägliche häusliche Routine und Apotheken-Einstiegsregale." data-zh="面向日常居家慢病管理与药房基础零售货架。">Built for daily home routines and entry pharmacy shelves.</p>
+            <ul class="sku-list">
+              <li data-de="6 Fächer, 36 LEDs, 6 Sensoren, Vibration &amp; Signalton" data-zh="6 仓 6 传感器 · 灯光 + 震动 + 蜂鸣三重提醒">6 compartments, 36 LEDs, 6 sensors, light &amp; vibration</li>
+              <li data-de="WLAN-App-Fernkonfiguration (max. 3 Hotspots)" data-zh="2.4 GHz Wi-Fi（3 热点切换）+ App 远程设定">2.4 GHz Wi-Fi (3 hotspots) + remote App scheduling</li>
+              <li data-de="60 Tage lokaler Offline-Speicher · USB-C 5V/1A" data-zh="60 天本地离线缓存 · USB-C 充电">60-day offline flash cache · USB-C charging</li>
+            </ul>
+          </div>
+          <div class="sku-foot" data-de="Preis &amp; MOQ-Details am 24.11. in SA308 / Booth C9" data-zh="报价与订货阶梯将于 11.24 发布会现场揭晓">Pricing &amp; allocation unveiled at launch · 24 Nov</div>
+        </article>
+
+        <article class="sku-card sku-card--hero">
+          <div>
+            <span class="sku-badge" data-de="★ Hauptmodell · Flaggschiff" data-zh="★ 主推型号 · Flagship">★ Hero Model · Flagship</span>
+            <h4 data-de="W100 Voice (Sprach-Edition)" data-zh="W100 Voice 智能语音版">W100 Voice</h4>
+            <p class="sku-sub" data-de="Unser Export-Flaggschiff – persönliche Sprachansagen von Angehörigen schaffen Vertrauen." data-zh="本次发布会及海外渠道主推款：支持 10 秒亲人原声录制，更适合高龄长辈。">Our global launch hero — familiar family voice prompts boost elder trust and adherence.</p>
+            <ul class="sku-list">
+              <li data-de="Alle Essential-Funktionen + High-Fidelity-Lautsprecher" data-zh="包含基础版全功能 + 高保真语音播报">All Essential features + high-fidelity speaker</li>
+              <li data-de="10 s individuelle Familien-Sprachaufnahme pro Erinnerung" data-zh="支持 10 秒自定义亲人原声录音与错仓语音提示">10-sec custom family voice prompt + wrong-lid audio cue</li>
+              <li data-de="EU Data Act JSON-/CSV-Export · Mehrsprachig (EN / DE)" data-zh="支持 EU Data Act 日志导出 · 多语本地化">EU Data Act JSON/CSV export · EN / DE localized</li>
+            </ul>
+          </div>
+          <div class="sku-foot" data-de="Live-Demo vor Ort: SUIBE SA308 &amp; SA407 Booth C9" data-zh="SA308 发布会暨 SA407 Booth C9 现场真机演示">Live stage &amp; booth demo · SA308 / SA407 Booth C9</div>
+        </article>
+
+        <article class="sku-card">
+          <div>
+            <span class="sku-badge">W100-P · Institutional</span>
+            <h4 data-de="W100 Pro" data-zh="W100 Pro 机构版">W100 Pro</h4>
+            <p class="sku-sub" data-de="Für Pflegedienste, betreutes Wohnen und Flotten-Rollouts." data-zh="面向居家护理机构、康复养老社区与多设备统一管理。">Designed for home-care agencies, assisted living and multi-patient fleets.</p>
+            <ul class="sku-list">
+              <li data-de="Alle Voice-Funktionen + 60 s tägliche Gesundheitsaudio-Slots" data-zh="含语音版全功能 + 每日 60 秒健康教育语音播报">All Voice features + 60-sec daily health-education audio</li>
+              <li data-de="Mehrbenutzer- &amp; Mehrgeräte-Dashboard für Pflegekräfte" data-zh="一护多老 / 多子女协同监护与机构批量配置">Multi-elder caregiver fleet dashboard &amp; batch provisioning</li>
+              <li data-de="Unterstützung für Pilotprogramme (90 Tage) &amp; OEM" data-zh="支持 90 天机构试点与受控 OEM 定制">90-day institutional pilot &amp; controlled OEM support</li>
+            </ul>
+          </div>
+          <div class="sku-foot" data-de="Konditionen auf Anfrage nach dem Launch · sales@yizhi.com" data-zh="机构合作与商务条款待发布会后由商务团队对接">Institutional terms shared post-launch · sales@yizhi.com</div>
+        </article>
+      </div>
+
+      <div class="detail-grid reveal">
+        <div class="detail"><b data-de="Null Lernaufwand für Seniorinnen &amp; Senioren" data-zh="老人端零屏幕零操作">Zero setup on box</b><p data-de="Keine Tasten, kein Touchscreen, keine Sprachbefehlseingabe – kein versehentliches Verstellen." data-zh="无屏幕、无按键、无语音口令输入，彻底杜绝老人误触与设置焦虑。">No screen, no buttons, no voice commands — impossible to misconfigure.</p></div>
+        <div class="detail"><b data-de="3-Hotspot-WLAN &amp; OTA" data-zh="3 热点自动切换 + OTA">3-Hotspot Wi-Fi &amp; OTA</b><p data-de="Speichert bis zu 3 WLANs; signierte OTA-Updates über 5 Jahre (CRA-konform bis 2031)." data-zh="支持预存 3 个 Wi-Fi 热点自动切换；提供 5 年签名 OTA 安全更新。">Up to 3 Wi-Fi hotspots with 5-year signed CRA OTA security updates.</p></div>
+        <div class="detail"><b data-de="Kindersicherer Verschluss" data-zh="儿童安全防拧设计">Safety latch</b><p data-de="Mechanische Sicherung erschwert versehentliches Öffnen durch Kinderhände." data-zh="物理安全卡扣结构，降低儿童误开误食风险。">Mechanical safety latch helps keep curious small hands out.</p></div>
+        <div class="detail"><b data-de="Multi-Caregiver-Zugriff" data-zh="多子女 · 多设备协同">Multi-user, multi-device</b><p data-de="Eine Betreuungsperson verwaltet mehrere Geräte; Geschwister teilen denselben Zeitstrahl." data-zh="一名照护者可管理多台设备，多位子女共享同一条服药时间线。">One carer can manage several elders; siblings share the same live timeline.</p></div>
+      </div>
+
+      <div class="specs" id="specs">
         <div class="spec-block reveal">
-          <h3 data-zh="技术参数">Specifications</h3>
-          <p data-zh="参数以参赛型号（智能语音版）为准，最终以出厂铭牌为准。">Figures refer to the voice edition shown here; the nameplate on the unit is final.</p>
+          <h3 data-de="Technische Spezifikationen" data-zh="核心硬件参数">Specifications</h3>
+          <p data-de="Alle Werte gemäß verifiziertem Produktdatenblatt (W100-Serie); maßgeblich ist das Typenschild." data-zh="参数严格对齐《商品详情页》及外贸全口径数据底座，最终以出厂铭牌为准。">Figures follow our verified W100 datasheet; the unit nameplate is final.</p>
           <table class="spec">
             <tbody>
-              <tr><th data-zh="药仓">Compartments</th><td data-zh="6 个（上下两层 × 3）">6 · 2 layers × 3</td></tr>
-              <tr><th data-zh="传感器">Sensors</th><td>6</td></tr>
-              <tr><th data-zh="单药提醒上限">Reminders per medicine</th><td data-zh="每天最多 7 次">Up to 7 per day</td></tr>
-              <tr><th data-zh="重复提醒间隔">Repeat interval</th><td data-zh="5 分钟">5 minutes</td></tr>
-              <tr><th data-zh="单次响铃">Ring duration</th><td data-zh="30 秒">30 seconds</td></tr>
-              <tr><th data-zh="电池">Battery</th><td data-zh="1200 mAh · 5V 1A">1,200 mAh · 5 V / 1 A</td></tr>
-              <tr><th data-zh="待机时长">Standby</th><td data-zh="约 60 天">≈ 60 days</td></tr>
-              <tr><th data-zh="断网数据保存">Offline data retention</th><td data-zh="60 天">60 days</td></tr>
-              <tr><th data-zh="整机净重">Net weight</th><td>210 g</td></tr>
-              <tr><th data-zh="芯片">Chip</th><td>144 MHz / 8 MB</td></tr>
-              <tr><th data-zh="质保">Warranty</th><td data-zh="2 年">2 years</td></tr>
+              <tr><th data-de="Außenmaße (L × B × H)" data-zh="整机外观尺寸">Dimensions</th><td data-de="130 × 85 × 40 mm (±1–2 mm)" data-zh="130 × 85 × 40 mm（±1–2 mm）">130 × 85 × 40 mm (±1–2 mm)</td></tr>
+              <tr><th data-de="Nettogewicht" data-zh="整机净重">Net weight</th><td>210 g (0.21 kg)</td></tr>
+              <tr><th data-de="Fächer &amp; Aufbau" data-zh="独立药仓结构">Compartments</th><td data-de="6 versiegelte Fächer (2 × 3)" data-zh="6 个独立密封仓（上下两层 × 3）">6 sealed · 2 layers × 3</td></tr>
+              <tr><th data-de="Optik &amp; Sensorik" data-zh="指示灯与传感器">Optics &amp; sensors</th><td data-de="36 LEDs + 6 Öffnungssensoren" data-zh="36 颗 LED + 6 枚开仓传感器">36 LEDs + 6 lid sensors</td></tr>
+              <tr><th data-de="Prozessor &amp; Speicher" data-zh="主控芯片与本地存储">MCU &amp; local flash</th><td>ARM Cortex-M4 · 144 MHz / 8 MB</td></tr>
+              <tr><th data-de="Konnektivität" data-zh="无线连接">Connectivity</th><td data-de="Wi-Fi 802.11 b/g/n (2,4 GHz · 6,0 dBm)" data-zh="2.4 GHz Wi-Fi 802.11 b/g/n (6.0 dBm)">2.4 GHz Wi-Fi 802.11 b/g/n (6.0 dBm)</td></tr>
+              <tr><th data-de="Erinnerungsfrequenz" data-zh="单药提醒上限">Reminders per medicine</th><td data-de="Bis zu 7 × täglich · 30 s · alle 5 Min." data-zh="每日最多 7 次 · 30 秒 · 每 5 分钟重复">Up to 7/day · 30s · 5-min repeat</td></tr>
+              <tr><th data-de="Akku &amp; Laden" data-zh="电池与充电规格">Battery &amp; charging</th><td>3.7 V / 1,200 mAh (4.44 Wh) · USB-C 5 V / 1 A</td></tr>
+              <tr><th data-de="Standby &amp; Offline-Cache" data-zh="待机与断网数据保存">Standby &amp; offline retention</th><td data-de="ca. 60 Tage Standby · 60 Tage Offline-Log" data-zh="约 60 天待机（&lt;0.1 mW）· 60 天断网存储">≈ 60 days standby · 60 days offline log</td></tr>
+              <tr><th data-de="Material" data-zh="机身与内盒材质">Materials</th><td data-de="ABS + lebensmittelechtes Silikon (trockene Oralia)" data-zh="ABS 外壳 + 可拆洗食品级硅胶（干态口服药）">ABS + removable food-grade silicone</td></tr>
+              <tr><th data-de="Lieferumfang (Standard)" data-zh="单台标配清单">In the box</th><td data-de="W100 + USB-C-Kabel + mehrspr. IFU (ohne Netzteil)" data-zh="主机 + Type-C 线 + 多语说明书（不含电源头）">Device + USB-C cable + IFU (no adapter)</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="spec-block reveal" data-delay="1" id="specs">
-          <h3 data-zh="单仓容量与资质">Capacity &amp; credentials</h3>
-          <p data-zh="单仓容量为预估值，人工测量，可能存在 0.1–0.3 mm 误差。">Capacity figures are estimates, measured by hand to ±0.1–0.3 mm.</p>
+        <div class="spec-block reveal" data-delay="1">
+          <h3 data-de="Fachkapazität &amp; Schutzrechte" data-zh="单仓参考容量与知识产权">Capacity &amp; IP credentials</h3>
+          <p data-de="Schätzwerte pro Fach (manuelle Messung, ±0,1–0,3 mm Toleranz)." data-zh="单仓容量为预估参考值，人工测量允许 0.1–0.3 mm 公差。">Per-compartment capacity estimates, measured to ±0.1–0.3 mm.</p>
           <table class="spec">
             <tbody>
-              <tr><th data-zh="普通圆形药片（约 0.8 mm）">Round tablets (≈0.8 mm)</th><td data-zh="25 片">25</td></tr>
-              <tr><th data-zh="普通胶囊（长约 1.5 cm）">Capsules (≈1.5 cm)</th><td data-zh="20 粒">20</td></tr>
-              <tr><th data-zh="大号软胶囊（长约 2 cm）">Large softgels (≈2 cm)</th><td data-zh="15 粒">15</td></tr>
+              <tr><th data-de="Runde Tabletten (ca. 8 mm)" data-zh="普通圆形药片（约 8 mm）">Round tablets (≈8 mm)</th><td data-de="~25 Stück / Fach" data-zh="约 25 片 / 仓">~25 / slot</td></tr>
+              <tr><th data-de="Standardkapseln (ca. 15 mm)" data-zh="普通胶囊（长约 15 mm）">Capsules (≈15 mm)</th><td data-de="~20 Stück / Fach" data-zh="约 20 粒 / 仓">~20 / slot</td></tr>
+              <tr><th data-de="Große Weichkapseln (ca. 20 mm)" data-zh="大号软胶囊（长约 20 mm）">Large softgels (≈20 mm)</th><td data-de="~15 Stück / Fach" data-zh="约 15 粒 / 仓">~15 / slot</td></tr>
             </tbody>
           </table>
           <div class="cert-list">
-            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-zh="发明专利">Invention patent</b> · ZL 2016 1 1021195.3 — <span data-zh="与三甲医院共同持有">co-owned with a tertiary hospital</span></span></div>
-            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-zh="实用新型专利">Utility model</b> · ZL 2019 2 1235778.5</span></div>
-            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-zh="注册商标 3 件">3 registered trademarks</b> · <span data-zh="第 10 / 21 / 35 类">classes 10, 21, 35</span></span></div>
-            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-zh="认证推进中">Compliance in progress</b> · <span data-zh="CE / RoHS / FDA 注册中">CE / RoHS / FDA registration</span></span></div>
+            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-de="Erfindungspatent" data-zh="发明专利">Invention patent</b> · <span class="mono">ZL 2016 1 1021195.3</span> — <span data-de="Gemeinsam mit Universitätsklinikum (Haupterfinder: Dr. Wen Hao)" data-zh="与三甲医院共同持有（第一发明人：温浩博士）">co-owned with tertiary hospital (lead inventor Dr. Wen Hao)</span></span></div>
+            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-de="Gebrauchsmuster" data-zh="实用新型专利">Utility model</b> · <span class="mono">ZL 2019 2 1235778.5</span></span></div>
+            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-de="3 eingetragene Marken" data-zh="3 件注册商标">3 registered trademarks</b> · <span data-de="Klassen 10 / 21 / 35" data-zh="第 10 / 21 / 35 类">Classes 10, 21, 35</span></span></div>
+            <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b data-de="EU-Konformität (Simulationsakte)" data-zh="欧盟全链条合规建档">EU conformity dossier</b> · <span data-de="12-teiliges Paket komplett (CE Modul A / RED / EMC / RoHS / LFGB / GPSR)" data-zh="12 份文件已建档（CE / RED / EMC / RoHS / LFGB / GPSR，模拟谈判样本）">12-file dossier compiled (CE Module A / RED / EMC / RoHS / LFGB / GPSR — simulation pack)</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPORT, LOGISTICS & EU COMPLIANCE ============ -->
+  <section class="section readiness" id="export">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow eyebrow--dark" data-de="Exportfähigkeit &amp; Regulierung" data-zh="外贸出口交付与合规就绪">Export &amp; Compliance Readiness</p>
+        <h2 class="display" data-de="Bereit für Container, Zoll<br>und europäische Apotheken." data-zh="从包装箱规到欧盟 12 份合规档案，<br>为正式出口做好准备。">Built for pallets, customs<br>and European pharmacy shelves.</h2>
+        <p class="lede" style="margin-top:18px" data-de="Standardisierte Verpackungslogistik auf Basis FOB Shanghai, ein 12-teiliges EU-Konformitätsdossier und ein verbindliches 24-Monate-After-Sales-SLA – alle Konditionen bleiben bis zum Launch am 24. November vertraulich." data-zh="以 FOB 上海为基准的轻量化出口装箱标准、12 份全交叉编号的欧盟合规文件包，以及 24 个月整机质保与 RMA 时效体系——具体报价与商务价格阶梯将于 11 月 24 日发布会现场公布。">Standardized FOB Shanghai export logistics, a cross-referenced 12-document EU compliance pack and a 24-month RMA SLA — all commercial pricing remains under launch embargo until 24 November.</p>
+      </div>
+
+      <div class="tab-bar reveal" id="readinessTabs" role="tablist" aria-label="Export readiness categories" data-de-aria-label="Export- und Compliance-Bereiche" data-zh-aria-label="出口交付与合规分类">
+        <button class="tab-btn" type="button" role="tab" aria-selected="true" aria-controls="tab-packing" id="btn-packing" data-de="Verpackung &amp; Containerlogistik" data-zh="出口包装与装柜物流">Packing &amp; Container Logistics</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-compliance" id="btn-compliance" data-de="12-teilige EU-Konformitätsakte" data-zh="12 份欧盟合规文件墙">12-File EU Compliance Wall</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-sla" id="btn-sla" data-de="Garantie &amp; RMA-SLA" data-zh="商业质保与售后 SLA">Warranty &amp; RMA SLA</button>
+      </div>
+
+      <!-- TAB 1: Packing & Logistics -->
+      <div class="tab-panel is-active" id="tab-packing" role="tabpanel" aria-labelledby="btn-packing">
+        <div class="pack-grid">
+          <div class="pack-card">
+            <div class="pack-k">165×115×62 mm</div>
+            <div class="pack-lbl" data-de="Einzelhandels-Faltschachtel" data-zh="单台零售彩盒">Retail Color Box</div>
+            <p data-de="Bruttogewicht ca. 330 g (PAP 21 + LDPE 4). Kompakt für Apothekenregale mit Platz für GPSR-, WEEE- und EAN-Kennzeichnung." data-zh="单盒毛重约 330 g（PAP 21 纸盒 + LDPE 4 内托），适配欧洲药房货架与环保减量规范。">Est. 330 g gross (PAP 21 + LDPE 4). Shelf-compact with dedicated space for GPSR, WEEE &amp; EAN labels.</p>
+          </div>
+          <div class="pack-card">
+            <div class="pack-k">40 PCS / 14.1 kg</div>
+            <div class="pack-lbl" data-de="Export-Umkarton (unter 15 kg)" data-zh="标准出口外箱（低于 15 kg 红线）">Master Carton (&lt; 15 kg EU Limit)</div>
+            <p data-de="475 × 345 × 330 mm (0,054 CBM). Unter dem europäischen 15-kg-Handhabungslimit; Volumengewicht 10,82 kg &lt; Realgewicht (keine Luftfracht-Strafe)." data-zh="475 × 345 × 330 mm（0.054 CBM），整箱毛重 14.1 kg 守住欧盟 15 kg 人工搬运上限，空运无泡重惩罚。">475 × 345 × 330 mm (0.054 CBM). Safely under Europe’s 15 kg manual handling limit; no air-freight volumetric penalty.</p>
+          </div>
+          <div class="pack-card">
+            <div class="pack-k">640 / Pallet</div>
+            <div class="pack-lbl" data-de="Europalette · 20'GP &amp; 40'HQ" data-zh="欧标托盘与海运整柜">Euro Pallet &amp; Containers</div>
+            <p data-de="16 Kartons/Europalette (1.200 × 800 mm). 20'GP ca. 20.000 Stk. (lose) · 40'HQ ca. 48.000 Stk. – Basis FOB Shanghai, CIF &amp; DDP unterstützt." data-zh="欧标托盘 16 箱（640 台/托）；20'GP 散装约 20,000 台 · 40'HQ 约 48,000 台；支持 FOB 上海 / CIF / DDP。">16 CTN per Euro Pallet (1,200 × 800 mm). 20'GP ~20,000 pcs · 40'HQ ~48,000 pcs. FOB Shanghai, CIF &amp; DDP ready.</p>
+          </div>
+          <div class="pack-card">
+            <div class="pack-k">UN 3481 · 4.44 Wh</div>
+            <div class="pack-lbl" data-de="Lithium-Ionen-Versand (PI 967)" data-zh="内置锂电普货空海运合规">General-Cargo Lithium Shipping</div>
+            <p data-de="4,44 Wh liegen weit unter dem 20-Wh-/100-Wh-Schwellenwert: Beförderung als reguläre Fracht nach IATA PI 967 Sec. II / IMDG SP 188 mit UN38.3." data-zh="内置 4.44 Wh 电芯远低于 20 Wh 危品线，随附 UN38.3 摘要按 PI 967 Sec. II 普货空海运，免高额危品附加费。">4.44 Wh is well below 20 Wh/100 Wh thresholds — ships as general cargo under IATA PI 967 Sec. II with UN38.3 summary.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: 12-File EU Compliance Wall -->
+      <div class="tab-panel" id="tab-compliance" role="tabpanel" aria-labelledby="btn-compliance">
+        <div class="dossier-grid">
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">00 · YZ-W100-IDX-2026-01</span><span class="dossier-status">ISSUED</span></div><b data-de="Dossier-Deckblatt &amp; Index" data-zh="合规文件包封面与索引">Conformity Dossier Index</b><span>Master cross-reference of 12 EU regulatory records</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">01 · YZ-W100-DOC-2026-01</span><span class="dossier-status">MODULE A</span></div><b data-de="EU-Konformitätserklärung (DoC)" data-zh="欧盟符合性声明（模块 A）">EU Declaration of Conformity</b><span>Non-Medical Aid per EU MDR Art. 2(1) · RED / EMC / RoHS</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">02 · ECAB/CE/2026/C-0418</span><span class="dossier-status">3-YR VALID</span></div><b data-de="Freiwillige CE-Konformitätsprüfung" data-zh="第三方自愿 CE 符合性证书">Voluntary CE Verification</b><span>ECAB S.r.l. review supporting Module A self-declaration</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">03 · SIEPT-2026-EMC-0417</span><span class="dossier-status">PASS</span></div><b data-de="EMV-Prüfbericht (Class B)" data-zh="EMC 电磁兼容检测报告">EMC Test Report</b><span>EN 55032 Class B / EN 55035 (ISO/IEC 17025 lab)</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">04 · SIEPT-2026-RF-0418</span><span class="dossier-status">PASS</span></div><b data-de="Funk &amp; RED-Cybersicherheit" data-zh="射频与 RED 网络安全报告">Radio &amp; RED Cyber Report</b><span>EN 300 328 (2.4 GHz 6.0 dBm) &amp; EN 18031-1/-2</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">05 · SIEPT-2026-SAF-0419</span><span class="dossier-status">PASS</span></div><b data-de="Produktsicherheit &amp; Akku" data-zh="安规与锂电池安全报告">Safety &amp; Battery Report</b><span>EN IEC 62368-1, EN 62133-2 &amp; EN 62471</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">06 · SIEPT-2026-RHS-0420</span><span class="dossier-status">PASS</span></div><b data-de="RoHS &amp; REACH-Erklärung" data-zh="RoHS 与 REACH 有害物质报告">RoHS &amp; REACH Report</b><span>IEC 62321 / EN IEC 63000 restricted-substance compliance</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">07 · ECAB/QMS/CN-2026-0873</span><span class="dossier-status">ISO 9001</span></div><b data-de="ISO 9001:2015 Qualitätsmanagement" data-zh="ISO 9001:2015 质量管理体系">ISO 9001:2015 QMS</b><span>Factory &amp; export OQC traceability system</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">08 · YZ-W100-GPSR-2026-01</span><span class="dossier-status">GPSR ART.16</span></div><b data-de="EU-Verantwortliche Person" data-zh="欧盟 GPSR 责任人任命书">EU Responsible Person</b><span>10-year technical file custody &amp; market surveillance liaison</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">09 · WEEE / BattG / LUCID</span><span class="dossier-status">DE EPR</span></div><b data-de="Deutsche Marktregistrierungen" data-zh="德国 EPR 合规登记汇总">German Market Registrations</b><span>ElektroG WEEE, BattG, LUCID packaging &amp; VAT readiness</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">10 · SIEPT-2026-FCM-0421</span><span class="dossier-status">LFGB PASS</span></div><b data-de="Lebensmittel- &amp; Arzneimittelkontakt" data-zh="食品/药品接触材料报告">Food/Drug Contact Report</b><span>EC 1935/2004, EU 10/2011, German LFGB §§ 30, 31 &amp; BfR XV</span></div>
+          <div class="dossier-item"><div class="dossier-top"><span class="dossier-id">11 · YZ-W100-CRA-2026-01</span><span class="dossier-status">CRA &amp; UN38.3</span></div><b data-de="CRA, Data Act &amp; UN 38.3" data-zh="CRA 网络安全 · Data Act · UN38.3">CRA, Data Act &amp; UN 38.3</b><span>5-yr security support, JSON/CSV export &amp; air/sea transport</span></div>
+        </div>
+        <div class="dossier-note" data-de="Hinweis zum Wettbewerbsrahmen: Die 12-teilige EU-Konformitätsakte sowie die Lieferanten-IP-Freigabe (YZ-W100-AUTH-2026-01) bilden ein durchgängig referenziertes Simulationsdossier für die internationale Handelsverhandlung (ohne FDA-/FCC-Behauptungen). Rückfragen an compliance@yizhi.com." data-zh="模拟合规档案边界说明：以上 00–11 号欧盟合规文件包及供应商授权摘要（YZ-W100-AUTH-2026-01）为 2026 全国商业精英挑战赛校赛决赛模拟谈判全交叉编号样本（不含北美 FDA/FCC 宣称）。如需技术文件清单或预审沟通，请联系 compliance@yizhi.com。">Simulation dossier note: Files 00–11 and Supplier IP Authorisation (YZ-W100-AUTH-2026-01) are cross-referenced simulated negotiation specimens illustrating full EU regulatory logic (no FDA/FCC claims). Enquiries: compliance@yizhi.com.</div>
+      </div>
+
+      <!-- TAB 3: Warranty & RMA SLA -->
+      <div class="tab-panel" id="tab-sla" role="tabpanel" aria-labelledby="btn-sla">
+        <div class="sla-grid">
+          <div class="sla-card">
+            <b data-de="24 Monate Hardware · 12 Monate Akku" data-zh="24 个月整机 + 12 个月电芯质保">24-Month Device · 12-Month Battery</b>
+            <p data-de="Umfassender Schutz für alle 6 Sensoren, LEDs, Lautsprecher, Vibrationsmotor, WLAN-Modul und Gehäuse – zzgl. 6 Monate auf Zubehör sowie 5 Jahre kostenlose CRA-OTA-Sicherheitsupdates bis 2031." data-zh="主机硬件与 6 枚传感器享 24 个月商业质保，内置 1,200 mAh 锂电享 12 个月单列质保，硅胶内盒与线材 6 个月，另有不少于 5 年（至 2031 年）免费签名 OTA 安全补丁。">Full 24-month commercial coverage on W100 hardware &amp; 6 sensors, 12-month dedicated coverage on the 1,200 mAh cell, 6-month accessory coverage, and 5-year signed CRA OTA security updates through 2031.</p>
+          </div>
+          <div class="sla-card">
+            <b data-de="≤ 2 % FOC-Ersatzteile · 30 Tage Schadenmeldung" data-zh="≤ 2% 随货免费备品 · 30 天破损申报">≤ 2% FOC Spares · 30-Day Transit Window</b>
+            <p data-de="Bei qualifizierten Großbestellungen liefern wir bis zu 2 % kostenlose Austauschgeräte und Silikoneinsätze mit, damit Apotheken und Distributoren vor Ort ohne Wartezeit austauschen können." data-zh="标准大货随箱配发不超过订单总量 2% 的免费整机备品与备用硅胶内盒，赋能渠道「零等待现场换新」；显性运输损伤支持到货 30 天内凭照片/视频向 rma@yizhi.com 申报。">Bulk orders include up to 2% free-of-charge replacement units &amp; silicone trays for zero-wait local swap-outs. Visible transit damage claims are accepted within 30 calendar days via rma@yizhi.com.</p>
+          </div>
+          <div class="sla-card">
+            <b data-de="24 h Annahme · 48 h Diagnose · SN-Rückverfolgung" data-zh="24 小时受理 · 48 小时定级 · 一机一档">24h Acknowledge · 48h Triage · Batch Trace</b>
+            <p data-de="RMA-Tickets über rma@yizhi.com werden binnen 24 Std. bestätigt und binnen 48 Std. diagnostiziert; 8D-Analyse bei Serienfehlern binnen 5 Werktagen. Lückenlose Seriennummern-Rückverfolgung in 4 Stunden." data-zh="每台出厂设备建立「生产批次 + SN 码 + 电芯批次 + 传感器 OQC」全链路档案，4 小时内精确定位。RMA 工单 24 小时受理、48 小时定级，批次问题 5 个工作日出 8D 简报。">Every unit carries full batch + SN + sensor OQC traceability (4-hour root lookup). RMA tickets at rma@yizhi.com receive 24h acknowledgement, 48h triage, and 5-business-day 8D reporting.</p>
           </div>
         </div>
       </div>
@@ -298,39 +598,39 @@
     <div class="wrap">
       <div class="launch-top">
         <div class="reveal">
-          <p class="eyebrow" data-zh="产品即将发布">The launch</p>
-          <h2 class="display" data-zh="W100，走向世界。">W100 goes<br>global.</h2>
-          <p class="lede" style="margin-top:20px" data-zh="2026 年 11 月 24 日，我们在上海向分销商、药房伙伴与媒体发布健康小护 W100——一个产品，一个承诺。">On 24 November 2026 we unveil the Healthcare Nurse W100 in Shanghai — one product, one promise.</p>
-          <div class="countdown" data-launch="2026-11-24T15:00:00+08:00" aria-label="Countdown to the launch" data-zh-aria-label="距离发布会的倒计时">
-            <div class="count"><b data-unit="days">—</b><span data-zh="天">Days</span></div>
-            <div class="count"><b data-unit="hours">—</b><span data-zh="时">Hours</span></div>
-            <div class="count"><b data-unit="minutes">—</b><span data-zh="分">Minutes</span></div>
-            <div class="count"><b data-unit="seconds">—</b><span data-zh="秒">Seconds</span></div>
+          <p class="eyebrow" data-de="Weltpremiere" data-zh="产品即将发布">The launch</p>
+          <h2 class="display" data-de="W100 geht<br>weltweit an den Start." data-zh="W100，走向世界。">W100 goes<br>global.</h2>
+          <p class="lede" style="margin-top:20px" data-de="Am 24. November 2026 präsentieren wir den Healthcare Nurse W100 in Shanghai vor Distributoren, Apothekenketten und Presse – inklusive Enthüllung aller Preise, Konditionen und Erstzuteilungen." data-zh="2026 年 11 月 24 日，我们在上海对外经贸大学向全球分销商、药房伙伴与媒体发布健康小护 W100——全系官方定价与首批渠道合作政策将在发布会现场正式揭晓。">On 24 November 2026 we unveil the Healthcare Nurse W100 in Shanghai — alongside the official unveiling of pricing, channel tiers and first-allocation terms.</p>
+          <div class="countdown" data-launch="2026-11-24T15:00:00+08:00" aria-label="Countdown to the launch" data-de-aria-label="Countdown bis zur Präsentation" data-zh-aria-label="距离发布会的倒计时">
+            <div class="count"><b data-unit="days">—</b><span data-de="Tage" data-zh="天">Days</span></div>
+            <div class="count"><b data-unit="hours">—</b><span data-de="Std." data-zh="时">Hours</span></div>
+            <div class="count"><b data-unit="minutes">—</b><span data-de="Min." data-zh="分">Minutes</span></div>
+            <div class="count"><b data-unit="seconds">—</b><span data-de="Sek." data-zh="秒">Seconds</span></div>
           </div>
-          <p class="countdown-note" data-zh="2026 年 11 月 24 日 15:00（北京时间）">15:00 China Standard Time · Tuesday</p>
+          <p class="countdown-note" data-de="Dienstag, 24. November 2026 · 15:00 CST (UTC+8)" data-zh="2026 年 11 月 24 日 周二 15:00（北京时间）">15:00 China Standard Time · Tuesday, 24 Nov 2026</p>
           <div class="hero-actions" style="margin-top:28px">
-            <a class="btn btn--gold" href="launch.html" data-zh="查看发布会详情">See the launch details</a>
-            <a class="btn btn--ghost" href="#contact" data-zh="预约席位">Reserve a seat</a>
+            <a class="btn btn--gold" href="launch.html" data-de="Launch-Details ansehen" data-zh="查看发布会详情">See the launch details</a>
+            <a class="btn btn--ghost" href="#contact" data-de="Sitzplatz reservieren" data-zh="预约席位">Reserve a seat</a>
           </div>
         </div>
         <div class="event-card reveal" data-delay="1">
           <dl>
-            <div class="row"><dt data-zh="日期">Date</dt><dd data-zh="2026 年 11 月 24 日 · 周二">24 Nov 2026 · Tuesday</dd></div>
-            <div class="row"><dt data-zh="时间">Time</dt><dd data-zh="15:00（北京时间）">15:00 CST (UTC+8)</dd></div>
-            <div class="row"><dt data-zh="发布会">Launch</dt><dd data-zh="上海对外经贸大学 学思楼 SA308">Room SA308, Xuesi Building, SUIBE</dd></div>
-            <div class="row"><dt data-zh="展会">Exhibition</dt><dd data-zh="同日 · 学思楼 SA407">Same day · Room SA407</dd></div>
-            <div class="row"><dt data-zh="语言">Language</dt><dd data-zh="英文为主，中文亦可">English, Chinese welcome</dd></div>
-            <div class="row"><dt data-zh="形式">Format</dt><dd data-zh="发布 + 问答（流程稍后公布）">Launch + Q&amp;A · programme TBA</dd></div>
+            <div class="row"><dt data-de="Datum" data-zh="日期">Date</dt><dd data-de="24. November 2026 · Dienstag" data-zh="2026 年 11 月 24 日 · 周二">24 Nov 2026 · Tuesday</dd></div>
+            <div class="row"><dt data-de="Uhrzeit" data-zh="时间">Time</dt><dd data-de="15:00 Uhr CST (UTC+8)" data-zh="15:00（北京时间）">15:00 CST (UTC+8)</dd></div>
+            <div class="row"><dt data-de="Launch-Saal" data-zh="发布会路演">Launch</dt><dd data-de="SUIBE · Xuesi-Gebäude · Raum SA308" data-zh="上海对外经贸大学 学思楼 SA308">Room SA308, Xuesi Building, SUIBE</dd></div>
+            <div class="row"><dt data-de="Messestand" data-zh="展会与谈判">Exhibition</dt><dd><span data-de="Gleicher Tag · Raum SA407" data-zh="同日 · 学思楼 SA407">Same day · Room SA407</span><span class="booth-pill">Booth C9</span></dd></div>
+            <div class="row"><dt data-de="Sprache" data-zh="语言">Language</dt><dd data-de="Englisch &amp; Chinesisch" data-zh="英文与中文（中英双语）">English &amp; Chinese</dd></div>
+            <div class="row"><dt data-de="Preise" data-zh="价格发布">Pricing</dt><dd data-de="Bekanntgabe beim Launch · 24. Nov." data-zh="发布会现场正式公布">Unveiled live at the launch</dd></div>
           </dl>
         </div>
       </div>
 
       <div class="agenda reveal">
         <div class="agenda-head">
-          <h3 data-zh="发布会流程">The programme</h3>
-          <span data-zh="稍后公布">To be announced</span>
+          <h3 data-de="Veranstaltungsprogramm" data-zh="发布会流程">The programme</h3>
+          <span data-de="Bekanntgabe folgt" data-zh="稍后公布">To be announced</span>
         </div>
-        <p class="agenda-pending" data-zh="发布会流程与台上安排仍在设计中，确定后将在此公布。">The programme and the stage line-up are still in design and will be published here once confirmed.</p>
+        <p class="agenda-pending" data-de="Der detaillierte Bühnenablauf befindet sich in der finalen Abstimmung und wird hier veröffentlicht. Die Live-Hardware-Demo, Preisenthüllung und 1:1-Gespräche mit dem Team finden direkt im Anschluss am Stand C9 (Raum SA407) statt." data-zh="发布会详细流程与台上环节仍在最终定稿中，确认后将在此公布。现场真机闭环演示、价格政策揭晓及一对一商务洽谈将于同楼 SA407 · Booth C9 展位同步开展。">The stage line-up is being finalized and will be published here once confirmed. Live hardware demonstrations, official pricing unveiling and one-to-one distributor sessions take place right next door at Booth C9 (Room SA407).</p>
       </div>
     </div>
   </section>
@@ -340,70 +640,141 @@
     <div class="wrap">
       <div class="contact-grid">
         <div class="reveal">
-          <p class="eyebrow eyebrow--dark" data-zh="联系我们">Contact</p>
-          <h2 class="display" data-zh="和团队谈谈。">Talk to<br>the team.</h2>
-          <p class="lede" style="margin-top:20px" data-zh="分销、贴牌、媒体，或只是一个问题——我们会在一个工作日内回复。">Distribution, OEM, press or a single question — we reply within one business day.</p>
+          <p class="eyebrow eyebrow--dark" data-de="Kontakt" data-zh="联系我们">Contact</p>
+          <h2 class="display" data-de="Sprechen Sie mit<br>unserem Team." data-zh="和颐智团队谈谈。">Talk to<br>the team.</h2>
+          <p class="lede" style="margin-top:20px" data-de="Vertrieb, OEM, Presse, EU-Konformität oder After-Sales – vier spezialisierte Postfächer unter @yizhi.com sorgen für eine Antwort innerhalb eines Werktags." data-zh="分销合作、贴牌 OEM、发布会媒体、欧盟合规或售后质保——我们以统一 @yizhi.com 企业域名按业务分流，一个工作日内响应。">Distribution, OEM, launch press, EU compliance or warranty — four dedicated @yizhi.com channels ensure a reply within one business day.</p>
+
+          <div class="email-matrix">
+            <div class="email-tile">
+              <span data-de="Vertrieb &amp; OEM" data-zh="商务报价 · 分销 · OEM">Sales, Distribution &amp; OEM</span>
+              <div class="email-tile-row">
+                <a href="mailto:sales@yizhi.com">sales@yizhi.com</a>
+                <button class="copy-btn" type="button" data-copy="sales@yizhi.com" data-de="Kopieren" data-zh="复制">Copy</button>
+              </div>
+            </div>
+            <div class="email-tile">
+              <span data-de="Launch &amp; Presse" data-zh="发布会报名 · 媒体公关">Launch, Demo &amp; Press</span>
+              <div class="email-tile-row">
+                <a href="mailto:launch@yizhi.com">launch@yizhi.com</a>
+                <button class="copy-btn" type="button" data-copy="launch@yizhi.com" data-de="Kopieren" data-zh="复制">Copy</button>
+              </div>
+            </div>
+            <div class="email-tile">
+              <span data-de="EU-Konformität &amp; Zoll" data-zh="欧盟合规 · 技术文档">EU Compliance &amp; Dossier</span>
+              <div class="email-tile-row">
+                <a href="mailto:compliance@yizhi.com">compliance@yizhi.com</a>
+                <button class="copy-btn" type="button" data-copy="compliance@yizhi.com" data-de="Kopieren" data-zh="复制">Copy</button>
+              </div>
+            </div>
+            <div class="email-tile">
+              <span data-de="Garantie &amp; RMA-Support" data-zh="商业质保 · 售后 RMA">Warranty &amp; RMA SLA</span>
+              <div class="email-tile-row">
+                <a href="mailto:rma@yizhi.com">rma@yizhi.com</a>
+                <button class="copy-btn" type="button" data-copy="rma@yizhi.com" data-de="Kopieren" data-zh="复制">Copy</button>
+              </div>
+            </div>
+          </div>
+
           <dl class="contact-list">
             <div class="contact-item">
-              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-              <div><dt data-zh="商务、媒体与报名">Business, press &amp; registration</dt><dd>yizhi_technology@126.com<small data-zh="统一使用这一个邮箱">One inbox, all enquiries</small></dd></div>
-            </div>
-            <div class="contact-item">
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
-              <div><dt data-zh="展会与谈判">Exhibition &amp; trade</dt><dd>林博铖 <span class="role-tag" data-zh="展会总监">Director of Exhibitions &amp; Trade</span><small><a href="tel:+8618050684286">+86 180 5068 4286</a></small></dd></div>
+              <div><dt data-de="Hauptansprechpartner Vertrieb" data-zh="商务总联系人">Primary business contact</dt><dd><span data-de="Humbert Zhang (张涵博)" data-zh="张涵博 Humbert Zhang">Humbert Zhang 张涵博</span> <span class="role-tag" data-de="Business Director" data-zh="商务总监">Business Director</span><small><a href="tel:+8615875415001">+86 158 7541 5001</a> · <span data-de="WhatsApp &amp; Telefon · EN / 中文" data-zh="电话 / WhatsApp · 商务谈判主谈">Tel / WhatsApp · Trade &amp; Channel Lead</span></small></dd></div>
             </div>
             <div class="contact-item">
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg></span>
-              <div><dt data-zh="发布会">Launch</dt><dd data-zh="上海对外经贸大学 学思楼 SA308">Room SA308, Xuesi Building<small data-zh="11 月 24 日 15:00（北京时间）">24 Nov, 15:00 CST</small></dd></div>
+              <div><dt data-de="Launch-Veranstaltung" data-zh="发布会地点">Launch venue</dt><dd data-de="SUIBE · Xuesi-Gebäude · Raum SA308" data-zh="上海对外经贸大学 学思楼 SA308">Room SA308, Xuesi Building, SUIBE<small data-de="24. Nov. 2026 · 15:00 CST · Songjiang, Shanghai" data-zh="2026 年 11 月 24 日 15:00（北京时间）· 上海松江">24 Nov 2026, 15:00 CST · Songjiang, Shanghai</small></dd></div>
             </div>
             <div class="contact-item">
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-              <div><dt data-zh="展会">Exhibition</dt><dd><span data-zh="上海对外经贸大学 学思楼 SA407">Room SA407, Xuesi Building, SUIBE</span><small data-zh="上海 · 松江 · 同日">Songjiang, Shanghai · same day</small></dd></div>
+              <div><dt data-de="Messestand &amp; Zentrale" data-zh="线下展位与总部">Exhibition booth &amp; HQ</dt><dd><span data-de="Raum SA407 · Booth C9 (SUIBE, Shanghai)" data-zh="上海对外经贸大学 学思楼 SA407 · Booth C9">Room SA407 · Booth C9, Xuesi Building, SUIBE</span><small data-de="Hauptsitz: YIZHI Smart Care Technology (Suzhou) Co., Ltd., Suzhou, China" data-zh="总部：颐智科技（苏州）有限公司 · 中国苏州">HQ: YIZHI Smart Care Technology (Suzhou) Co., Ltd. · Suzhou, China</small></dd></div>
             </div>
           </dl>
         </div>
 
         <div class="form-card reveal" data-delay="1">
-          <h3 data-zh="留下联系方式">Request a callback</h3>
-          <p data-zh="选择你的身份，我们会带着相应的资料联系你。">Tell us who you are; we will bring the right material.</p>
+          <h3 data-de="Rückruf oder Unterlagen anfordern" data-zh="留下联系方式">Request a callback</h3>
+          <p data-de="Wählen Sie Ihr Anliegen – wir leiten Ihre Anfrage direkt an das zuständige @yizhi.com-Team weiter." data-zh="选择您的合作意向，系统将自动匹配对应的 @yizhi.com 专责团队与您联系。">Choose your topic; we route your enquiry directly to the right @yizhi.com desk.</p>
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
             <input type="hidden" name="form-name" value="contact">
             <p class="hp"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <div class="form-grid">
               <div class="field">
-                <label for="c-name" data-zh="姓名">Your name</label>
-                <input id="c-name" name="name" type="text" placeholder="Jane Doe" data-zh-placeholder="张女士" required autocomplete="name">
+                <label for="c-name" data-de="Name" data-zh="姓名">Your name</label>
+                <input id="c-name" name="name" type="text" placeholder="Dr. Anna Weber" data-de-placeholder="Dr. Anna Weber" data-zh-placeholder="张女士" required autocomplete="name">
               </div>
               <div class="field">
-                <label for="c-company" data-zh="公司">Company</label>
-                <input id="c-company" name="company" type="text" placeholder="Company Ltd." data-zh-placeholder="公司名称" autocomplete="organization">
+                <label for="c-company" data-de="Unternehmen / Apotheke" data-zh="公司 / 机构">Company</label>
+                <input id="c-company" name="company" type="text" placeholder="MedCare GmbH" data-de-placeholder="Apotheke / MedCare GmbH" data-zh-placeholder="公司名称" autocomplete="organization">
               </div>
               <div class="field">
-                <label for="c-email" data-zh="邮箱">Email</label>
-                <input id="c-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email">
+                <label for="c-email" data-de="E-Mail" data-zh="邮箱">Email</label>
+                <input id="c-email" name="email" type="email" placeholder="you@company.de" data-de-placeholder="name@unternehmen.de" data-zh-placeholder="you@company.com" required autocomplete="email">
               </div>
               <div class="field">
-                <label for="c-country" data-zh="国家 / 地区">Country</label>
-                <input id="c-country" name="country" type="text" placeholder="Germany" data-zh-placeholder="中国" autocomplete="country-name">
+                <label for="c-country" data-de="Land / Region" data-zh="国家 / 地区">Country</label>
+                <input id="c-country" name="country" type="text" placeholder="Germany" data-de-placeholder="Deutschland" data-zh-placeholder="中国 / 德国" autocomplete="country-name">
               </div>
               <div class="field field--full">
-                <label for="c-interest" data-zh="合作意向">I am interested in</label>
+                <label for="c-interest" data-de="Anliegen" data-zh="合作意向">I am interested in</label>
                 <select id="c-interest" name="interest">
-                  <option value="distribution" data-zh="区域分销">Regional distribution</option>
-                  <option value="oem" data-zh="贴牌 / OEM">OEM / private label</option>
-                  <option value="press" data-zh="媒体与发布">Press &amp; launch</option>
-                  <option value="other" data-zh="其他">Something else</option>
+                  <option value="distribution" data-de="Regionaler Vertrieb / Apothekenkette" data-zh="区域分销 / 连锁药房">Regional distribution</option>
+                  <option value="oem" data-de="OEM / Eigenmarke &amp; Lokalisierung" data-zh="贴牌 / OEM 定制">OEM / private label</option>
+                  <option value="launch" data-de="Launch 24. Nov. &amp; Presseakkreditierung" data-zh="11.24 发布会席位与媒体报道">Launch registration &amp; press</option>
+                  <option value="compliance" data-de="EU-Konformitätsakte &amp; Exportlogistik" data-zh="欧盟合规文件与出口物流">EU compliance dossier &amp; logistics</option>
+                  <option value="rma" data-de="Garantie &amp; RMA-After-Sales" data-zh="商业质保与 RMA 售后">Warranty &amp; RMA support</option>
                 </select>
               </div>
               <div class="field field--full">
-                <label for="c-message" data-zh="留言">Message</label>
-                <textarea id="c-message" name="message" placeholder="Volumes, markets, timeline — anything helps." data-zh-placeholder="目标市场、预估量、时间节奏，写一点点就好。"></textarea>
+                <label for="c-message" data-de="Nachricht" data-zh="留言">Message</label>
+                <textarea id="c-message" name="message" placeholder="Markets, pilot goals, timeline — pricing details will be shared at/after the launch." data-de-placeholder="Zielmarkt, Pilotvorhaben oder Terminwunsch (Preise werden zum Launch am 24.11. bekannt gegeben)." data-zh-placeholder="目标市场、试点需求或时间节奏（具体报价将于 11.24 发布会公布后同步）。"></textarea>
               </div>
-              <label class="check"><input type="checkbox" name="consent" required><span data-zh="我同意颐智科技使用以上信息与我联系。本表单仅用于商务沟通，不会公开。">I agree that YIZHI may contact me using the details above. This form is for business enquiries only.</span></label>
+              <label class="check"><input type="checkbox" name="consent" required><span data-de="Ich bin damit einverstanden, dass YIZHI meine Angaben zur geschäftlichen Kontaktaufnahme verwendet." data-zh="我同意颐智科技使用以上信息与我进行商务联系，本表单不会对外公开。">I agree that YIZHI may contact me using the details above for business enquiries only.</span></label>
             </div>
-            <button class="btn" type="submit"><span data-zh="发送">Send enquiry</span><span class="arrow" aria-hidden="true">→</span></button>
-            <p class="form-note" data-zh="或直接写信至 yizhi_technology@126.com">Or write to yizhi_technology@126.com</p>
+            <button class="btn" type="submit"><span data-de="Anfrage absenden" data-zh="发送咨询">Send enquiry</span><span class="arrow" aria-hidden="true">→</span></button>
+            <p class="form-note"><span data-de="Zuständiges Postfach: " data-zh="对应专责邮箱：">Routed desk: </span><a id="formRouteEmail" href="mailto:sales@yizhi.com">sales@yizhi.com</a></p>
           </form>
+        </div>
+      </div>
+
+      <!-- 4-Person Exhibition & Trade Team -->
+      <div class="team-strip reveal">
+        <div class="team-head">
+          <h3 data-de="Ihr Messeteam vor Ort · Booth C9 (SA407)" data-zh="现场参展与谈判核心团队 · SA407 Booth C9">On-site Exhibition &amp; Trade Team · Booth C9 (SA407)</h3>
+          <span data-de="Direkte Durchwahlen für die Verhandlung am 24. November 2026" data-zh="2026 年 11 月 24 日发布会与展位现场直联">Direct contacts for 24 November 2026</span>
+        </div>
+        <div class="team-grid">
+          <article class="member-card is-lead">
+            <div>
+              <span class="member-role" data-de="Business Director · Hauptkontakt" data-zh="商务总监 · 商务主联系人">Business Director · Lead</span>
+              <div class="member-name" data-de="Humbert Zhang (张涵博)" data-zh="张涵博 · Humbert Zhang">Humbert Zhang · 张涵博</div>
+              <p class="member-sub" data-de="Vertriebsstrategie, Handelsverhandlungen &amp; Kanalpartnerschaften (EN / 中文)." data-zh="负责海外渠道合作、商务谈判主谈与贸易条款对接。">Channel strategy, trade negotiations &amp; distributor partnerships.</p>
+            </div>
+            <a class="member-phone" href="tel:+8615875415001">+86 158 7541 5001</a>
+          </article>
+          <article class="member-card">
+            <div>
+              <span class="member-role" data-de="Product Manager" data-zh="产品经理">Product Manager</span>
+              <div class="member-name" data-de="Steve Lin (林博铖)" data-zh="林博铖 · Steve Lin">Steve Lin · 林博铖</div>
+              <p class="member-sub" data-de="Live-Hardware-Demo, technische Spezifikationen, Qualität &amp; Compliance-Aussagen." data-zh="负责产品现场演示、硬件技术参数、品控与合规边界说明。">Live hardware demo, specs, quality assurance &amp; compliance claims.</p>
+            </div>
+            <a class="member-phone" href="tel:+8618050684286">+86 180 5068 4286</a>
+          </article>
+          <article class="member-card">
+            <div>
+              <span class="member-role" data-de="Logistics Manager" data-zh="物流经理">Logistics Manager</span>
+              <div class="member-name" data-de="Antique Chen (陈雨昂)" data-zh="陈雨昂 · Antique Chen">Antique Chen · 陈雨昂</div>
+              <p class="member-sub" data-de="Exportverpackung, Europaletten, Containerbeladung &amp; UN38.3-Versand." data-zh="负责出口箱规包装、欧标托盘、整柜装柜与锂电普货运输。">Export packing, Euro pallets, container loading &amp; UN38.3 shipping.</p>
+            </div>
+            <a class="member-phone" href="tel:+8615375529689">+86 153 7552 9689</a>
+          </article>
+          <article class="member-card">
+            <div>
+              <span class="member-role" data-de="Business Support Manager" data-zh="商务支持经理">Business Support Manager</span>
+              <div class="member-name" data-de="Shawn Hu (胡思想)" data-zh="胡思想 · Shawn Hu">Shawn Hu · 胡思想</div>
+              <p class="member-sub" data-de="Musterabwicklung, Zahlungsabläufe &amp; Terminkoordination." data-zh="负责样品申请排期、结算支持与来访客户接待协调。">Sample scheduling, payment settlement &amp; client support.</p>
+            </div>
+            <a class="member-phone" href="tel:+8614751368973">+86 147 5136 8973</a>
+          </article>
         </div>
       </div>
     </div>
@@ -414,40 +785,42 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <img src="assets/img/logo-reverse.svg" alt="YIZHI Smart Care Technology" data-zh-alt="颐智科技" loading="lazy">
-        <p data-zh="以智颐养——把「记得吃药」变成看得见的照护。">Smart care for graceful aging — turning remembering into evidence of care.</p>
+        <img src="assets/img/logo-reverse.svg" alt="YIZHI Smart Care Technology" data-de-alt="YIZHI Smart Care Technology" data-zh-alt="颐智科技" loading="lazy">
+        <p data-de="Intelligente Pflege für würdevolles Altern – Erinnern wird zu sichtbarer Fürsorge." data-zh="以智颐养——把「记得吃药」变成看得见的照护。">Smart care for graceful aging — turning remembering into visible care.</p>
       </div>
       <div class="footer-col">
-        <h4 data-zh="公司">Company</h4>
-        <a href="#company" data-zh="关于我们">About</a>
-        <a href="#product" data-zh="产品">Product</a>
-        <a href="#launch" data-zh="发布会">Launch</a>
-        <a href="#contact" data-zh="联系我们">Contact</a>
+        <h4 data-de="Navigation" data-zh="网站导航">Navigation</h4>
+        <a href="#company" data-de="Über uns" data-zh="关于我们">About</a>
+        <a href="#product" data-de="Produkt W100" data-zh="产品 W100">Product W100</a>
+        <a href="#export" data-de="Export &amp; EU-Dossier" data-zh="出口与合规">Export &amp; EU</a>
+        <a href="launch.html" data-de="Launch 24. Nov." data-zh="发布会专页">Launch details</a>
       </div>
       <div class="footer-col">
-        <h4 data-zh="资源">Resources</h4>
-        <a href="launch.html" data-zh="发布会详情">Launch details</a>
-        <a href="#specs" data-zh="技术参数">Specifications</a>
-        <a href="#company" data-zh="合规说明">Compliance</a>
+        <h4 data-de="E-Mail-Kanäle (@yizhi.com)" data-zh="业务邮箱（@yizhi.com）">Channels (@yizhi.com)</h4>
+        <a href="mailto:sales@yizhi.com">sales@yizhi.com</a>
+        <a href="mailto:launch@yizhi.com">launch@yizhi.com</a>
+        <a href="mailto:compliance@yizhi.com">compliance@yizhi.com</a>
+        <a href="mailto:rma@yizhi.com">rma@yizhi.com</a>
       </div>
       <div class="footer-col">
-        <h4 data-zh="联系">Contact</h4>
-        <a href="mailto:yizhi_technology@126.com">yizhi_technology@126.com</a>
-        <a href="tel:+8618050684286">+86 180 5068 4286</a>
-        <a href="#contact" data-zh="上海 · 松江">Shanghai · Songjiang</a>
+        <h4 data-de="Vor Ort &amp; Telefon" data-zh="现场与热线">Booth &amp; Phone</h4>
+        <a href="tel:+8615875415001">+86 158 7541 5001</a>
+        <a href="#contact" data-de="SUIBE SA308 / SA407 Booth C9" data-zh="上海 SUIBE SA308 / SA407 Booth C9">SUIBE SA308 / SA407 Booth C9</a>
+        <a href="#company" data-de="Suzhou, China" data-zh="中国 · 苏州">Suzhou, China</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span data-zh="© 2026 颐智科技（苏州）有限公司 · 保留所有权利">© 2026 YIZHI Smart Care Technology (Suzhou) Co., Ltd.</span>
+      <span data-de="© 2026 YIZHI Smart Care Technology (Suzhou) Co., Ltd." data-zh="© 2026 颐智科技（苏州）有限公司 · 保留所有权利">© 2026 YIZHI Smart Care Technology (Suzhou) Co., Ltd.</span>
       <span class="legal">
-        <span data-zh="用药依从性辅助产品，不做医疗诊断或疗效宣称">Medication-adherence support. Not a diagnostic device.</span>
-        <span data-zh="合规推进中：CE / RoHS / FDA">Compliance in progress: CE / RoHS / FDA</span>
+        <span data-de="Kein Medizinprodukt (EU-MDR Art. 2(1)) · Öffnungsprotokoll ≠ Einnahmenachweis" data-zh="非医疗器械（EU MDR Art. 2(1)）· 开仓记录 ≠ 证明实际吞服">Non-medical care aid (EU MDR Art. 2(1)) · Opening log ≠ proof of ingestion</span>
+        <span data-de="Preise werden zum Launch am 24.11.2026 bekannt gegeben" data-zh="官方定价于 2026.11.24 发布会揭晓">Pricing unveiled at 24 Nov 2026 launch</span>
       </span>
     </div>
   </div>
 </footer>
 
-<button class="to-top" id="toTop" type="button" aria-label="Back to top" data-zh-aria-label="回到顶部">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" data-de-aria-label="Nach oben" data-zh-aria-label="回到顶部">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
