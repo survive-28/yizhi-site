@@ -15,3 +15,12 @@
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/slides
+  Cache-Control: no-store, must-revalidate
+
+/slides/*
+  Cache-Control: no-store, must-revalidate
+
+/api/*
+  Cache-Control: no-store, must-revalidate

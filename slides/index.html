@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#02110c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>YIZHI W100 Global Launch · Every Dose, Seen.</title>
+<meta name="description" content="YIZHI Healthcare Nurse W100 — Global Launch Keynote (24 Nov 2026, SUIBE Shanghai).">
+<script>
+(function(){
+  var u=Date.parse("2026-11-24T14:40:00+08:00");
+  var isLocal=location.protocol==="file:"||location.hostname==="localhost"||location.hostname==="127.0.0.1";
+  if(isLocal)return;
+  if(Date.now()<u){location.replace("/slides-locked.html");return;}
+  fetch("/api/slides-status",{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(d&&d.unlocked===false)location.replace("/slides-locked.html");
+  }).catch(function(){});
+})();
+</script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div id="webgl" aria-hidden="true"><canvas id="gl"></canvas></div>
+<div id="product-stage-bg" aria-hidden="true"><canvas id="gl-product"></canvas></div>
+
+<!-- Dynamic 6-Segment Optical Aperture / Light-Iris Layer (光阑动效) -->
+<div class="optical-iris" id="optical-iris" aria-hidden="true">
+  <svg class="iris-svg" viewBox="0 0 240 240">
+    <g class="iris-ring-outer" transform="translate(120,120)">
+      <circle r="108" fill="none" stroke="rgba(168,215,197,0.14)" stroke-width="0.75" stroke-dasharray="4 6"/>
+      <circle r="92" fill="none" stroke="rgba(233,214,168,0.16)" stroke-width="0.6"/>
+      <path d="M-116,0 L-100,0 M100,0 L116,0 M0,-116 L0,-100 M0,100 L0,116" stroke="rgba(233,214,168,0.28)" stroke-width="0.9"/>
+    </g>
+    <g class="iris-segments" id="iris-segments" transform="translate(120,120)">
+      <rect class="iris-seg" data-seg="0" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(0)"/>
+      <rect class="iris-seg is-lit" data-seg="1" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(60)"/>
+      <rect class="iris-seg" data-seg="2" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(120)"/>
+      <rect class="iris-seg" data-seg="3" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(180)"/>
+      <rect class="iris-seg" data-seg="4" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(240)"/>
+      <rect class="iris-seg" data-seg="5" x="-11" y="-82" width="22" height="10" rx="5" transform="rotate(300)"/>
+    </g>
+  </svg>
+</div>
+
+<div id="light-wipe" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
+<div class="seam-blade" id="seam-blade" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand-lockup" href="#slide-0" data-jump="0" aria-label="YIZHI Launch Home">
+    <img src="assets/brand-logo-green.png" alt="" width="28" height="28">
+    <span class="brand-word">YIZHI</span>
+    <span class="brand-sub">SMART CARE TECHNOLOGY</span>
+  </a>
+  <div class="top-right">
+    <span class="top-badge">24 NOV 2026 · SA308 LAUNCH → SA407 BOOTH C9</span>
+    <a class="top-contact" href="mailto:sales@yizhi.com">Trade Desk <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<div class="deck-viewport" id="deck-viewport">
+  <main class="deck-track" id="deck-track">
+
+    <!-- ============================================================
+         01 / 13 · OPENING COVER
+         ============================================================ -->
+    <section class="slide slide--hero is-active-slide" data-slide="0" data-chapter="0">
+      <div class="slide-inner hero-inner">
+        <div class="cover" data-parallax="0.18">
+          <p class="eyebrow">GLOBAL EXPORT LAUNCH · SUIBE SHANGHAI</p>
+          <h1>Every Dose,<br><em>Seen.</em></h1>
+          <p class="cover-sub">HEALTHCARE NURSE W100 · BUILT TO CLEAR CUSTOMS</p>
+          <p class="cover-en">LET THE MACHINE REMEMBER. LET THE FAMILY CARE.</p>
+          <div class="cover-meta">
+            <span>6 Compartments (2 × 3)</span>
+            <span>Zero Elder Screen</span>
+            <span>12-Doc EU Dossier</span>
+            <span>42–45.3% Channel Margin</span>
+          </div>
+        </div>
+        <p class="scroll-cue"><span></span>Press → or swipe to pass light through the prism</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 / 13 · COMPANY MISSION & CARE REALITY
+         ============================================================ -->
+    <section class="slide slide--med" data-slide="1" data-chapter="1">
+      <div class="slide-inner keynote-center">
+        <p class="eyebrow">01 / COMPANY MISSION · HUMANISTIC PRECISION</p>
+        <h2 class="xl-title" data-parallax="0.12">Turn remembering into<br><em>care you can see.</em></h2>
+        <p class="xl-sub">Chronic care is shifting home — yet families and mobile nurses cannot stand bedside at every dose.</p>
+        <div class="med-metrics-3" data-parallax="-0.08">
+          <div class="med-node">
+            <span class="node-code">DEMOGRAPHIC · DESTATIS 2025</span>
+            <b>25.85<small>M</small></b>
+            <span>Germany aged 60+ (30.9%)</span>
+            <i>5.90M aged 80+ requiring structured daily support</i>
+          </div>
+          <div class="med-node">
+            <span class="node-code">HOME CARE · 86% SHARE</span>
+            <b>4.90<small>M</small></b>
+            <span>Cared for at home</span>
+            <i>Out of 5.7M care-dependent elders nationwide</i>
+          </div>
+          <div class="med-node">
+            <span class="node-code">ADHERENCE GAP · WHO</span>
+            <b>~50<small>%</small></b>
+            <span>Long-term adherence</span>
+            <i>Missed &amp; double doses remain largely invisible</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03 / 13 · FOUR CARE SCENARIOS & SOM
+         ============================================================ -->
+    <section class="slide slide--med" data-slide="2" data-chapter="1">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">01 / REAL CARE ROUTINES</p>
+            <h2>Four daily scenarios.<br><em>One €45M+ beachhead.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">52,000u · $1.61M FOB (3-Yr SOM)</strong>
+            <span>EU TAM 29.1M Elders · Germany SAM ~2.27M</span>
+          </div>
+        </div>
+
+        <div class="med-grid-4" data-parallax="-0.06">
+          <article class="med-card">
+            <span class="med-tag">S1 · HOME ALONE</span>
+            <h3>Solo Chronic Elder</h3>
+            <p>Scheduled cues &amp; authorised live family alerts when relatives live out of town.</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">S2 · COGNITIVE</span>
+            <h3>Early Cognitive Decline</h3>
+            <p>Six lid sensors gently catch repeat or wrong-slot openings without screen anxiety.</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">S3 · POST-DISCHARGE</span>
+            <h3>First 30 Days Home</h3>
+            <p>Timestamped compartment logs replace hazy memory at clinical follow-up.</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">S4 · HOME CARE TEAMS</span>
+            <h3>Care Institutions</h3>
+            <p>W100 Pro portal &amp; €12.9/mo (+€40 dep.) rental-ready pilot configuration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 / 13 · COMPANY PHILOSOPHY & IP PROVENANCE
+         ============================================================ -->
+    <section class="slide slide--med" data-slide="3" data-chapter="1">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">01 / PHILOSOPHY &amp; R&amp;D PROVENANCE</p>
+            <h2>Restraint over claims.<br><em>Engineered for trust.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">YZ-W100-AUTH-2026-01 · ISO 9001</strong>
+            <span>YIZHI Smart Care Technology Co., Ltd. · Suzhou</span>
+          </div>
+        </div>
+
+        <div class="med-grid-2" data-parallax="-0.05">
+          <article class="med-panel">
+            <span class="med-tag">CORE VALUES &amp; DESIGN ETHOS</span>
+            <h3>The Six-Moment Ring</h3>
+            <ul class="med-list">
+              <li><b>Verifiable Honesty:</b> Logs observable lid openings only — never overclaims ingestion.</li>
+              <li><b>Boundary Discipline:</b> Explicitly positioned as a non-medical aid (EU MDR Art. 2(1) excluded).</li>
+              <li><b>3-Year Vision:</b> Earn lasting pharmacy reorders &amp; care adoption, not vanity sales.</li>
+            </ul>
+          </article>
+          <article class="med-panel">
+            <span class="med-tag">MANUFACTURING &amp; CO-PATENTED IP</span>
+            <h3>Suzhou Xiangshi × YIZHI</h3>
+            <ul class="med-list">
+              <li><b>CN Invention Patent ZL201611021195.3</b> (co-owned with Tertiary Hospital, Dr. Wen Hao).</li>
+              <li><b>CN Utility Model ZL201921235778.5</b> + 3 YIZHI commercial trademarks (Classes 10, 21, 35).</li>
+              <li><b>Frozen-BOM Quality:</b> 100% 6-sensor OQC inspection &amp; 90-day FOB price lock.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05 / 13 · PRODUCT PHILOSOPHY & TELEMETRY SPECS
+         ============================================================ -->
+    <section class="slide slide--med-deep" data-slide="4" data-chapter="2">
+      <div class="slide-inner keynote-center">
+        <p class="eyebrow">02 / PRODUCT ARCHITECTURE · HEALTHCARE NURSE W100</p>
+        <h2 class="xl-title" data-parallax="0.12">No screen. No menu.<br><em>Just open the lit slot.</em></h2>
+        <p class="xl-sub">Caregivers set up to 7 daily alerts/slot &amp; 10s family voice via our EU-hosted App — zero WeChat, TLS 1.3.</p>
+        <div class="med-specs-4" data-parallax="-0.06">
+          <div class="med-node">
+            <span class="node-code">CHAMBER MATRIX</span>
+            <b>6 Slots</b>
+            <span>2 × 3 Dual-Layer</span>
+            <i>Detachable LFGB silicone tray</i>
+          </div>
+          <div class="med-node">
+            <span class="node-code">FORM FACTOR</span>
+            <b>130×85×40</b>
+            <span>mm · 210 g</span>
+            <i>~25 tabs / ~20 caps / ~15 softgels</i>
+          </div>
+          <div class="med-node">
+            <span class="node-code">ENDURANCE</span>
+            <b>~60 Days</b>
+            <span>1,200 mAh USB-C</span>
+            <i>4.44 Wh · 2.4G Wi-Fi (3 SSIDs)</i>
+          </div>
+          <div class="med-node">
+            <span class="node-code">OFFLINE MEMORY</span>
+            <b>60-Day</b>
+            <span>8 MB Flash Buffer</span>
+            <i>EU Data Act JSON/CSV export</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 / 13 · PRODUCT THREE-TIER LINEUP
+         ============================================================ -->
+    <section class="slide slide--med-deep" data-slide="5" data-chapter="2">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">02 / THREE-TIER PRODUCT LINEUP</p>
+            <h2>Three hardware editions.<br><em>Zero forced subscription.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">Essential · Voice · Pro</strong>
+            <span>Built for pharmacy retail &amp; care programmes</span>
+          </div>
+        </div>
+
+        <div class="med-grid-3" data-parallax="-0.06">
+          <article class="med-sku">
+            <span class="med-tag">W100 ESSENTIAL · W100-B · ~30% MIX</span>
+            <h3>Retail Entry</h3>
+            <p class="med-price">€59.9 <small>DE RRP</small></p>
+            <p>6 sealed compartments · 6 lid sensors · Buzzer + 36 LEDs · ~60-day standby.</p>
+          </article>
+          <article class="med-sku med-sku--hero">
+            <span class="med-tag">W100 VOICE · W100-S ★ HERO · ~50% MIX</span>
+            <h3>Family Voice</h3>
+            <p class="med-price">€69.9 <small>DE RRP</small></p>
+            <p>Hi-Fi speaker + 10s custom family voice · LED + silent vibration · Wrong-lid voice correction.</p>
+          </article>
+          <article class="med-sku">
+            <span class="med-tag">W100 PRO · W100-P · ~20% MIX</span>
+            <h3>Institutional</h3>
+            <p class="med-price">€89.9 <small>or €12.9/mo</small></p>
+            <p>Voice + daily 60s health-education audio · Institutional portal &amp; €40 dep. rental pilot.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07 / 13 · LIVE HARDWARE & ANIMATED DEMO (3D W100 + IRIS SYNC)
+         ============================================================ -->
+    <section class="slide slide--demo" data-slide="6" data-chapter="3">
+      <div class="slide-inner demo-layout">
+        <div class="product-copy" data-parallax="0.08">
+          <p class="eyebrow">03 / LIVE HARDWARE &amp; ANIMATED DEMO</p>
+          <h2>Open one lid.<br><em>See care live.</em></h2>
+          <p class="product-lede">Synced 3D mechanism + physical W100 in hand: triple alert, 6-sensor guard, and symmetrical 2×3 dual-layer lids.</p>
+
+          <div class="demo-deck" role="group" aria-label="Interactive 3D W100 Stage Demo">
+            <button type="button" class="demo-btn is-active" data-demo="scroll"><i>0</i><span>Auto Tour</span></button>
+            <button type="button" class="demo-btn" data-demo="alert"><i>1</i><span>Dose Alert · Slot 02</span></button>
+            <button type="button" class="demo-btn" data-demo="wrong"><i>2</i><span>Wrong-Slot Guard</span></button>
+            <button type="button" class="demo-btn" data-demo="dual"><i>3</i><span>Dual-Layer 6 Slots</span></button>
+            <button type="button" class="demo-btn" data-demo="io"><i>4</i><span>USB-C &amp; Switch</span></button>
+          </div>
+
+          <div class="demo-app-card" id="demo-app-card">
+            <div class="demo-app-head">
+              <span>GUARDIAN APP · TELEMETRY SYNC</span>
+              <b id="demo-badge" class="badge-ok">STANDBY · WI-FI ONLINE</b>
+            </div>
+            <p class="demo-app-status" id="demo-status">Select cues 1–4 (or press keys 1–4) to drive live 3D hardware &amp; aperture telemetry.</p>
+            <ul class="demo-timeline" id="demo-timeline">
+              <li class="is-ok"><time>07:02</time><span>Slot 01 (Morning) opened on schedule</span><em>OPENED</em></li>
+              <li class="is-sync"><time>12:00</time><span>60-day buffer synced · Battery 94%</span><em>SYNCED</em></li>
+            </ul>
+          </div>
+
+          <p class="product-note">Logs observable lid openings only; does not verify ingestion.</p>
+        </div>
+
+        <div class="product-callouts" aria-hidden="true">
+          <div class="product-halo"></div>
+          <div class="product-tag product-tag--a"><span>01</span><b>6 Sealed Slots</b><i>Top 3 + Bottom 3 Lids</i></div>
+          <div class="product-tag product-tag--b"><span>02</span><b>6 Lid Sensors</b><i>Wrong · Missed · Repeat</i></div>
+          <div class="product-tag product-tag--c"><span>03</span><b>Hardware I/O</b><i>USB-C · Green Switch · 5-Hole Mic/Spk</i></div>
+          <div class="product-tag product-tag--d"><span>04</span><b>Detachable Tray</b><i>LFGB Food-Grade Silicone</i></div>
+          <img class="product-fallback" src="assets/product-fallback.png" alt="YIZHI W100 Smart Pill Organiser">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         08 / 13 · PRODUCT FEATURES (OPTICAL APERTURE & 5 PRISM RAYS)
+         ============================================================ -->
+    <section class="slide slide--prism" data-slide="7" data-chapter="4">
+      <div class="slide-inner prism-layout">
+        <div class="slide-head prism-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">04 / PRODUCT FEATURES · OPTICAL SPECTRUM</p>
+            <h2>Five Pillars of <em>Visible Care</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">Aperture-Guided Telemetry</strong>
+            <span>Hover or tap any beam (or press 1–5) to focus the iris</span>
+          </div>
+        </div>
+
+        <div class="features-row" id="features-row" aria-label="Five Product Pillars">
+          <article class="ray-card is-focused" style="--ray:#f4ebdd" data-ray="0">
+            <span class="f-index">01 · APERTURE</span>
+            <h3>6-Slot Dual Layer</h3>
+            <p>3 top + 3 bottom sealed LFGB silicone compartments.</p>
+            <span class="f-key">2 × 3 SEALED SLOTS</span>
+          </article>
+          <article class="ray-card" style="--ray:#e9d6a8" data-ray="1">
+            <span class="f-index">02 · SIGNAL</span>
+            <h3>Triple Alert</h3>
+            <p>36 LEDs, 10s voice &amp; vibration every 5 min.</p>
+            <span class="f-key">LIGHT · VOICE · VIBRATE</span>
+          </article>
+          <article class="ray-card" style="--ray:#d8b35c" data-ray="2">
+            <span class="f-index">03 · VERIFY</span>
+            <h3>6-Sensor Guard</h3>
+            <p>Flags missed, repeat &amp; wrong-lid opens live.</p>
+            <span class="f-key">ANTI-MISS · DOUBLE</span>
+          </article>
+          <article class="ray-card" style="--ray:#a8d7c5" data-ray="3">
+            <span class="f-index">04 · RECORD</span>
+            <h3>Record, Not Guess</h3>
+            <p>60d offline log + Data Act JSON/CSV export.</p>
+            <span class="f-key">ZERO WECHAT · GDPR</span>
+          </article>
+          <article class="ray-card" style="--ray:#74bfa2" data-ray="4">
+            <span class="f-index">05 · RESILIENCE</span>
+            <h3>60d &amp; 5-Yr OTA</h3>
+            <p>2.4G Wi-Fi, USB-C &amp; signed CRA to 2031.</p>
+            <span class="f-key">PI 967 NON-DG</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         09 / 13 · EU CUSTOMS & REGULATORY CLEARANCE
+         ============================================================ -->
+    <section class="slide slide--med-deep" data-slide="8" data-chapter="4">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">04 / EXPORT READINESS · YZ-W100-IDX-2026-01</p>
+            <h2>8 Applicable EU Laws.<br><em>2 Explicit Exclusions.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">12-Doc EU Dossier Issued</strong>
+            <span>HS 8543.70.90 (~3.3% Duty) · 4.44 Wh Non-DG</span>
+          </div>
+        </div>
+
+        <div class="med-grid-4" data-parallax="-0.06">
+          <article class="med-card">
+            <span class="med-tag">EU MDR ART. 2(1) EXCLUDED</span>
+            <h3>Non-Medical Aid</h3>
+            <p>Clause 5 DoC exclusion eliminates 12–18 month UDI clinical delays.</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">CE MODULE A + ECAB VoC</span>
+            <h3>RED · EMC · Safety</h3>
+            <p>EN 18031 cyber, EN 62368-1, RoHS &amp; LFGB tested at SIEPT (CNAS L4523).</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">EPR &amp; PACKAGING READY</span>
+            <h3>EU Registrations</h3>
+            <p>WEEE DE 94823176 · Batt-Reg DE 61842901 · LUCID DE4821109376543 · GPSR Art. 16.</p>
+          </article>
+          <article class="med-card">
+            <span class="med-tag">CRA 2024/2847 &amp; UN38.3</span>
+            <h3>5-Yr Cyber &amp; Air Safe</h3>
+            <p>CycloneDX v1.5 SBOM, 24h PSIRT, 5y OTA to 2031, PI 967 Sec. II non-DG.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10 / 13 · PRICING — OFFICIAL FOB SCHEDULE
+         ============================================================ -->
+    <section class="slide slide--pricing" data-slide="9" data-chapter="5">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">05 / OFFICIAL EXPORT PRICING · YZ-QT-2026-1124</p>
+            <h2>FOB Shanghai <em>Schedule.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">INCOTERMS® 2020 · VALID 30D</strong>
+            <span>1 EUR ≈ 1.08 USD · DE RRP incl. 19% VAT</span>
+          </div>
+        </div>
+
+        <div class="med-grid-3 pricing-grid--xl" data-parallax="-0.06">
+          <article class="med-sku">
+            <div class="price-card-top"><span class="med-tag">W100 ESSENTIAL · W100-B</span><b>~30% MIX</b></div>
+            <div class="price-main--xl"><span>$</span>27.0<small> / FOB</small></div>
+            <dl class="price-rows">
+              <div><dt>Sample (1–4u)</dt><dd>$65.0</dd></div>
+              <div><dt>CIF Hamburg*</dt><dd>$27.5</dd></div>
+              <div><dt>German RRP (19% VAT)</dt><dd>€59.9 (~43.8%)</dd></div>
+            </dl>
+          </article>
+
+          <article class="med-sku med-sku--hero">
+            <div class="price-card-top"><span class="med-tag">W100 VOICE · W100-S</span><b>HERO · 50% MIX</b></div>
+            <div class="price-main--xl"><span>$</span>31.0<small> / FOB</small></div>
+            <dl class="price-rows">
+              <div><dt>Sample (1–4u)</dt><dd>$75.0</dd></div>
+              <div><dt>CIF Hamburg*</dt><dd>$31.5</dd></div>
+              <div><dt>German RRP (19% VAT)</dt><dd>€69.9 (42–45.3%)</dd></div>
+            </dl>
+          </article>
+
+          <article class="med-sku">
+            <div class="price-card-top"><span class="med-tag">W100 PRO · W100-P</span><b>CARE · 20% MIX</b></div>
+            <div class="price-main--xl"><span>$</span>37.0<small> / FOB</small></div>
+            <dl class="price-rows">
+              <div><dt>Sample (1–4u)</dt><dd>$90.0</dd></div>
+              <div><dt>CIF Hamburg*</dt><dd>$37.5</dd></div>
+              <div><dt>DE RRP / Pilot Lease</dt><dd>€89.9 or €12.9/mo (+€40)</dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11 / 13 · PRICING — HERO UNIT MARGIN WATERFALL
+         ============================================================ -->
+    <section class="slide slide--pricing" data-slide="10" data-chapter="5">
+      <div class="slide-inner keynote-center">
+        <p class="eyebrow">05 / CHANNEL ECONOMICS · W100 VOICE (€69.9 RRP)</p>
+        <h2 class="xl-title" data-parallax="0.12"><em>€26.59</em> channel profit.<br>45.3% gross margin.</h2>
+        <p class="xl-sub">Net Ex-VAT Shelf Value €58.74 vs. Est. Landed EU Cost ~€32.15 — zero forced subscriptions.</p>
+
+        <div class="waterfall-box waterfall-box--xl" data-parallax="-0.05">
+          <div class="waterfall-bar waterfall-bar--xl">
+            <div class="wf-seg wf-fob" style="width:48.8%"><span>FOB $31 (≈€28.70)</span></div>
+            <div class="wf-seg wf-frt" style="width:5.9%"><span>~€3.45</span></div>
+            <div class="wf-seg wf-imp" style="width:16.5%"><span>Importer ~15–18%</span></div>
+            <div class="wf-seg wf-ret" style="width:28.8%"><span>Pharmacy Retail ~27–30%</span></div>
+          </div>
+        </div>
+
+        <div class="med-metrics-3 margin-kpis">
+          <div class="med-node"><span class="node-code">20' GP POOL (20,000U)</span><b>&gt; €530k</b><span>Two-tier channel gross profit</span></div>
+          <div class="med-node"><span class="node-code">YEAR 1 TARGET</span><b>8,000 u</b><span>$248k FOB export volume</span></div>
+          <div class="med-node"><span class="node-code">SOFTWARE LOCK-IN</span><b>0 € / mo</b><span>100% hardware margin</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12 / 13 · PRICING — FIVE TIERS & SLA
+         ============================================================ -->
+    <section class="slide slide--pricing" data-slide="11" data-chapter="5">
+      <div class="slide-inner">
+        <div class="slide-head" data-parallax="0.1">
+          <div>
+            <p class="eyebrow">05 / ORDER TIERS, LOGISTICS &amp; SLA · YZ-SLA-2026-01</p>
+            <h2>Zero-risk entry.<br><em>Factory-direct SLA.</em></h2>
+          </div>
+          <div class="head-kicker">
+            <strong class="kicker-gold">90-Day Pilot Price Lock</strong>
+            <span>Samples 100% credited on PO ≥500u in 90d</span>
+          </div>
+        </div>
+
+        <div class="tiers-compact tiers-compact--xl" data-parallax="-0.04">
+          <div><b>1–4u · Sample</b><span>$65/$75/$90 · 5–7 wd · 100% credit ≥500u</span></div>
+          <div><b>5–99u · Bench</b><span>Trial quote · Express / LCL</span></div>
+          <div><b>100–499u · Pilot</b><span>90d FOB lock · 50% credit on 100u</span></div>
+          <div><b>500–999u · MOQ</b><span>480/520u ctn · 30–45d + POS kit</span></div>
+          <div><b>1,000u+ · OEM</b><span>Custom box/IFU · Free voice ≥2k</span></div>
+        </div>
+
+        <div class="pricing-terms pricing-terms--xl" data-parallax="-0.06">
+          <div><span>PAYMENT</span><p>T/T 30% deposit, 70% vs B/L; repeat L/C at Sight; FX &gt;3% trigger.</p></div>
+          <div><span>LOGISTICS</span><p>40 pcs/ctn · 14.10 kg GW (&lt;15 kg EU limit) · 640 pcs / Euro pallet.</p></div>
+          <div><span>WARRANTY &amp; FOC</span><p>24M unit &amp; sensors · 12M battery · ≤2% FOC spares + trays (≥500u).</p></div>
+          <div><span>RMA SERVICE SLA</span><p>Quarterly EU consolidation · 24h ack · 48h triage · ≤7 wd urgent dispatch.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         13 / 13 · EXHIBITION BOOTH C9 & FINALE
+         ============================================================ -->
+    <section class="slide slide--finale" data-slide="12" data-chapter="6">
+      <div class="slide-inner finale-inner">
+        <p class="eyebrow">06 / EXHIBITION &amp; TRADE NEGOTIATION</p>
+        <div class="finale-logo">
+          <img src="assets/finale-logo.png" alt="YIZHI Smart Care Technology">
+        </div>
+        <h2>Meet us at<br><em>Room SA407 · Booth C9.</em></h2>
+        <p class="finale-invite">Join us at Booth C9 immediately after this launch for hands-on trials, 12-doc dossier inspection, and 90-day pilot lock-in.</p>
+        <div class="booth-cards">
+          <div><span>HANDS-ON HARDWARE</span><b>Test W100 Voice &amp; Dual-Layer Slots</b></div>
+          <div><span>12-DOC EU DOSSIER</span><b>Inspect CE, LFGB, WEEE &amp; CRA Files</b></div>
+          <div><span>PILOT RESERVATION</span><b>Lock Sample Credit &amp; 90-Day FOB</b></div>
+        </div>
+        <div class="team">
+          <p class="team-name">TEAM YIZHI · HUMBERT ZHANG (BUSINESS DIR.) · <a href="mailto:sales@yizhi.com">sales@yizhi.com</a> · +86 158 7541 5001</p>
+          <p class="team-members">Shi Yicheng · Humbert Zhang · Steve Lin · Antique Chen · Shawn Hu · Teng Shiming · Tao Kuiguang · Liu Fengyuan</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Minimal Bottom Agenda Dock + Slide Counter HUD -->
+<nav class="bottom-dock" aria-label="Launch Agenda Chapters">
+  <div class="bottom-chapters">
+    <button data-chap="0" data-jump="0" class="is-active"><i>00</i><b>Launch</b></button>
+    <button data-chap="1" data-jump="1"><i>01</i><b>Company</b></button>
+    <button data-chap="2" data-jump="4"><i>02</i><b>Product</b></button>
+    <button data-chap="3" data-jump="6"><i>03</i><b>Live Demo</b></button>
+    <button data-chap="4" data-jump="7"><i>04</i><b>Features</b></button>
+    <button data-chap="5" data-jump="9"><i>05</i><b>Pricing</b></button>
+    <button data-chap="6" data-jump="12"><i>06</i><b>Booth C9</b></button>
+  </div>
+  <div class="deck-hud">
+    <button type="button" class="hud-btn" id="hud-prev" title="Previous Slide (← / ↑)">←</button>
+    <span class="hud-status" id="hud-status">01 / 13</span>
+    <button type="button" class="hud-btn" id="hud-next" title="Next Slide (→ / ↓ / Space)">→</button>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <button type="button" class="hud-btn hud-btn--text" id="hud-timer-toggle" title="Toggle Presenter Cue Bar (P)">00:00</button>
+    <button type="button" class="hud-btn hud-btn--text" id="hud-fs" title="Fullscreen (F)">⛶</button>
+  </div>
+</nav>
+
+<aside class="presenter-bar" id="presenter-bar" hidden aria-label="Presenter Cue Card">
+  <div class="presenter-head">
+    <span id="p-slide-tag">SLIDE 01 / 13 · 0:00–0:25</span>
+    <div class="presenter-actions">
+      <button type="button" id="p-timer-start">Start / Pause</button>
+      <button type="button" id="p-timer-reset">Reset</button>
+      <button type="button" id="p-close" aria-label="Close Cue Card">✕</button>
+    </div>
+  </div>
+  <p class="presenter-cue" id="p-cue">Open calmly: "Every dose, seen." Hold 2s before advancing.</p>
+  <p class="presenter-keys">Operator Keys: <b>← / → / Space / Wheel</b> Slides · <b>1–4</b> Live 3D Demo · <b>P</b> Cue Bar · <b>F</b> Fullscreen</p>
+</aside>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -45,6 +45,28 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/slides/*"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+
+[[edge_functions]]
+  path = "/slides"
+  function = "slides-gate"
+
+[[edge_functions]]
+  path = "/slides/*"
+  function = "slides-gate"
+
+[[edge_functions]]
+  path = "/api/slides-status"
+  function = "slides-gate"
+
 [[redirects]]
   from = "/launch"
   to = "/launch.html"

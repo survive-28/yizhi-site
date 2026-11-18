@@ -10,14 +10,18 @@
 website/
 ├─ index.html            首页：动态六时环 · 公司介绍 · W100 交互闭环模拟 · 三型号矩阵（不涉价）· 出口/合规/SLA · 发布会 · 四人团队与 @yizhi.com 联系矩阵
 ├─ launch.html           发布会专页：倒计时 · SUIBE SA308 / SA407 Booth C9 · 四人现场团队 · 预约表单 · FAQ
+├─ slides/               发布会横向 13 页 Keynote Slides（Three.js 光阑/棱镜动效 + 3D W100 实机演示 + 官方定价；仅在 2026-11-24 14:40 CST 后开放）
+├─ slides-locked.html    发布前定时锁页（倒计时至北京时间 2026-11-24 14:40:00，自动同步服务器时间解锁）
+├─ netlify/edge-functions/slides-gate.js  Netlify 边缘服务端时间闸门 & `/api/slides-status` 状态接口
 ├─ thank-you.html        Netlify 表单提交成功页（支持 EN / DE / 中文）
 ├─ 404.html              自定义 404（支持 EN / DE / 中文）
-├─ netlify.toml          Netlify 构建/缓存/安全头/表单配置
+├─ netlify.toml          Netlify 构建/缓存/Edge Function 路由配置
 ├─ robots.txt / sitemap.xml
 └─ assets/
    ├─ css/site.css       设计系统、动效、W100 交互模拟器与三语切换样式
    ├─ css/pages.css      发布会专页组件样式
    ├─ js/site.js         EN/DE/中文三语引擎、六时环交互、W100 闭环模拟器、多视角图库、表单邮箱分流、倒计时、日历下载
+   ├─ js/slides-connector.js  官网首页 / 发布会页与 `/slides/`、`/api/slides-status` 的前端连接器（`window.YIZHI_SLIDES`）
    └─ img/               品牌 SVG Logo、去中文清洗版 W100 多视角产品图与 EN/DE App 界面图
 ```
 
