@@ -4306,11 +4306,13 @@ function Zm(r) {
     e.clearRect(0, 0, t, i);
     e.textAlign = "center";
     e.textBaseline = "middle";
-    e.fillStyle = "#79a72b";
-    e.font = "600 110px Georgia,serif";
-    e.fillText("0" + String(r), t / 2, 106);
-    e.font = "600 26px Inter,Arial,sans-serif";
-    e.fillStyle = "rgba(121,167,43,.85)";
+    e.fillStyle = "#84cc00";
+    e.font = '700 118px Inter,"Helvetica Neue",Arial,sans-serif';
+    e.fillText(String(r), t / 2 - 14, 108);
+    e.font = "700 44px Inter,Arial,sans-serif";
+    e.fillText("#", t / 2 + 44, 72);
+    e.font = "600 22px Inter,Arial,sans-serif";
+    e.fillStyle = "rgba(132,204,0,.86)";
     e.fillText("SLOT", t / 2, 186);
   });
 }
@@ -4345,10 +4347,10 @@ var xo = class {
     this.topLids = [];
     this.botLids = [];
     this.leds = [];
-    this.topPills = [];
-    this.botPills = [];
-    this.topTablets = [];
-    this.botTablets = [];
+    this.topPills = [[], [], []];
+    this.botPills = [[], [], []];
+    this.topTablets = [[], [], []];
+    this.botTablets = [[], [], []];
     this.innerLight = null;
     this.curRotY = -0.55;
     this.curRotX = 0.08;
@@ -4395,18 +4397,18 @@ var xo = class {
     this.innerLight.position.set(0, 0.75, 0.25);
     this.model.add(this.innerLight);
   }
-  populateLayer(yBase, ySign, pillArr, tabArr, limeMat, deepGreenMat) {
-    let trayBase = new Be(Zi(4.02, 0.055, 2.56, 0.04, 3), limeMat);
-    trayBase.position.y = yBase;
+  populateLayer(yBase, ySign, pillArr, tabArr, limeMat, limeInnerMat) {
+    let trayBase = new Be(Zi(4.08, 0.055, 2.08, 0.04, 3), limeMat);
+    trayBase.position.set(0, yBase, -0.18);
     this.model.add(trayBase);
     for (let g = 0; g < 3; g++) {
-      let y = -1.38 + g * 1.38;
-      let well = new Be(Zi(1.20, 0.11, 2.34, 0.05, 3), deepGreenMat);
-      well.position.set(y, yBase + ySign * 0.015, 0.02);
-      this.model.add(well);
-      let rim = new Be(Zi(1.31, 0.055, 2.45, 0.045, 3), limeMat);
-      rim.position.set(y, yBase - ySign * 0.01, 0.02);
+      let cx = -1.34 + g * 1.34;
+      let rim = new Be(Zi(1.24, 0.085, 1.92, 0.05, 3), limeMat);
+      rim.position.set(cx, yBase + ySign * 0.025, -0.18);
       this.model.add(rim);
+      let well = new Be(Zi(1.08, 0.055, 1.76, 0.045, 3), limeInnerMat);
+      well.position.set(cx, yBase + ySign * 0.042, -0.18);
+      this.model.add(well);
       for (let A = 0; A < 4; A++) {
         let I = new bt();
         let N = new Qt({ color: A % 2 ? 14204305 : 15986658, roughness: 0.45, metalness: 0, clearcoat: 0.4 });
@@ -4415,166 +4417,281 @@ var xo = class {
         B.rotation.z = Math.PI / 2;
         I.add(B);
         I.position.set(
-          y - 0.30 + (A % 2) * 0.42 + (Math.random() - 0.5) * 0.06,
-          yBase + ySign * 0.062,
-          -0.55 + Math.floor(A / 2) * 0.50 + (Math.random() - 0.5) * 0.06
+          cx - 0.24 + (A % 2) * 0.36 + (Math.random() - 0.5) * 0.05,
+          yBase + ySign * 0.068,
+          -0.55 + Math.floor(A / 2) * 0.46 + (Math.random() - 0.5) * 0.05
         );
         I.rotation.y = Math.random() * Math.PI;
         this.model.add(I);
-        pillArr.push(I);
+        pillArr[g].push(I);
       }
       for (let A = 0; A < 3; A++) {
-        let I = new Be(new Xi(0.095, 0.095, 0.045, 20), new Qt({ color: 16513778, roughness: 0.6, clearcoat: 0.15 }));
-        I.position.set(y + 0.28 + Math.cos(A * 2.1) * 0.11, yBase + ySign * 0.068, 0.44 + Math.sin(A * 2.1) * 0.14);
-        I.rotation.set(Math.random() * 0.25, 0, Math.random() * 0.3);
+        let I = new Be(new Xi(0.092, 0.092, 0.040, 20), new Qt({ color: 16513778, roughness: 0.55, clearcoat: 0.15 }));
+        I.position.set(cx + 0.24 + Math.cos(A * 2.1) * 0.10, yBase + ySign * 0.068, 0.22 + Math.sin(A * 2.1) * 0.12);
+        I.rotation.set(Math.random() * 0.20, 0, Math.random() * 0.24);
         this.model.add(I);
-        tabArr.push(I);
+        tabArr[g].push(I);
       }
     }
   }
   buildModel() {
-    let bodyMat = new Qt({ color: 15854559, roughness: 0.32, metalness: 0, clearcoat: 0.5, clearcoatRoughness: 0.38 });
-    let lidMat = new Qt({ color: 16249318, roughness: 0.30, metalness: 0, clearcoat: 0.6, clearcoatRoughness: 0.34 });
-    let bezelMat = new Qt({ color: 461321, roughness: 0.12, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.14 });
-    let limeMat = new Qt({ color: 10275642, roughness: 0.54, metalness: 0, clearcoat: 0.18, clearcoatRoughness: 0.68 });
-    let deepGreenMat = new Qt({ color: 7118113, roughness: 0.72, metalness: 0 });
-    let metalMat = new dn({ color: 8552053, roughness: 0.38, metalness: 0.55 });
-    let darkSlotMat = new dn({ color: 1382165, roughness: 0.55 });
+    let bodyMat = new Qt({ color: 16119542, roughness: 0.28, metalness: 0, clearcoat: 0.55, clearcoatRoughness: 0.32 });
+    let lidMat = new Qt({ color: 16448763, roughness: 0.26, metalness: 0, clearcoat: 0.65, clearcoatRoughness: 0.26 });
+    let bezelMat = new Qt({ color: 592650, roughness: 0.08, metalness: 0.08, clearcoat: 1, clearcoatRoughness: 0.06 });
+    let limeMat = new Qt({ color: 10016768, roughness: 0.42, metalness: 0, clearcoat: 0.25, clearcoatRoughness: 0.48 });
+    let limeInnerMat = new Qt({ color: 8108032, roughness: 0.48, metalness: 0, clearcoat: 0.16, clearcoatRoughness: 0.56 });
+    let metalMat = new dn({ color: 9803157, roughness: 0.35, metalness: 0.62 });
+    let darkSlotMat = new dn({ color: 1514521, roughness: 0.55 });
 
-    let chassis = new Be(Zi(4.33, 0.88, 2.83, 0.12, 5), bodyMat);
+    // Central white ABS housing (130 x 40 x 85 mm proportion)
+    let chassis = new Be(Zi(4.33, 0.86, 2.83, 0.16, 5), bodyMat);
     this.model.add(chassis);
-    let collarTop = new Be(Zi(4.26, 0.14, 2.78, 0.06, 4), bodyMat);
-    collarTop.position.y = 0.42;
-    this.model.add(collarTop);
-    let collarBot = new Be(Zi(4.26, 0.14, 2.78, 0.06, 4), bodyMat);
-    collarBot.position.y = -0.42;
-    this.model.add(collarBot);
 
-    this.populateLayer(0.495, 1, this.topPills, this.topTablets, limeMat, deepGreenMat);
-    this.populateLayer(-0.495, -1, this.botPills, this.botTablets, limeMat, deepGreenMat);
-
-    let strip = new Be(Zi(4.06, 0.32, 0.06, 0.025, 3), bezelMat);
-    strip.position.set(0, 0.20, 1.43);
+    // Top-front signature glossy black optical bezel strip (horizontal on top face!)
+    let strip = new Be(Zi(4.08, 0.085, 0.46, 0.04, 4), bezelMat);
+    strip.position.set(0, 0.435, 1.13);
     this.model.add(strip);
 
-    let brandDecal = new Be(
-      new zt(1.36, 0.36),
-      new Tt({ map: Ym("HEALTHCARE", "NURSE W100", "#f7f2e6"), transparent: !0, depthWrite: !1 })
+    // Subtle circular optical/status sensor emblem on right-center of black strip
+    let optDot = new Be(
+      new Qn(0.065, 24),
+      new Tt({
+        map: fr(128, 128, (ctx, w, h) => {
+          ctx.clearRect(0, 0, w, h);
+          ctx.strokeStyle = "rgba(255,255,255,0.42)";
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.arc(w / 2, h / 2, 46, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.fillStyle = "rgba(255,255,255,0.22)";
+          ctx.font = "600 22px Inter,Arial,sans-serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("QC", w / 2, h / 2);
+        }),
+        transparent: !0, depthWrite: !1
+      })
     );
-    brandDecal.position.set(-1.28, 0.20, 1.466);
-    this.model.add(brandDecal);
+    optDot.rotation.x = -Math.PI / 2;
+    optDot.position.set(0.46, 0.481, 1.13);
+    this.model.add(optDot);
 
-    [-0.32, -0.04, 0.56, 0.84, 1.38, 1.66].forEach((gx, idx) => {
-      let led = new Be(new Qn(0.026, 18), new Tt({ color: 9171134, transparent: !0, opacity: 0.9 }));
-      led.position.set(gx, 0.20, 1.466);
+    // Bottom-front white stepped chin (matches physical unit without bottom black strip)
+    let botChin = new Be(Zi(4.08, 0.065, 0.46, 0.035, 4), bodyMat);
+    botChin.position.set(0, -0.435, 1.13);
+    this.model.add(botChin);
+
+    // Dual-layer vibrant lime-green silicone trays (top & bottom)
+    this.populateLayer(0.435, 1, this.topPills, this.topTablets, limeMat, limeInnerMat);
+    this.populateLayer(-0.435, -1, this.botPills, this.botTablets, limeMat, limeInnerMat);
+
+    // Two white tray-retainer / alignment tabs between slots 1-2 and 2-3 along front rim
+    [-0.67, 0.67].forEach(tx => {
+      let ret = new Be(Zi(0.11, 0.075, 0.055, 0.015, 2), bodyMat);
+      ret.position.set(tx, 0.47, 0.87);
+      this.model.add(ret);
+    });
+
+    // 6 glowing LEDs embedded inside the top-front black optical bezel (2 per slot)
+    [-1.46, -1.22, -0.12, 0.12, 1.22, 1.46].forEach((gx, idx) => {
+      let led = new Be(new Qn(0.032, 18), new Tt({ color: 9171134, transparent: !0, opacity: 0.9 }));
+      led.rotation.x = -Math.PI / 2;
+      led.position.set(gx, 0.482, 1.13);
       led.userData.phase = idx * 0.4;
       this.model.add(led);
       this.leds.push(led);
     });
 
-    [-0.95, -0.84, -0.73, -0.62, -0.51, -0.18].forEach(px => {
-      let hole = new Be(new Qn(0.02, 12), darkSlotMat);
-      hole.position.set(px, -0.16, 1.422);
+    // Front vertical white ABS wall: 5 speaker pinholes + 1 pinhole + green pill brand badge
+    [-1.08, -0.97, -0.86, -0.75, -0.64, -0.22].forEach(px => {
+      let hole = new Be(new Qn(0.022, 12), darkSlotMat);
+      hole.position.set(px, -0.02, 1.417);
       this.model.add(hole);
     });
 
-    for (let g = 0; g < 3; g++) {
-      let hinge = new Be(new Xi(0.032, 0.032, 0.3, 14), metalMat);
-      hinge.rotation.z = Math.PI / 2;
-      hinge.position.set(-1.38 + g * 1.38, 0.53, -1.29);
-      this.model.add(hinge);
-
-      let pivot = new bt();
-      pivot.position.set(-1.42 + g * 1.42, 0.53, -1.275);
-      let lid = new Be(Zi(1.38, 0.13, 2.68, 0.06, 4), lidMat);
-      lid.position.set(0, 0, 1.31);
-      pivot.add(lid);
-      let tab = new Be(Zi(0.56, 0.09, 0.16, 0.035, 3), lidMat);
-      tab.position.set(0, -0.02, 1.38);
-      lid.add(tab);
-      let lbl = new Be(new zt(0.58, 0.58), new Tt({ map: Zm(g + 1), transparent: !0, depthWrite: !1 }));
-      lbl.rotation.x = -Math.PI / 2;
-      lbl.position.set(0, 0.072, 1.15);
-      lbl.renderOrder = 3;
-      lid.add(lbl);
-      this.model.add(pivot);
-      this.topLids.push({ pivot: pivot, lid: lid });
-    }
-
-    for (let g = 0; g < 3; g++) {
-      let hinge = new Be(new Xi(0.032, 0.032, 0.3, 14), metalMat);
-      hinge.rotation.z = Math.PI / 2;
-      hinge.position.set(-1.38 + g * 1.38, -0.53, -1.29);
-      this.model.add(hinge);
-
-      let pivot = new bt();
-      pivot.position.set(-1.42 + g * 1.42, -0.53, -1.275);
-      let lid = new Be(Zi(1.38, 0.13, 2.68, 0.06, 4), lidMat);
-      lid.position.set(0, 0, 1.31);
-      pivot.add(lid);
-      let tab = new Be(Zi(0.56, 0.09, 0.16, 0.035, 3), lidMat);
-      tab.position.set(0, 0.02, 1.38);
-      lid.add(tab);
-      let lbl = new Be(new zt(0.58, 0.58), new Tt({ map: Zm(g + 4), transparent: !0, depthWrite: !1 }));
-      lbl.rotation.x = Math.PI / 2;
-      lbl.position.set(0, -0.072, 1.15);
-      lbl.renderOrder = 3;
-      lid.add(lbl);
-      this.model.add(pivot);
-      this.botLids.push({ pivot: pivot, lid: lid });
-    }
-
-    let ringTex = fr(512, 512, (g, y, M) => {
-      g.clearRect(0, 0, y, M);
-      g.translate(y / 2, M / 2);
-      for (let E = 0; E < 6; E++) {
-        g.save();
-        g.rotate(E * Math.PI / 3);
-        g.fillStyle = E === 1 ? "#c59b3a" : "#294238";
-        g.beginPath();
-        g.roundRect(-30, -196, 60, 130, 30);
-        g.fill();
-        g.restore();
-      }
-    });
-    let ringPlane = new Be(new zt(0.52, 0.52), new Tt({ map: ringTex, transparent: !0, opacity: 0.34, depthWrite: !1, side: ft }));
-    ringPlane.position.set(0, 0.16, -1.422);
-    ringPlane.rotation.y = Math.PI;
-    this.model.add(ringPlane);
-
-    let backTxt = new Be(
-      new zt(1.24, 0.34),
+    let brandLogo = new Be(
+      new zt(0.96, 0.28),
       new Tt({
-        map: fr(1024, 280, (g, y, M) => {
-          g.clearRect(0, 0, y, M);
-          g.textAlign = "center";
-          g.fillStyle = "#294238";
-          g.font = "600 68px Inter,Arial,sans-serif";
-          g.fillText("YIZHI W100", y / 2, 108);
-          g.fillStyle = "rgba(41,66,56,.62)";
-          g.font = "500 28px Inter,Arial,sans-serif";
-          g.fillText("SMART CARE TECHNOLOGY", y / 2, 174);
-          g.fillStyle = "rgba(41,66,56,.48)";
-          g.font = "400 22px Inter,Arial,sans-serif";
-          g.fillText("6-SLOT DUAL LAYER · 5V USB-C", y / 2, 224);
+        map: fr(512, 150, (ctx, w, h) => {
+          ctx.clearRect(0, 0, w, h);
+          // YIZHI Six-Moment Ring mark (matches assets/img/logo-mark.svg)
+          ctx.save();
+          ctx.translate(82, h / 2);
+          for (let e = 0; e < 6; e++) {
+            ctx.save();
+            ctx.rotate((e * Math.PI) / 3);
+            ctx.fillStyle = e === 1 ? "#c59b3a" : "#005b3e";
+            ctx.beginPath();
+            ctx.roundRect(-16, -42, 32, 11, 5.5);
+            ctx.fill();
+            ctx.restore();
+          }
+          ctx.restore();
+          // Wordmark
+          ctx.textAlign = "left";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#005b3e";
+          ctx.font = '700 46px Inter,"Helvetica Neue",Arial,sans-serif';
+          ctx.fillText("YIZHI", 148, h / 2 - 14);
+          ctx.fillStyle = "rgba(0,91,62,0.78)";
+          ctx.font = '600 20px Inter,"Helvetica Neue",Arial,sans-serif';
+          ctx.fillText("SMART CARE · W100", 150, h / 2 + 26);
         }),
-        transparent: !0, opacity: 0.42, depthWrite: !1, side: ft
+        transparent: !0, depthWrite: !1
       })
     );
-    backTxt.position.set(0, -0.22, -1.422);
-    backTxt.rotation.y = Math.PI;
-    backTxt.scale.x = -1;
-    this.model.add(backTxt);
+    brandLogo.position.set(1.14, -0.02, 1.418);
+    this.model.add(brandLogo);
 
-    let usbc = new Be(Zi(0.06, 0.10, 0.26, 0.03, 3), darkSlotMat);
-    usbc.position.set(2.165, 0.08, 0.18);
+    // Helper to build one realistic contoured lid (top or bottom)
+    let buildLid = (slotNum, cx, isTop) => {
+      let sgn = isTop ? 1 : -1;
+      let pivot = new bt();
+      pivot.position.set(cx, sgn * 0.46, -1.24);
+
+      // Main lid deck (stops cleanly at the front black optical strip / white chin!)
+      let lid = new Be(Zi(1.30, 0.105, 2.08, 0.042, 4), lidMat);
+      lid.position.set(0, sgn * 0.052, 1.04);
+      pivot.add(lid);
+
+      // Curved 90° wrap-around rear hood
+      let arcCyl = new Be(new Xi(0.088, 0.088, 1.30, 16), lidMat);
+      arcCyl.rotation.z = Math.PI / 2;
+      arcCyl.position.set(0, sgn * 0.015, -0.015);
+      pivot.add(arcCyl);
+
+      let rearSkirt = new Be(Zi(1.30, 0.30, 0.105, 0.042, 4), lidMat);
+      rearSkirt.position.set(0, -sgn * 0.125, -0.055);
+      pivot.add(rearSkirt);
+
+      // Protruding front rounded tongue tab
+      let tongue = new Be(Zi(0.60, 0.095, 0.22, 0.045, 4), lidMat);
+      tongue.position.set(0, sgn * 0.048, 2.11);
+      pivot.add(tongue);
+
+      // Shallow recessed thumb pocket + raised thumb-pull ridge
+      let pocket = new Be(Zi(0.32, 0.018, 0.13, 0.015, 2), bodyMat);
+      pocket.position.set(0, sgn * 0.096, 2.10);
+      pivot.add(pocket);
+
+      let thumbRidge = new Be(Zi(0.24, 0.042, 0.068, 0.02, 3), lidMat);
+      thumbRidge.position.set(0, sgn * 0.114, 2.11);
+      pivot.add(thumbRidge);
+
+      // Inner snap-latch clip (visible when lid opens)
+      let latch = new Be(Zi(0.22, 0.036, 0.065, 0.01, 2), bodyMat);
+      latch.position.set(0, -sgn * 0.008, 2.10);
+      pivot.add(latch);
+      let latchSlot = new Be(Zi(0.14, 0.022, 0.032, 0.005, 2), darkSlotMat);
+      latchSlot.position.set(0, -sgn * 0.015, 2.10);
+      pivot.add(latchSlot);
+
+      // Subtle molding dimple near rear hinge
+      let dimple = new Be(new Qn(0.02, 12), new Tt({ color: 13818842, transparent: !0, opacity: 0.75 }));
+      dimple.rotation.x = isTop ? -Math.PI / 2 : Math.PI / 2;
+      dimple.position.set(0, sgn * 0.107, 0.22);
+      pivot.add(dimple);
+
+      // Crisp lime-green slot number badge near front tongue
+      let lbl = new Be(new zt(0.58, 0.58), new Tt({ map: Zm(slotNum), transparent: !0, depthWrite: !1 }));
+      lbl.rotation.x = isTop ? -Math.PI / 2 : Math.PI / 2;
+      lbl.position.set(0, sgn * 0.108, 1.56);
+      lbl.renderOrder = 3;
+      pivot.add(lbl);
+
+      this.model.add(pivot);
+      return { pivot: pivot, lid: lid };
+    };
+
+    for (let g = 0; g < 3; g++) {
+      let cx = -1.34 + g * 1.34;
+      this.topLids.push(buildLid(g + 1, cx, !0));
+      this.botLids.push(buildLid(g + 4, cx, !1));
+    }
+
+    // Rear inter-slot divider hinge knuckles & S/N barcode label in central recessed channel
+    [-0.67, 0.67].forEach(hx => {
+      let rib = new Be(Zi(0.055, 0.56, 0.14, 0.02, 2), bodyMat);
+      rib.position.set(hx, 0, -1.35);
+      this.model.add(rib);
+    });
+    [-1.34, 0, 1.34].forEach(cx => {
+      [0.44, -0.44].forEach(hy => {
+        let pin = new Be(new Xi(0.026, 0.026, 0.24, 12), bodyMat);
+        pin.rotation.z = Math.PI / 2;
+        pin.position.set(cx, hy, -1.28);
+        this.model.add(pin);
+      });
+    });
+
+    let snLabel = new Be(
+      new zt(0.92, 0.22),
+      new Tt({
+        map: fr(512, 128, (ctx, w, h) => {
+          ctx.fillStyle = "#f4f6f4";
+          ctx.fillRect(0, 0, w, h);
+          ctx.fillStyle = "#1d2420";
+          ctx.font = "600 24px monospace";
+          ctx.textAlign = "center";
+          ctx.fillText("S/N: 260180000955", w / 2, 32);
+          for (let i = 0; i < 34; i++) {
+            let bw = (i * 7 + 3) % 5 + 2;
+            ctx.fillRect(46 + i * 12, 48, bw, 62);
+          }
+        }),
+        transparent: !0, opacity: 0.92, depthWrite: !1, side: ft
+      })
+    );
+    snLabel.position.set(0, -0.02, -1.418);
+    snLabel.rotation.y = Math.PI;
+    this.model.add(snLabel);
+
+    // Left Side Wall (x = -2.166): Horizontal USB-C + White Slide Switch near front, QC seal near rear
+    let usbcRim = new Be(Zi(0.03, 0.105, 0.28, 0.035, 3), metalMat);
+    usbcRim.position.set(-2.156, 0.14, 0.76);
+    this.model.add(usbcRim);
+    let usbc = new Be(Zi(0.05, 0.08, 0.24, 0.03, 3), darkSlotMat);
+    usbc.position.set(-2.165, 0.14, 0.76);
     this.model.add(usbc);
-    let swHousing = new Be(Zi(0.04, 0.11, 0.32, 0.03, 3), darkSlotMat);
-    swHousing.position.set(2.16, -0.18, 0.18);
-    this.model.add(swHousing);
-    let greenToggle = new Be(Zi(0.08, 0.09, 0.18, 0.035, 3), limeMat);
-    greenToggle.position.set(2.175, -0.18, 0.13);
-    this.model.add(greenToggle);
+
+    let swTrack = new Be(Zi(0.04, 0.092, 0.30, 0.035, 3), darkSlotMat);
+    swTrack.position.set(-2.162, -0.15, 0.76);
+    this.model.add(swTrack);
+    let swKnob = new Be(Zi(0.07, 0.082, 0.14, 0.035, 3), lidMat);
+    swKnob.position.set(-2.178, -0.15, 0.82);
+    this.model.add(swKnob);
+
+    let qcSticker = new Be(
+      new Qn(0.14, 24),
+      new Tt({
+        map: fr(160, 160, (ctx, w, h) => {
+          let g = ctx.createRadialGradient(w * 0.35, h * 0.35, 6, w / 2, h / 2, w / 2);
+          g.addColorStop(0, "#cfd6d3");
+          g.addColorStop(0.55, "#5c6460");
+          g.addColorStop(1, "#2a302d");
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(w / 2, h / 2, w / 2 - 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = "rgba(255,255,255,0.82)";
+          ctx.font = "700 28px Inter,Arial,sans-serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("QC", w / 2, h / 2 - 14);
+          ctx.font = "600 18px Inter,Arial,sans-serif";
+          ctx.fillText("PASSED", w / 2, h / 2 + 18);
+        }),
+        transparent: !0, depthWrite: !1
+      })
+    );
+    qcSticker.rotation.y = -Math.PI / 2;
+    qcSticker.position.set(-2.168, -0.02, -0.84);
+    this.model.add(qcSticker);
+
+    let sidePin = new Be(new Qn(0.018, 12), darkSlotMat);
+    sidePin.rotation.y = -Math.PI / 2;
+    sidePin.position.set(-2.168, -0.02, -1.14);
+    this.model.add(sidePin);
   }
   buildShadow() {
     let e = Jm();
@@ -4589,17 +4706,17 @@ var xo = class {
     this.camera.aspect = e / t;
     this.camera.updateProjectionMatrix();
     this.mobile = e < 760;
-    this.shadowPlane && (this.shadowPlane.position.x = this.mobile ? 0 : 1.78);
+    this.shadowPlane && (this.shadowPlane.position.x = this.mobile ? 0 : 1.48);
     if (this.mobile) {
       this.model.position.set(0, -0.95, 0);
       this.camera.position.set(0, 0.65, 12.0);
       this.camera.lookAt(0, 0.40, 0);
       this.model.scale.setScalar(0.46);
     } else {
-      this.model.position.set(1.78, 0.0, 0);
+      this.model.position.set(1.48, 0.02, 0);
       this.camera.position.set(0, 0.46, 11.4);
       this.camera.lookAt(0, 0.05, 0);
-      this.model.scale.setScalar(0.84);
+      this.model.scale.setScalar(0.72);
     }
   }
   update(pointer, timeSec, immediate) {
@@ -4609,32 +4726,32 @@ var xo = class {
     let ledMode = "idle";
 
     if (this.demoMode === "scroll") {
-      targetRotY = -0.45 + Math.sin(timeSec * 0.42) * 0.62;
-      targetRotX = 0.16 + Math.sin(timeSec * 0.35) * 0.04;
+      targetRotY = -0.35 + Math.sin(timeSec * 0.42) * 0.65;
+      targetRotX = 0.30 + Math.sin(timeSec * 0.35) * 0.06;
       let op = 0.35 + 0.35 * Math.sin(timeSec * 0.65);
       targetTop = [op * 0.85, op, op * 0.85];
       targetBot = [op * 0.6, op * 0.65, op * 0.6];
       ledMode = "active";
     } else if (this.demoMode === "alert") {
-      targetRotY = 0.34 + Math.sin(timeSec * 0.5) * 0.06;
-      targetRotX = 0.16;
+      targetRotY = 0.24 + Math.sin(timeSec * 0.5) * 0.06;
+      targetRotX = 0.34;
       targetTop = [0, 0.96, 0];
       ledMode = "slot2";
     } else if (this.demoMode === "wrong") {
-      targetRotY = 0.30 + Math.sin(timeSec * 1.4) * 0.03;
-      targetRotX = 0.14;
+      targetRotY = 0.22 + Math.sin(timeSec * 1.4) * 0.03;
+      targetRotX = 0.32;
       targetTop = [0, 0.08, 0.88];
       ledMode = "warn";
     } else if (this.demoMode === "dual") {
       targetRotY = -0.78 + Math.sin(timeSec * 0.45) * 0.10;
-      targetRotX = 0.18;
-      targetRotZ = -0.06;
+      targetRotX = 0.24;
+      targetRotZ = -0.05;
       targetTop = [0.95, 0.95, 0.95];
       targetBot = [0.92, 0.92, 0.92];
       ledMode = "active";
     } else if (this.demoMode === "io") {
-      targetRotY = -1.22 + Math.sin(timeSec * 0.55) * 0.16;
-      targetRotX = 0.09;
+      targetRotY = 1.18 + Math.sin(timeSec * 0.55) * 0.16;
+      targetRotX = 0.16;
       ledMode = "idle";
     }
 
@@ -4652,16 +4769,18 @@ var xo = class {
       this.botOpens[g] += (targetBot[g] - this.botOpens[g]) * (immediate ? 1 : 0.12);
       maxTop = Math.max(maxTop, this.topOpens[g]);
       maxBot = Math.max(maxBot, this.botOpens[g]);
-      this.topLids[g].pivot.rotation.x = -this.topOpens[g] * 1.48;
-      this.botLids[g].pivot.rotation.x = this.botOpens[g] * 1.42;
+      this.topLids[g].pivot.rotation.x = -this.topOpens[g] * 1.46;
+      this.botLids[g].pivot.rotation.x = this.botOpens[g] * 1.40;
     }
 
-    let showTop = maxTop > 0.03;
-    this.topPills.forEach((p, idx) => { p.visible = showTop; p.position.y = 0.557 + Math.sin(timeSec * 0.9 + idx) * 0.002; });
-    this.topTablets.forEach(t => { t.visible = maxTop > 0.08; });
-    let showBot = maxBot > 0.03;
-    this.botPills.forEach((p, idx) => { p.visible = showBot; p.position.y = -0.557 - Math.sin(timeSec * 0.9 + idx) * 0.002; });
-    this.botTablets.forEach(t => { t.visible = maxBot > 0.08; });
+    for (let g = 0; g < 3; g++) {
+      let showSlotTop = this.topOpens[g] > 0.05;
+      this.topPills[g].forEach((p, idx) => { p.visible = showSlotTop; p.position.y = 0.503 + Math.sin(timeSec * 0.9 + idx) * 0.002; });
+      this.topTablets[g].forEach(t => { t.visible = this.topOpens[g] > 0.08; });
+      let showSlotBot = this.botOpens[g] > 0.05;
+      this.botPills[g].forEach((p, idx) => { p.visible = showSlotBot; p.position.y = -0.503 - Math.sin(timeSec * 0.9 + idx) * 0.002; });
+      this.botTablets[g].forEach(t => { t.visible = this.botOpens[g] > 0.08; });
+    }
     this.innerLight.intensity = maxTop * 2.2;
 
     this.leds.forEach((led, idx) => {
@@ -4766,7 +4885,7 @@ var xo = class {
     alert: { badge: "ACTIVE ALERT · SLOT 02", warn: !1, status: "Triple Alert: 6 LEDs + 10s family voice + vibration -> Slot 02 opened.", log: { cls: "is-ok", time: "12:30", text: "Slot 02 (Noon Dose) opened on schedule", tag: "TAKEN" } },
     wrong: { badge: "WRONG-SLOT GUARD", warn: !0, status: "Voice Correction: 'Wrong compartment — please open Slot 02.'", log: { cls: "is-warn", time: "12:31", text: "Slot 03 opened by mistake (Target Slot 02)", tag: "WRONG LID" } },
     dual: { badge: "DUAL-LAYER 6 SLOTS", warn: !1, status: "Symmetrical top (01–03) & bottom (04–06) lids + LFGB silicone trays.", log: { cls: "is-sync", time: "12:32", text: "All 6 lid sensors & dual trays verified", tag: "VERIFIED" } },
-    io: { badge: "USB-C & I/O · 60D", warn: !1, status: "USB-C 5V/1A + lime toggle switch + 5 speaker pinholes · ~60d standby.", log: { cls: "is-sync", time: "12:33", text: "1,200 mAh (4.44 Wh) · PI 967 Non-DG", tag: "HARDWARE" } }
+    io: { badge: "USB-C & I/O · 60D", warn: !1, status: "Left USB-C 5V/1A + white slide switch + 5+1 front speaker/mic pinholes.", log: { cls: "is-sync", time: "12:33", text: "1,200 mAh (4.44 Wh) · PI 967 Non-DG", tag: "HARDWARE" } }
   };
 
   function setDemo(mode) {

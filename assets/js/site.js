@@ -837,8 +837,9 @@
       if (!vp) return;
       vp.style.setProperty('--rx', rx.toFixed(2) + 'deg');
       vp.style.setProperty('--rz', rz.toFixed(2) + 'deg');
+      var fl = rx > 92;
+      modelCard.classList.toggle('is-flipped', fl);
       if (btnFlip) {
-        var fl = rx > 92;
         btnFlip.classList.toggle('is-active', fl);
         btnFlip.setAttribute('aria-pressed', fl ? 'true' : 'false');
       }
@@ -898,7 +899,7 @@
         modelCard.classList.remove('is-exploded');
         modelCard.classList.toggle('is-dual');
         if (modelCard.classList.contains('is-dual')) {
-          rx = 78; rz = -34; autoOrbit = false; applyRig();
+          rx = 68; rz = -34; autoOrbit = false; applyRig();
         }
         syncButtons();
       });
