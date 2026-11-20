@@ -4930,7 +4930,7 @@ var xo = class {
     { tag: "SLIDE 10 / 13 · 5:35–5:58 · FOB PRICING", cue: "Reveal FOB Shanghai: $27.0 Essential, $31.0 Voice, $37.0 Pro." },
     { tag: "SLIDE 11 / 13 · 5:58–6:22 · CHANNEL MARGIN", cue: "Highlight €26.59/u (45.3%) profit & >€530k per 20'GP container." },
     { tag: "SLIDE 12 / 13 · 6:22–6:45 · TERMS & SLA", cue: "1–4u 100% credit, 100u 90d pilot, 14.1 kg ctn, ≤2% FOC spares, 24h/48h RMA." },
-    { tag: "SLIDE 13 / 13 · 6:45–7:10 · BOOTH C9", cue: "As 5 beams converge, invite judges & buyers to Room SA407 · Booth C9." }
+    { tag: "SLIDE 13 / 13 · 6:45–7:10 · BOOTH C9", cue: "As 5 beams converge, invite judges & buyers to Room SA407 · Booth C9 (13:30–16:00)." }
   ];
 
   // Time-based critically-damped horizontal slide tween

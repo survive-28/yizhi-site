@@ -624,11 +624,11 @@
         'BEGIN:VEVENT',
         'UID:w100-launch-20261124@yizhi.com',
         'DTSTAMP:20261118T000000Z',
-        'DTSTART:20261124T070000Z',
-        'DTEND:20261124T090000Z',
-        'SUMMARY:Healthcare Nurse W100 - Global Launch (SA308) & Booth C9 (SA407)',
-        'LOCATION:Room SA308 & Booth C9 (Room SA407), Xuesi Building, SUIBE, Songjiang, Shanghai, China',
-        'DESCRIPTION:Live demonstration and channel programme. Contact: launch@yizhi.com / sales@yizhi.com',
+        'DTSTART:20261124T053000Z',
+        'DTEND:20261124T080000Z',
+        'SUMMARY:Healthcare Nurse W100 - Global Launch (SD308, 14:50 CST) & Booth C9 (SA407, 13:30-16:00 CST)',
+        'LOCATION:Room SD308 (Launch 14:50 CST) & Booth C9 (Room SA407, 13:30-16:00 CST), Xuesi Building, SUIBE, Songjiang, Shanghai, China',
+        'DESCRIPTION:Global Launch at Room SD308 (14:50 CST) and exhibition & trade negotiations at Room SA407 Booth C9 (13:30-16:00 CST). Contact: launch@yizhi.com / sales@yizhi.com',
         'END:VEVENT', 'END:VCALENDAR'
       ];
       var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });

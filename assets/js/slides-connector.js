@@ -9,8 +9,9 @@
   var UNLOCK_AT = "2026-11-24T14:40:00+08:00";
   var UNLOCK_EPOCH_MS = Date.parse(UNLOCK_AT);
   var STATUS_ENDPOINT = "/api/slides-status";
-  var SLIDES_URL = "/slides/";
-  var LOCKED_URL = "/slides-locked.html";
+  var IS_FILE = location.protocol === "file:";
+  var SLIDES_URL = IS_FILE ? "slides/index.html" : "/slides/";
+  var LOCKED_URL = IS_FILE ? "slides-locked.html" : "/slides-locked.html";
 
   var cachedStatus = {
     unlocked: Date.now() >= UNLOCK_EPOCH_MS,

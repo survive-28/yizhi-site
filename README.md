@@ -9,7 +9,7 @@
 ```
 website/
 ├─ index.html            首页：动态六时环 · 公司介绍 · W100 交互闭环模拟 · 三型号矩阵（不涉价）· 出口/合规/SLA · 发布会 · 四人团队与 @yizhi.com 联系矩阵
-├─ launch.html           发布会专页：倒计时 · SUIBE SA308 / SA407 Booth C9 · 四人现场团队 · 预约表单 · FAQ
+├─ launch.html           发布会专页：倒计时 · SUIBE SD308 (14:50) / SA407 Booth C9 (13:30–16:00) · 四人现场团队 · 预约表单 · FAQ
 ├─ slides/               发布会横向 13 页 Keynote Slides（Three.js 光阑/棱镜动效 + 3D W100 实机演示 + 官方定价；仅在 2026-11-24 14:40 CST 后开放）
 ├─ slides-locked.html    发布前定时锁页（倒计时至北京时间 2026-11-24 14:40:00，自动同步服务器时间解锁）
 ├─ netlify/edge-functions/slides-gate.js  Netlify 边缘服务端时间闸门 & `/api/slides-status` 状态接口
@@ -33,7 +33,7 @@ website/
   - `launch@yizhi.com` — 发布会报名、现场演示与媒体咨询
   - `compliance@yizhi.com` — 欧盟 12 份合规文件包与技术文档核查
   - `rma@yizhi.com` — 24 个月商业质保、备品与 RMA 售后支持
-- **现场参展团队（SUIBE 学思楼 SA308 发布会 / SA407 · Booth C9 展位）**：
+- **现场参展团队（SUIBE 学思楼 SD308 14:50 发布会 / SA407 · Booth C9 13:30–16:00 谈判展位）**：
   - **张涵博 Humbert Zhang**（商务总监 Business Director · `+86 158 7541 5001` · 商务主联系人）
   - **林博铖 Steve Lin**（产品经理 Product Manager · `+86 180 5068 4286`）
   - **陈雨昂 Antique Chen**（物流经理 Logistics Manager · `+86 153 7552 9689`）
